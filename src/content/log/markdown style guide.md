@@ -1,7 +1,7 @@
 ---
-description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
+description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
 created: 2024-10-18 10:37
-heroImage: "/blog-placeholder-1.jpg"
+heroImage: '/blog-placeholder-1.jpg'
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
