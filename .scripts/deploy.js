@@ -9,7 +9,7 @@ async function deployMyCode() {
     protocol: 'ftps',
     'local-dir': './dist/',
     'server-dir': './public_html/',
-    exclude: ['.*'],
+    exclude: ['.*', '.DS_Store'],
   });
   console.log('deployment complete. Check out on: https://your.url.here', '\n');
 }
