@@ -6,7 +6,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://knoto.whatphilipdoes.com',
+  site: 'https://dox.where',
   markdown: {
     shikiConfig: {
       themes: {
