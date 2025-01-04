@@ -9,6 +9,9 @@ Features:
 - Prebuilt Routes
   - Devlog
   - Manual
+- FTP Deployment already set up
+  - directly via script
+  - workflow for GitHub Actions
 
 ---
 
