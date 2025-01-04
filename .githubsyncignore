@@ -1,2 +1,4 @@
 public
-src/content
+src/content/log
+src/content/manual
+README.md
