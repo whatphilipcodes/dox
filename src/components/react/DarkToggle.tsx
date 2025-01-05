@@ -27,13 +27,14 @@ function DarkToggle() {
   return (
     <button
       onClick={toggleDarkMode}
-      className='flex items-center gap-2 rounded-lg px-3 py-2'
+      className={`flex h-8 w-8 items-center rounded-full bg-neutral-300 dark:bg-neutral-800`}
       aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
     >
-      {isDarkMode ? <Sun className='h-5 w-5' /> : <Moon className='h-5 w-5' />}
-      <span className='text-sm font-medium'>
-        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-      </span>
+      {isDarkMode ? (
+        <Moon className='m-auto h-4 w-4' />
+      ) : (
+        <Sun className='m-auto h-4 w-4' />
+      )}
     </button>
   );
 }
