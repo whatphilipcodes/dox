@@ -11,4 +11,17 @@ const log = defineCollection({
   }),
 });
 
-export const collections = { log };
+const manual = defineCollection({
+  loader: frontLoader({
+    base: './src/content/manual',
+    pattern: '**/*.{md,mdx}',
+  }),
+  schema: z.object({
+    title: z.string().optional(), // needs to be optional for filename replacement
+    created: z.coerce.date(),
+    description: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
+export const collections = { log, manual };

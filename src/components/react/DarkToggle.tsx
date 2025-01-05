@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
 function DarkToggle() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   // setup on init render
-  useEffect(() => {
+  useLayoutEffect(() => {
     const systemPreference = window.matchMedia(
       '(prefers-color-scheme: dark)',
     ).matches;

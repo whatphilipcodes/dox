@@ -1,9 +1,19 @@
 ---
-import { SITE_AUTHOR } from '../consts';
+import {
+  SITE_AUTHOR,
+  AUTHOR_URL,
+  EXTERNAL_IMPRINT,
+  EXTERNAL_PRIVACY,
+} from '../consts';
 const today = new Date();
 ---
 
-<footer>
-  &copy; {today.getFullYear()}
-  {SITE_AUTHOR} All rights reserved.
+<footer
+  class='flex h-16 w-full flex-row items-center gap-4 border-t border-neutral-600 p-4'
+>
+  <div>MIT License &copy; {today.getFullYear()}</div>
+  <a href={AUTHOR_URL}>{SITE_AUTHOR}</a>
+  <div>/</div>
+  <a href={EXTERNAL_IMPRINT}>imprint</a>
+  <a href={EXTERNAL_PRIVACY}>privacy</a>
 </footer>
