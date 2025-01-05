@@ -18,5 +18,8 @@ export default defineConfig({
       },
     },
   },
-  integrations: [mdx(), sitemap(), tailwind(), react()],
+  integrations: [react(), mdx(), sitemap(), tailwind()],
 });
+
+// using react and mdx currently prints a bug to console when using hooks: https://github.com/withastro/astro/issues/12802
+// during build vite throws a resolve error for 'react-compiler-runtime'

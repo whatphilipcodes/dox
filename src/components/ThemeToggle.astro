@@ -1,0 +1,26 @@
+<button> Toggle Dark Mode </button>
+<script>
+  const button = document.querySelector('button');
+  button?.addEventListener('click', () => {
+    toggleTheme();
+  });
+  function toggleTheme() {
+    const currentTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
+
+    if (currentTheme === 'dark' || (currentTheme === null && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
+</script>

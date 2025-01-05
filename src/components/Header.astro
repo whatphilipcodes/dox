@@ -1,15 +1,17 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+import HeaderLink from './HeaderLink.astro';
+import DarkToggle from './react/DarkToggle';
+import { SITE_TITLE } from '../consts';
 ---
 
 <header>
   <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
-    <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/log">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
+    <h2><a href='/'>{SITE_TITLE}</a></h2>
+    <div class='internal-links'>
+      <HeaderLink href='/'>Home</HeaderLink>
+      <HeaderLink href='/log'>Blog</HeaderLink>
+      <HeaderLink href='/about'>About</HeaderLink>
+      <DarkToggle client:idle />
     </div>
   </nav>
 </header>
