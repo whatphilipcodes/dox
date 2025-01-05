@@ -27,7 +27,7 @@ function DarkToggle() {
   return (
     <button
       onClick={toggleDarkMode}
-      className='flex items-center gap-2 self-end rounded-lg px-3 py-2'
+      className='flex items-center gap-2 rounded-lg px-3 py-2'
       aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
     >
       {isDarkMode ? <Sun className='h-5 w-5' /> : <Moon className='h-5 w-5' />}
