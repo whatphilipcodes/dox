@@ -19,7 +19,7 @@ jobs:
       - name: template sync
         uses: AndreasAugustin/actions-template-sync@v2
         with:
-          source_repo_path: whatphilipcodes/taupy
+          source_repo_path: whatphilipcodes/dox
           pr_branch_name_prefix: template-sync
           pr_title: sync template
           pr_body: merge ${SOURCE_REPO} ${TEMPLATE_GIT_HASH}
