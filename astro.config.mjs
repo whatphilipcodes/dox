@@ -19,6 +19,9 @@ export default defineConfig({
     },
   },
   integrations: [react(), mdx(), sitemap(), tailwind()],
+  experimental: {
+    svg: true,
+  },
 });
 
 // using react and mdx currently prints a bug to console when using hooks: https://github.com/withastro/astro/issues/12802
