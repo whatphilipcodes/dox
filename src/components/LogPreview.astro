@@ -1,0 +1,35 @@
+---
+import FormattedDate from '../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  limit?: number;
+}
+
+const { limit } = Astro.props;
+const preview = (await getCollection('log')).sort(
+  (a, b) => b.data.created.valueOf() - a.data.created.valueOf(),
+);
+if (limit && preview.length > limit) {
+  preview.splice(limit);
+}
+---
+
+<section>
+  <ul>
+    {
+      preview.map((post) => (
+        <li>
+          <div class='flex flex-row gap-4'>
+            <div data-info='created' class='text-neutral-600'>
+              <FormattedDate date={post.data.created} />
+            </div>
+            <a href={`/log/${post.id}/`}>
+              <h4 class='title'>{post.data.title}</h4>
+            </a>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>

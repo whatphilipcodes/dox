@@ -1,27 +1,18 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Basic from '../layouts/Basic.astro';
+import LogPreview from '../components/LogPreview.astro';
+import { SITE_TITLE } from '../consts';
 ---
 
-<!doctype html>
-<html lang='en'>
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>Welcome to {SITE_TITLE}</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-        perspiciatis vel similique possimus voluptate cum nobis porro doloribus?
-        Nesciunt architecto reiciendis quasi quisquam quis quae nisi beatae
-        blanditiis quo quas!
-      </p>
-      <p>have recent log entries here</p>
-    </main>
-    <Footer />
-  </body>
-</html>
+<Basic>
+  <section>
+    <h1>Welcome to {SITE_TITLE}</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+      perspiciatis vel similique possimus voluptate cum nobis porro doloribus?
+      Nesciunt architecto reiciendis quasi quisquam quis quae nisi beatae
+      blanditiis quo quas!
+    </p>
+  </section>
+  <LogPreview limit={5} />
+</Basic>
