@@ -8,3 +8,7 @@ html.dark .astro-code span {
   font-weight: var(--shiki-dark-font-weight) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
 }
+
+.shiki {
+  @apply font-mono;
+}

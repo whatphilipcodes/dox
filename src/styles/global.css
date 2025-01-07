@@ -6,6 +6,10 @@ main {
   @apply p-4;
 }
 
+h1 {
+  @apply text-4xl font-bold;
+}
+
 pre {
-  @apply rounded-sm;
+  @apply my-4 rounded-md p-4;
 }
