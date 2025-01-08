@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
 function DarkToggle() {
@@ -27,7 +27,7 @@ function DarkToggle() {
   return (
     <button
       onClick={toggleDarkMode}
-      className={`flex h-8 w-8 items-center rounded-full bg-neutral-300 dark:bg-neutral-800`}
+      className={`flex h-8 w-8 items-center rounded-full bg-neutral-300 transition-colors duration-300 hover:bg-neutral-400 dark:bg-neutral-800 dark:hover:bg-neutral-700`}
       aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
     >
       {isDarkMode ? (
