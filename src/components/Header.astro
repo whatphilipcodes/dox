@@ -1,6 +1,6 @@
 ---
 import Link from './Link.astro';
-import DarkToggle from './react/DarkToggle';
+import ThemeToggle from './react/ThemeToggle';
 import { SITE_TITLE, GITHUB_URL } from '../consts';
 import { collections } from '../content.config';
 
@@ -29,7 +29,7 @@ const collectionsList = Object.keys(collections);
       }
       <Link href='/download/'>download</Link>
       <Link href={GITHUB_URL}>github</Link>
-      <DarkToggle client:load />
+      <ThemeToggle client:load />
     </div>
   </nav>
 </header>
