@@ -17,6 +17,7 @@ const collectionsList = Object.keys(collections);
       {SITE_TITLE}</Link
     >
     <div data-info='controls' class='flex flex-row items-center gap-4'>
+      <Link href='/roadmap'>roadmap</Link>
       {
         collectionsList.map((collection) => (
           <Link href={`/${collection}/`} class='flex'>
@@ -26,7 +27,7 @@ const collectionsList = Object.keys(collections);
       }
       <Link href='/download/'>download</Link>
       <Link href={GITHUB_URL}>github</Link>
-      <DarkToggle client:idle />
+      <DarkToggle client:load />
     </div>
   </nav>
 </header>
