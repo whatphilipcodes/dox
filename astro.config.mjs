@@ -24,5 +24,4 @@ export default defineConfig({
   },
 });
 
-// using react and mdx currently prints a bug to console when using hooks: https://github.com/withastro/astro/issues/12802
 // during build vite throws a resolve error for 'react-compiler-runtime'
