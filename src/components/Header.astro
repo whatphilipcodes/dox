@@ -3,6 +3,8 @@ import Link from './Link.astro';
 import DarkToggle from './react/DarkToggle';
 import { SITE_TITLE, GITHUB_URL } from '../consts';
 import { collections } from '../content.config';
+
+// @ts-ignore -> astro experimental feature
 import Icon from '../../public/favicon.svg';
 
 const collectionsList = Object.keys(collections);
