@@ -2,7 +2,7 @@ import { useState, useLayoutEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
 function DarkToggle() {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   // setup on init render
   useLayoutEffect(() => {
