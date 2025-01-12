@@ -25,9 +25,12 @@ const isActive = (path: string) => {
   <nav class='flex h-full w-full flex-row items-center justify-between gap-4'>
     <Link href='/' data-info='icon' class={`flex flex-row items-center gap-4`}>
       <Icon class='h-12 w-12' />
-      {SITE_TITLE}</Link
+      <div class='hidden sm:block'>{SITE_TITLE}</div>
+    </Link>
+    <div
+      data-info='controls'
+      class='flex flex-row items-center gap-4 overflow-y-scroll'
     >
-    <div data-info='controls' class='flex flex-row items-center gap-4'>
       {
         collectionsList.map((collection) => (
           <Link

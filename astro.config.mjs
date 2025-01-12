@@ -22,6 +22,9 @@ export default defineConfig({
   experimental: {
     svg: true,
   },
+  server: {
+    host: true,
+  },
 });
 
 // during build vite throws a resolve error for 'react-compiler-runtime'
