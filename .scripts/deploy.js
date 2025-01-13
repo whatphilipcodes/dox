@@ -1,4 +1,5 @@
 import { deploy } from '@samkirkland/ftp-deploy';
+import { SITE_URL } from '../src/consts';
 
 async function deployMyCode() {
   console.log('deploying to test domain...');
@@ -11,7 +12,7 @@ async function deployMyCode() {
     'server-dir': './public_html/',
     exclude: ['.*'],
   });
-  console.log('deployment complete. Check out on: https://your.url.here', '\n');
+  console.log(`deployment complete. Check out on: ${SITE_URL}`, '\n');
 }
 
 deployMyCode();
