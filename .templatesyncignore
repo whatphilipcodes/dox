@@ -13,4 +13,5 @@ src/pages/*
 
 # misc
 src/consts.ts
+src/content.config.ts
 README.md
