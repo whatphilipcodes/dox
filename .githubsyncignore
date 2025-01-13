@@ -1,5 +1,13 @@
-public
+# public
+public/*
+!public/fonts
+
+# content
+src/content/*
+
+# pages
+src/pages/*
+
+# misc
 src/consts.ts
-src/content/log
-src/content/manual
 README.md
