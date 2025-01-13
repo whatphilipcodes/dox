@@ -1,5 +1,5 @@
 import { deploy } from '@samkirkland/ftp-deploy';
-import { SITE_URL } from '../src/consts';
+import { SITE_URL } from '../src/consts.ts';
 
 async function deployMyCode() {
   console.log('deploying to test domain...');
