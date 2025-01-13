@@ -1,5 +1,13 @@
+html {
+  @apply overflow-y-scroll;
+}
+
 body {
   @apply bg-neutral-200 text-neutral-900 transition-colors duration-300 dark:bg-neutral-900 dark:text-neutral-200;
+}
+
+section {
+  @apply flex flex-col gap-4;
 }
 
 main {
