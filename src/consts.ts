@@ -10,3 +10,4 @@ export const AUTHOR_URL = 'https://whatphilipdoes.com';
 export const GITHUB_URL = 'https://github.com/whatphilipcodes/dox';
 export const EXTERNAL_IMPRINT = 'https://where/imprint';
 export const EXTERNAL_PRIVACY = 'https://where/privacy';
+export const SERVER_DIR = './public_html/';
