@@ -22,12 +22,7 @@ if (limit && preview.length > limit) {
       preview.map((post) => (
         <li>
           <div class='flex flex-row gap-4'>
-            <div
-              data-info='created'
-              class='text-neutral-500 dark:text-neutral-600'
-            >
-              <FormattedDate date={post.data.created} />
-            </div>
+            <FormattedDate date={post.data.created} />
             <Link href={`/log/${post.id}/`}>
               <div class='title'>{post.data.title}</div>
             </Link>

@@ -1,7 +1,4 @@
-html {
-  @apply overflow-y-scroll;
-}
-
+/* custom stuff */
 /* Light */
 ::-webkit-scrollbar {
   width: 8px;
@@ -29,9 +26,19 @@ html.dark ::-webkit-scrollbar-thumb {
 html.dark ::-webkit-scrollbar-thumb:hover {
   background: theme('colors.neutral.500');
 }
+/* --- */
+
+/* Tailwind CSS */
+* {
+  @apply transition-[background-color] duration-300;
+}
+
+html {
+  @apply overflow-y-scroll;
+}
 
 body {
-  @apply bg-neutral-200 text-neutral-900 transition-colors duration-300 dark:bg-neutral-900 dark:text-neutral-200;
+  @apply bg-neutral-200 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-200;
 }
 
 section {
@@ -72,4 +79,8 @@ h6 {
 
 pre {
   @apply rounded-md p-4;
+}
+
+code {
+  @apply rounded-sm bg-neutral-300 dark:bg-neutral-800;
 }

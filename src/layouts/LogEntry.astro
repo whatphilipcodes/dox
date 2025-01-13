@@ -11,9 +11,7 @@ const { title, description, created } = Astro.props;
   <article>
     <div class='prose'>
       <div class='title'>
-        <div class='date'>
-          <FormattedDate date={created} />
-        </div>
+        <FormattedDate date={created} />
         <h1>{title}</h1>
       </div>
       <slot />
