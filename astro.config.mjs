@@ -28,3 +28,4 @@ export default defineConfig({
 });
 
 // during build vite throws a resolve error for 'react-compiler-runtime'
+// host option currently not working on my machine
