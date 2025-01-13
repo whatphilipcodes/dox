@@ -2,6 +2,34 @@ html {
   @apply overflow-y-scroll;
 }
 
+/* Light */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.transparent');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.neutral.400');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.neutral.500');
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: theme('colors.neutral.600');
+  border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.neutral.500');
+}
+
 body {
   @apply bg-neutral-200 text-neutral-900 transition-colors duration-300 dark:bg-neutral-900 dark:text-neutral-200;
 }
@@ -14,10 +42,34 @@ main {
   @apply p-4;
 }
 
+.prose {
+  @apply flex flex-col gap-4;
+}
+
 h1 {
+  @apply text-5xl font-bold;
+}
+
+h2 {
   @apply text-4xl font-bold;
 }
 
+h3 {
+  @apply text-3xl font-bold;
+}
+
+h4 {
+  @apply text-2xl font-bold;
+}
+
+h5 {
+  @apply text-xl font-bold;
+}
+
+h6 {
+  @apply text-lg font-bold;
+}
+
 pre {
-  @apply my-4 rounded-md p-4;
+  @apply rounded-md p-4;
 }
