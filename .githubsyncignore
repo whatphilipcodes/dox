@@ -1,3 +1,6 @@
+# workflows
+.github/workflows/*
+
 # public
 public/*
 !public/fonts
