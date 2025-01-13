@@ -19,7 +19,6 @@ jobs:
       - name: template sync
         uses: AndreasAugustin/actions-template-sync@v2
         with:
-          template_sync_ignore_file_path: .githubsyncignore
           source_repo_path: whatphilipcodes/dox
           pr_branch_name_prefix: template-sync
           pr_title: sync template
