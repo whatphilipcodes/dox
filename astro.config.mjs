@@ -5,20 +5,13 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 
+import expressiveConfig from './src/utils/expressiveConfig.ts';
 import { SITE_URL } from './src/consts.ts';
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  markdown: {
-    shikiConfig: {
-      themes: {
-        light: 'one-light',
-        dark: 'one-dark-pro',
-      },
-    },
-  },
-  integrations: [react(), mdx(), sitemap(), tailwind()],
+  integrations: [expressiveConfig, react(), mdx(), sitemap(), tailwind()],
   experimental: {
     svg: true,
   },
