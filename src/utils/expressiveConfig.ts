@@ -64,6 +64,7 @@ const expressiveConfig = expressiveCode({
           : `theme('colors.neutral.300')`;
       },
       editorActiveTabIndicatorBottomColor: `theme('colors.neutral.500')`,
+      editorActiveTabIndicatorTopColor: `theme('colors.transparent')`,
       editorActiveTabBackground: `theme('colors.transparent')`,
       editorActiveTabForeground: `theme('colors.neutral.500')`,
       editorTabBarBackground: `theme('colors.transparent')`,
