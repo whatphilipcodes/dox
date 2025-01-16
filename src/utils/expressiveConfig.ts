@@ -1,4 +1,12 @@
+// even though there is an 'official way' to have the config in root as 'ec.config.mjs' this wont work with the tailwind theme import. So far this workaround has been usable for me.
+
 import expressiveCode, { pluginFramesTexts } from 'astro-expressive-code';
+
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from '../../tailwind.config.mjs';
+
+const fullConfig = resolveConfig(tailwindConfig);
+const { theme } = fullConfig;
 
 pluginFramesTexts.addLocale('en', {
   terminalWindowFallbackTitle: 'Terminal',
@@ -13,7 +21,7 @@ pluginFramesTexts.addLocale('de', {
 });
 
 const expressiveConfig = expressiveCode({
-  themes: ['snazzy-light', 'vesper'],
+  themes: ['one-light', 'vesper'],
   useDarkModeMediaQuery: false,
   themeCssSelector: (theme) => {
     if (theme.type === 'dark') return '.dark';
@@ -28,55 +36,55 @@ const expressiveConfig = expressiveCode({
   styleOverrides: {
     borderColor: (context) => {
       return context.theme.type === 'dark'
-        ? `theme('colors.neutral.800')`
-        : `theme('colors.neutral.300')`;
+        ? theme.colors.neutral[800]
+        : theme.colors.neutral[300];
     },
-    codeBackground: `theme('colors.transparent')`,
-    codeFontFamily: `theme('fontFamily.mono')`,
-    uiFontFamily: `theme('fontFamily.sans')`,
+    codeBackground: theme.colors.transparent,
+    codeFontFamily: theme.fontFamily.mono[0],
+    uiFontFamily: theme.fontFamily.sans[0],
     frames: {
-      shadowColor: `theme('colors.transparent')`,
+      shadowColor: theme.colors.transparent,
       inlineButtonBorderOpacity: '0%',
-      inlineButtonBackground: `theme('colors.transparent')`,
+      inlineButtonBackground: theme.colors.transparent,
       inlineButtonForeground: (context) => {
         return context.theme.type === 'dark'
-          ? `theme('colors.neutral.600')`
-          : `theme('colors.neutral.500')`;
+          ? theme.colors.neutral[600]
+          : theme.colors.neutral[500];
       },
-      tooltipSuccessForeground: `theme('colors.neutral.500')`,
+      tooltipSuccessForeground: theme.colors.neutral[500],
       tooltipSuccessBackground: (context) => {
         return context.theme.type === 'dark'
-          ? `theme('colors.neutral.800')`
-          : `theme('colors.neutral.300')`;
+          ? theme.colors.neutral[800]
+          : theme.colors.neutral[300];
       },
-      terminalTitlebarBackground: `theme('colors.transparent')`,
-      terminalTitlebarForeground: `theme('colors.neutral.500')`,
-      terminalBackground: `theme('colors.transparent')`,
+      terminalTitlebarBackground: theme.colors.transparent,
+      terminalTitlebarForeground: theme.colors.neutral[500],
+      terminalBackground: theme.colors.transparent,
       terminalTitlebarDotsOpacity: '100%',
       terminalTitlebarDotsForeground: (context) => {
         return context.theme.type === 'dark'
-          ? `theme('colors.neutral.700')`
-          : `theme('colors.neutral.400')`;
+          ? theme.colors.neutral[700]
+          : theme.colors.neutral[400];
       },
       terminalTitlebarBorderBottomColor: (context) => {
         return context.theme.type === 'dark'
-          ? `theme('colors.neutral.800')`
-          : `theme('colors.neutral.300')`;
+          ? theme.colors.neutral[800]
+          : theme.colors.neutral[300];
       },
-      editorActiveTabIndicatorBottomColor: `theme('colors.neutral.500')`,
-      editorActiveTabIndicatorTopColor: `theme('colors.transparent')`,
-      editorActiveTabBackground: `theme('colors.transparent')`,
-      editorActiveTabForeground: `theme('colors.neutral.500')`,
-      editorTabBarBackground: `theme('colors.transparent')`,
+      editorActiveTabIndicatorBottomColor: theme.colors.neutral[500],
+      editorActiveTabIndicatorTopColor: theme.colors.transparent,
+      editorActiveTabBackground: theme.colors.transparent,
+      editorActiveTabForeground: theme.colors.neutral[500],
+      editorTabBarBackground: theme.colors.transparent,
       editorTabBarBorderBottomColor: (context) => {
         return context.theme.type === 'dark'
-          ? `theme('colors.neutral.800')`
-          : `theme('colors.neutral.300')`;
+          ? theme.colors.neutral[800]
+          : theme.colors.neutral[300];
       },
       editorActiveTabBorderColor: (context) => {
         return context.theme.type === 'dark'
-          ? `theme('colors.neutral.800')`
-          : `theme('colors.neutral.300')`;
+          ? theme.colors.neutral[800]
+          : theme.colors.neutral[300];
       },
     },
   },
