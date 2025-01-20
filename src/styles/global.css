@@ -57,3 +57,8 @@ code {
 mark {
   @apply rounded-sm bg-[#aef7e0] px-1;
 }
+
+/* fx: hide copied message behind header */
+.feedback {
+  @apply !z-10;
+}
