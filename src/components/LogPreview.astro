@@ -17,18 +17,16 @@ if (limit && preview.length > limit) {
 ---
 
 <section>
-  <ul>
+  <div>
     {
       preview.map((post) => (
-        <li>
-          <div class='flex flex-row gap-4'>
-            <FormattedDate date={post.data.created} />
-            <Link href={`/log/${post.id}/`}>
-              <div class='title'>{post.data.title}</div>
-            </Link>
-          </div>
-        </li>
+        <div class='flex flex-row gap-4'>
+          <FormattedDate date={post.data.created} />
+          <Link href={`/log/${post.id}/`}>
+            <div class='title'>{post.data.title}</div>
+          </Link>
+        </div>
       ))
     }
-  </ul>
+  </div>
 </section>

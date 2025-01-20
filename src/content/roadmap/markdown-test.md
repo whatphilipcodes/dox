@@ -1,0 +1,173 @@
+---
+description: 'Small demo of Expressive Code features on this template'
+created: 2025-01-15 23:38
+---
+
+# This is an Example for a Table
+
+In this example the table is encapsulated with a custom component in order to make it simultaneously work in Astro and on GitHub.
+
+<table>
+  <tr slot='header'>
+    <th>Time Frame</th>
+    <th>Milestone</th>
+    <th>Work Packages</th>
+  </tr>
+  <tr>
+    <td>
+      <code>01.11.2024 - 26.11.2024</code>
+    </td>
+    <td>System Architecture</td>
+    <td>
+      <ul>
+        <li>techstack evaluation; goal → desktop application</li>
+        <li>framework selection</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>27.11.2024 - 06.01.2025</code>
+    </td>
+    <td>Framework Template</td>
+    <td>
+      <ul>
+        <li>Python</li>
+        <ul>
+          <li>backend access → setting up FastAPI & Uvicorn</li>
+          <li>bundling → Pyinstaller</li>
+        </ul>
+        <li>Tauri</li>
+        <ul>
+          <li>configuration for sidecar usage and CORS setup</li>
+          <li>sidecar management</li>
+          <ul>
+            <li>automatic process spawn upon launch</li>
+            <ul>
+              <li>check</li>
+              <li>check</li>
+            </ul>
+            <li>automatic process kill upon exit</li>
+          </ul>
+        </ul>
+        <li>React</li>
+        <ul>
+          <li>setup and configuration</li>
+        </ul>
+        <li>Github</li>
+        <ul>
+          <li>workflow setup and configuration</li>
+        </ul>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>07.01.2025 - 15.01.2025</code>
+    </td>
+    <td>Documentation Template</td>
+    <td>
+      <ul>
+        <li>Astro Project</li>
+        <ul>
+          <li>configuration and setup</li>
+          <li>Expressive Code setup</li>
+          <li>layout and design</li>
+        </ul>
+        <li>Github</li>
+        <ul>
+          <li>workflow setup and configuration</li>
+        </ul>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>07.01.2025 - 15.01.2025</code>
+    </td>
+    <td>Documentation Template</td>
+    <td>
+      <ul>
+        <li>Astro Project</li>
+        <ul>
+          <li>configuration and setup</li>
+          <li>Expressive Code setup</li>
+          <li>layout and design</li>
+        </ul>
+        <li>Github</li>
+        <ul>
+          <li>workflow setup and configuration</li>
+        </ul>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>07.01.2025 - 15.01.2025</code>
+    </td>
+    <td>Documentation Template</td>
+    <td>
+      <ul>
+        <li>Astro Project</li>
+        <ul>
+          <li>configuration and setup</li>
+          <li>Expressive Code setup</li>
+          <li>layout and design</li>
+        </ul>
+        <li>Github</li>
+        <ul>
+          <li>workflow setup and configuration</li>
+        </ul>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>07.01.2025 - 15.01.2025</code>
+    </td>
+    <td>Documentation Template</td>
+    <td>
+      <ul>
+        <li>Astro Project</li>
+        <ul>
+          <li>configuration and setup</li>
+          <li>Expressive Code setup</li>
+          <li>layout and design</li>
+        </ul>
+        <li>Github</li>
+        <ul>
+          <li>workflow setup and configuration</li>
+        </ul>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nuncElit cupidatat anim minim mollit culpa laboris nulla nostrud dolore aliqua dolore duis excepteur commodo. Velit velit laboris ea nostrud ex enim ea eiusmod cupidatat eu dolore. Eiusmod est occaecat cillum elit do. Deserunt tempor veniam dolor consequat deserunt sit cupidatat consequat adipisicing eiusmod. Ut proident proident proident enim veniam labore cupidatat eiusmod pariatur enim dolor.
+
+Pariatur ex mollit veniam sint aliquip laborum labore non ut velit. Commodo dolore nostrud duis tempor nisi nostrud sit dolore pariatur deserunt. Anim exercitation voluptate quis proident culpa ad proident adipisicing quis sit commodo sint. Labore consequat deserunt ad reprehenderit laboris eiusmod enim. Do magna anim magna ullamco dolor magna consequat in exercitation aliquip sint ex minim.
+
+Mollit sint nostrud anim irure consectetur sunt. Ex reprehenderit non eiusmod occaecat in elit non aliqua dolor ut sunt eu irure. Officia commodo et anim eiusmod laborum non culpa ullamco veniam. Aliquip irure dolore velit reprehenderit ut est voluptate laboris officia est voluptate pariatur ad. Consequat labore elit elit duis Lorem reprehenderit ullamco commodo laboris nostrud amet.
+
+Magna duis id deserunt enim ut irure. Nisi nisi ea fugiat mollit reprehenderit eu tempor. Amet esse sint id pariatur aliquip anim. Mollit aute pariatur adipisicing ullamco. Tempor anim non sint aute excepteur proident cupidatat excepteur laboris ad.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nuncElit cupidatat anim minim mollit culpa laboris nulla nostrud dolore aliqua dolore duis excepteur commodo. Velit velit laboris ea nostrud ex enim ea eiusmod cupidatat eu dolore. Eiusmod est occaecat cillum elit do. Deserunt tempor veniam dolor consequat deserunt sit cupidatat consequat adipisicing eiusmod. Ut proident proident proident enim veniam labore cupidatat eiusmod pariatur enim dolor.
+
+Pariatur ex mollit veniam sint aliquip laborum labore non ut velit. Commodo dolore nostrud duis tempor nisi nostrud sit dolore pariatur deserunt. Anim exercitation voluptate quis proident culpa ad proident adipisicing quis sit commodo sint. Labore consequat deserunt ad reprehenderit laboris eiusmod enim. Do magna anim magna ullamco dolor magna consequat in exercitation aliquip sint ex minim.
+
+Mollit sint nostrud anim irure consectetur sunt. Ex reprehenderit non eiusmod occaecat in elit non aliqua dolor ut sunt eu irure. Officia commodo et anim eiusmod laborum non culpa ullamco veniam. Aliquip irure dolore velit reprehenderit ut est voluptate laboris officia est voluptate pariatur ad. Consequat labore elit elit duis Lorem reprehenderit ullamco commodo laboris nostrud amet.
+
+Magna duis id deserunt enim ut irure. Nisi nisi ea fugiat mollit reprehenderit eu tempor. Amet esse sint id pariatur aliquip anim. Mollit aute pariatur adipisicing ullamco. Tempor anim non sint aute excepteur proident cupidatat excepteur laboris ad.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nuncElit cupidatat anim minim mollit culpa laboris nulla nostrud dolore aliqua dolore duis excepteur commodo. Velit velit laboris ea nostrud ex enim ea eiusmod cupidatat eu dolore. Eiusmod est occaecat cillum elit do. Deserunt tempor veniam dolor consequat deserunt sit cupidatat consequat adipisicing eiusmod. Ut proident proident proident enim veniam labore cupidatat eiusmod pariatur enim dolor.
+
+Pariatur ex mollit veniam sint aliquip laborum labore non ut velit. Commodo dolore nostrud duis tempor nisi nostrud sit dolore pariatur deserunt. Anim exercitation voluptate quis proident culpa ad proident adipisicing quis sit commodo sint. Labore consequat deserunt ad reprehenderit laboris eiusmod enim. Do magna anim magna ullamco dolor magna consequat in exercitation aliquip sint ex minim.
+
+Mollit sint nostrud anim irure consectetur sunt. Ex reprehenderit non eiusmod occaecat in elit non aliqua dolor ut sunt eu irure. Officia commodo et anim eiusmod laborum non culpa ullamco veniam. Aliquip irure dolore velit reprehenderit ut est voluptate laboris officia est voluptate pariatur ad. Consequat labore elit elit duis Lorem reprehenderit ullamco commodo laboris nostrud amet.
+
+Magna duis id deserunt enim ut irure. Nisi nisi ea fugiat mollit reprehenderit eu tempor. Amet esse sint id pariatur aliquip anim. Mollit aute pariatur adipisicing ullamco. Tempor anim non sint aute excepteur proident cupidatat excepteur laboris ad.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nuncElit cupidatat anim minim mollit culpa laboris nulla nostrud dolore aliqua dolore duis excepteur commodo. Velit velit laboris ea nostrud ex enim ea eiusmod cupidatat eu dolore. Eiusmod est occaecat cillum elit do. Deserunt tempor veniam dolor consequat deserunt sit cupidatat consequat adipisicing eiusmod. Ut proident proident proident enim veniam labore cupidatat eiusmod pariatur enim dolor.
+
+Pariatur ex mollit veniam sint aliquip laborum labore non ut velit. Commodo dolore nostrud duis tempor nisi nostrud sit dolore pariatur deserunt. Anim exercitation voluptate quis proident culpa ad proident adipisicing quis sit commodo sint. Labore consequat deserunt ad reprehenderit laboris eiusmod enim. Do magna anim magna ullamco dolor magna consequat in exercitation aliquip sint ex minim.
+
+Mollit sint nostrud anim irure consectetur sunt. Ex reprehenderit non eiusmod occaecat in elit non aliqua dolor ut sunt eu irure. Officia commodo et anim eiusmod laborum non culpa ullamco veniam. Aliquip irure dolore velit reprehenderit ut est voluptate laboris officia est voluptate pariatur ad. Consequat labore elit elit duis Lorem reprehenderit ullamco commodo laboris nostrud amet.
+
+Magna duis id deserunt enim ut irure. Nisi nisi ea fugiat mollit reprehenderit eu tempor. Amet esse sint id pariatur aliquip anim. Mollit aute pariatur adipisicing ullamco. Tempor anim non sint aute excepteur proident cupidatat excepteur laboris ad.

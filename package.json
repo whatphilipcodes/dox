@@ -29,6 +29,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.10",
+    "rehype-rewrite": "^4.0.2",
     "tailwind-merge": "^2.6.0"
   }
 }
