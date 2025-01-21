@@ -2,9 +2,11 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import rewrite from 'rehype-rewrite';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
+
+import rehypeRaw from 'rehype-raw';
+import rehypeWrapAll from 'rehype-wrap-all';
 
 import expressiveConfig from './src/utils/expressiveConfig.ts';
 import { SITE_URL } from './src/consts.ts';
@@ -14,19 +16,8 @@ export default defineConfig({
   site: SITE_URL,
   markdown: {
     rehypePlugins: [
-      [
-        rewrite,
-        {
-          selector: 'table',
-          rewrite: (
-            /** @type {{ type: string; properties: { className: string; }; }} */ node,
-          ) => {
-            if (node.type === 'element') {
-              node.properties.className = 'table-test';
-            }
-          },
-        },
-      ],
+      rehypeRaw,
+      [rehypeWrapAll, { selector: 'table', wrapper: 'div.responsive-table' }],
     ],
   },
   integrations: [expressiveConfig, react(), mdx(), sitemap(), tailwind()],
@@ -39,4 +30,3 @@ export default defineConfig({
 });
 
 // during build vite throws a resolve error for 'react-compiler-runtime'
-// host option currently not working on my machine

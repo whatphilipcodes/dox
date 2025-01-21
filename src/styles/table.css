@@ -1,10 +1,18 @@
+.responsive-table {
+  @apply overflow-x-scroll;
+}
+
 table {
   @apply w-full table-auto border-collapse overflow-x-scroll text-left;
 }
 
 thead {
-  @apply sticky top-20 z-40 bg-neutral-300 align-top text-neutral-500 dark:bg-neutral-800;
+  @apply bg-neutral-300 align-top text-neutral-500 dark:bg-neutral-800;
 }
+
+/* thead {
+  @apply sticky top-20 z-40 bg-neutral-300 align-top text-neutral-500 dark:bg-neutral-800;
+} */
 
 tbody {
   @apply align-top [&_tr:nth-child(odd)]:bg-neutral-800/20 dark:[&_tr:nth-child(odd)]:bg-neutral-800/30;
