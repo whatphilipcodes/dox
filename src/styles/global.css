@@ -22,6 +22,10 @@ main {
   @apply flex flex-col gap-4;
 }
 
+hr {
+  @apply border-neutral-300 dark:border-neutral-800;
+}
+
 h1 {
   @apply text-5xl font-bold;
 }
