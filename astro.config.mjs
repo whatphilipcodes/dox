@@ -8,7 +8,7 @@ import mdx from '@astrojs/mdx';
 import rehypeRaw from 'rehype-raw';
 import rehypeWrapAll from 'rehype-wrap-all';
 
-import expressiveConfig from './src/utils/expressiveConfig.ts';
+import expressiveConfig from './src/utils/expressiveCode/expressiveConfig.ts';
 import { SITE_URL } from './src/consts.ts';
 
 // https://astro.build/config

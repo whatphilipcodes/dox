@@ -59,7 +59,7 @@ code {
 }
 
 mark {
-  @apply rounded-sm bg-[#aef7e0] px-1;
+  @apply bg-mint-500 rounded-sm px-1;
 }
 
 /* fx: hide copied message behind header */

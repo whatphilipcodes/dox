@@ -1,9 +1,19 @@
 // even though there is an 'official way' to have the config in root as 'ec.config.mjs' this wont work with the tailwind theme import. So far this workaround has been usable for me.
 
-import expressiveCode, { pluginFramesTexts } from 'astro-expressive-code';
+import expressiveCode, {
+  pluginFramesTexts,
+  ExpressiveCodeTheme,
+} from 'astro-expressive-code';
+import fs from 'node:fs';
+
+const jsoncString = fs.readFileSync(
+  new URL(`./monochrome-light-amplified.jsonc`, import.meta.url),
+  'utf-8',
+);
+const custom = ExpressiveCodeTheme.fromJSONString(jsoncString);
 
 import resolveConfig from 'tailwindcss/resolveConfig';
-import tailwindConfig from '../../tailwind.config.mjs';
+import tailwindConfig from '../../../tailwind.config.mjs';
 
 const fullConfig = resolveConfig(tailwindConfig);
 const { theme } = fullConfig;
@@ -21,12 +31,13 @@ pluginFramesTexts.addLocale('de', {
 });
 
 const expressiveConfig = expressiveCode({
-  themes: ['one-light', 'vesper'],
+  themes: [custom, 'vesper'],
   useDarkModeMediaQuery: false,
   themeCssSelector: (theme) => {
     if (theme.type === 'dark') return '.dark';
     else return false;
   },
+  minSyntaxHighlightingColorContrast: 0,
   frames: {
     removeCommentsWhenCopyingTerminalFrames: true,
   },
