@@ -1,4 +1,5 @@
-ul {
+ul,
+.contains-task-list {
   @apply list-inside list-disc;
 }
 

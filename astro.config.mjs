@@ -22,7 +22,11 @@ export default defineConfig({
   },
   integrations: [expressiveConfig, react(), mdx(), sitemap(), tailwind()],
   experimental: {
+    responsiveImages: true,
     svg: true,
+  },
+  image: {
+    experimentalLayout: 'responsive',
   },
   server: {
     host: true,

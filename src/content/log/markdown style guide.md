@@ -3,6 +3,8 @@ description: 'Here is a sample of some basic Markdown syntax that can be used wh
 created: 2024-10-18 10:37
 ---
 
+![car](../../assets/img/placeholder.jpg)
+
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
 
 ## Headings
@@ -85,9 +87,9 @@ The blockquote element represents content that is quoted from another source, op
 
 ### Output
 
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
+| Italics     | Bold     | Code   |
+| ----------- | -------- | ------ |
+| - [x] task  | **bold** | `code` |
 
 ## Code Blocks
 
@@ -301,8 +303,14 @@ The blockquote element represents content that is quoted from another source, op
 
 ---
 
+<audio controls><source src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Binaural_beat_lossless_new.wav" type="audio/wav"> → [download audio](https://upload.wikimedia.org/wikipedia/commons/a/a8/Binaural_beat_lossless_new.wav)</audio>
+
 #### To-Do
 
+- Hello
+  - yellow
+    - [x] Task 1
+    - [ ] Task 2
 - [x] Task 1
 - [ ] Task 2
 - [ ] Task 3

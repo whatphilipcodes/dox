@@ -63,10 +63,14 @@ code {
 }
 
 mark {
-  @apply bg-mint-500 rounded-sm px-1;
+  @apply rounded-sm bg-mint-500 px-1;
 }
 
 /* fx: hide copied message behind header */
 .feedback {
   @apply !z-10;
+}
+
+img {
+  @apply rounded-md;
 }
