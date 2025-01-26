@@ -7,6 +7,8 @@ created: 2024-10-18 10:37
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
 
+[to the syntax](#syntax)
+
 ## Headings
 
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
@@ -61,19 +63,7 @@ The blockquote element represents content that is quoted from another source, op
 
 ### Blockquote with attribution
 
-#### Syntax
-
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
-
 #### Output
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
 ## Tables
 
@@ -143,6 +133,8 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 ## List Types
 
 ### Ordered List
+
+Gumba[^2]
 
 #### Syntax
 
@@ -280,29 +272,6 @@ The blockquote element represents content that is quoted from another source, op
 
 ### Blockquote with attribution
 
-#### Syntax
-
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
-
-#### Output
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-#### Syntax
-
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
-
----
-
 <audio controls><source src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Binaural_beat_lossless_new.wav" type="audio/wav"> → [download audio](https://upload.wikimedia.org/wikipedia/commons/a/a8/Binaural_beat_lossless_new.wav)</audio>
 
 #### To-Do
@@ -315,4 +284,4 @@ The blockquote element represents content that is quoted from another source, op
 - [ ] Task 2
 - [ ] Task 3
 
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+[^2]: Here is another footnote. There is a [link](https://www.google.com) in this footnote.

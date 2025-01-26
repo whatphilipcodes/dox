@@ -3,7 +3,7 @@
 }
 
 html {
-  @apply overflow-y-scroll;
+  @apply scroll-pt-24 overflow-y-scroll;
 }
 
 body {
@@ -64,6 +64,23 @@ code {
 
 mark {
   @apply rounded-sm bg-mint-500 px-1;
+}
+
+article a {
+  @apply underline decoration-mint-500 underline-offset-4 dark:text-mint-500;
+}
+
+a[data-footnote-ref] {
+  @apply no-underline;
+}
+
+.footnotes h2 {
+  @apply hidden;
+}
+
+.footnotes::before {
+  content: '';
+  @apply block h-px w-full bg-neutral-300 dark:bg-neutral-800;
 }
 
 /* fx: hide copied message behind header */
