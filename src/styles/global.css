@@ -71,7 +71,7 @@ article a {
 }
 
 a[data-footnote-ref] {
-  @apply no-underline;
+  @apply underline-offset-2 dark:text-mint-500;
 }
 
 .footnotes h2 {
