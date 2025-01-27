@@ -8,6 +8,15 @@ const baseSchema = z.object({
   tags: z.array(z.string()).optional(),
 });
 
+const timeStep = z.object({
+  title: z.string().optional(),
+  start: z.coerce.date(),
+  due: z.coerce.date(),
+  logEntry: z.string().optional(),
+  tags: z.array(z.string()).optional(),
+  status: z.enum(['planned', 'active', 'completed']),
+});
+
 const basePattern = '**/*.{md,mdx}';
 
 const download = defineCollection({
@@ -26,8 +35,11 @@ const manual = defineCollection({
 });
 
 const roadmap = defineCollection({
-  loader: frontLoader({ base: './src/content/roadmap', pattern: basePattern }),
-  schema: baseSchema,
+  loader: frontLoader({
+    base: './src/content/roadmap',
+    pattern: basePattern,
+  }),
+  schema: timeStep,
 });
 
 export const collections = { download, log, manual, roadmap };

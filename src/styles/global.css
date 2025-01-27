@@ -10,16 +10,16 @@ body {
   @apply bg-neutral-200 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-200;
 }
 
+article {
+  @apply flex flex-col gap-4;
+}
+
 section {
   @apply flex flex-col gap-4;
 }
 
 main {
   @apply p-4;
-}
-
-.prose {
-  @apply flex flex-col gap-4;
 }
 
 hr {
@@ -68,19 +68,6 @@ mark {
 
 article a {
   @apply underline decoration-mint-500 underline-offset-4 dark:text-mint-500;
-}
-
-a[data-footnote-ref] {
-  @apply underline-offset-2 dark:text-mint-500;
-}
-
-.footnotes h2 {
-  @apply hidden;
-}
-
-.footnotes::before {
-  content: '';
-  @apply block h-px w-full bg-neutral-300 dark:bg-neutral-800;
 }
 
 /* fx: hide copied message behind header */

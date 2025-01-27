@@ -7,14 +7,6 @@ type Props = CollectionEntry<'log'>['data'];
 const { title, description, created } = Astro.props;
 ---
 
-<Basic title={title} description={description}>
-  <article>
-    <div class='prose'>
-      <div class='title'>
-        <FormattedDate date={created} />
-        <h1>{title}</h1>
-      </div>
-      <slot />
-    </div>
-  </article>
-</Basic>
+<section>
+  <slot />
+</section>

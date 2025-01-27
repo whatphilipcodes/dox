@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Basic from './Basic.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+type Props = CollectionEntry<'log'>['data'];
+const { title, description, created } = Astro.props;
+---
+
+<Basic title={title} description={description}>
+  <article>
+    <div class='title'>
+      <FormattedDate date={created} />
+      <h1>{title}</h1>
+    </div>
+    <slot />
+  </article>
+</Basic>

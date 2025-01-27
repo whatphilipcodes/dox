@@ -1,0 +1,22 @@
+---
+import Segment from '../layouts/Segment.astro';
+import { type RenderResult } from 'astro:content';
+
+interface Props {
+  title: string;
+  start: Date;
+  due: Date;
+  status: 'planned' | 'active' | 'completed';
+  logEntry?: string;
+  tags?: string[];
+  content: Promise<RenderResult>;
+}
+
+const { title, start, due, status, logEntry, tags, content } = Astro.props;
+
+const { Content } = await content;
+---
+
+<Segment title={title} description={logEntry} created={start}>
+  <Content />
+</Segment>

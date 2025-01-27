@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import { render } from 'astro:content';
+
+import TimeStep from '../components/TimeStep.astro';
+import Basic from '../layouts/Basic.astro';
+
+const roadmap = (await getCollection('roadmap')).sort(
+  (a, b) => b.data.start.valueOf() - a.data.start.valueOf(),
+);
+
+const formatStep = (step: any) => {
+  if (!step.data.title) throw new Error('Missing title for:', step);
+  return {
+    title: step.data.title,
+    start: new Date(step.data.start),
+    due: new Date(step.data.due),
+    status: step.data.status,
+    logEntry: step.data.logEntry,
+    tags: step.data.tags,
+    content: render(step),
+  };
+};
+---
+
+<Basic>
+  <article>
+    {
+      roadmap.map((step) => {
+        const timeStep = formatStep(step);
+        return (
+          <>
+            <TimeStep {...timeStep} />
+            <hr />
+          </>
+        );
+      })
+    }
+  </article>
+</Basic>
