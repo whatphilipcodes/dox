@@ -1,6 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
-import { render } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 import TimeStep from '../components/TimeStep.astro';
 import Basic from '../layouts/Basic.astro';
@@ -13,13 +12,11 @@ const roadmap = (await getCollection('roadmap')).sort(
 <Basic>
   <article>
     {
-      roadmap.map((step) => {
-        return (
-          <>
-            <TimeStep {...step.data}>{render(step)}</TimeStep>
-          </>
-        );
-      })
+      roadmap.map((step) => (
+        <>
+          <TimeStep step={step} />
+        </>
+      ))
     }
   </article>
 </Basic>

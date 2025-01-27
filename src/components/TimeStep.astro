@@ -1,16 +1,15 @@
 ---
+import { type CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+
 interface Props {
-  title: string;
-  start: Date;
-  due: Date;
-  status: 'planned' | 'active' | 'completed';
-  logEntry?: string;
-  tags?: string[];
+  step: CollectionEntry<'roadmap'>;
 }
 
-const { title, start, due, status, logEntry, tags } = Astro.props;
+const { step } = Astro.props;
+const { Content } = await render(step);
 ---
 
 <section>
-  <slot name='content' />
+  <Content />
 </section>
