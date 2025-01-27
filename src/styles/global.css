@@ -25,8 +25,12 @@ hr {
   @apply border-neutral-300 dark:border-neutral-800;
 }
 
+p {
+  @apply hyphens-auto;
+}
+
 h1 {
-  @apply text-5xl font-bold;
+  @apply break-words text-5xl font-bold;
 }
 
 h1::after {
