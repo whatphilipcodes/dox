@@ -4,6 +4,8 @@ due: 2025-01-15
 status: completed
 ---
 
+# Documentation Template
+
 - Sulalo
 - Mububu
 - Gandalf

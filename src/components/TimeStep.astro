@@ -1,5 +1,4 @@
 ---
-import Segment from '../layouts/Segment.astro';
 import { type RenderResult } from 'astro:content';
 
 interface Props {
@@ -17,6 +16,6 @@ const { title, start, due, status, logEntry, tags, content } = Astro.props;
 const { Content } = await content;
 ---
 
-<Segment title={title} description={logEntry} created={start}>
+<section>
   <Content />
-</Segment>
+</section>

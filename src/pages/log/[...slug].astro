@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import FullPage from '../../layouts/FullPage.astro';
+import ArticleFullPage from '../../layouts/ArticleFullPage.astro';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -15,6 +15,6 @@ const log: Props = Astro.props;
 const { Content } = await render(log);
 ---
 
-<FullPage {...log.data}>
+<ArticleFullPage {...log.data}>
   <Content />
-</FullPage>
+</ArticleFullPage>
