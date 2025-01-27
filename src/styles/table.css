@@ -22,7 +22,3 @@ th,
 td {
   @apply p-4 font-normal;
 }
-
-tr {
-  @apply w-screen;
-}
