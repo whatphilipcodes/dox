@@ -5,7 +5,6 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 
-import rehypeRaw from 'rehype-raw';
 import rehypeWrapAll from 'rehype-wrap-all';
 
 import expressiveConfig from './src/utils/expressiveCode/expressiveConfig.ts';
@@ -16,7 +15,6 @@ export default defineConfig({
   site: SITE_URL,
   markdown: {
     rehypePlugins: [
-      rehypeRaw,
       [rehypeWrapAll, { selector: 'table', wrapper: 'div.responsive-table' }],
     ],
   },
@@ -32,5 +30,3 @@ export default defineConfig({
     host: true,
   },
 });
-
-// during build vite throws a resolve error for 'react-compiler-runtime'

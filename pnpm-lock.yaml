@@ -63,9 +63,6 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: ^0.6.11
         version: 0.6.11(prettier-plugin-astro@0.14.1)(prettier@3.4.2)
-      rehype-raw:
-        specifier: ^7.0.0
-        version: 7.0.0
       rehype-wrap-all:
         specifier: ^1.1.0
         version: 1.1.0
