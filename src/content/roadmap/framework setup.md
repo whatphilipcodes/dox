@@ -1,4 +1,5 @@
 ---
+title: Framework Setup
 start: 2024-11-27
 due: 2025-01-06
 status: completed

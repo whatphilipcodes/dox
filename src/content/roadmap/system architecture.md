@@ -1,4 +1,5 @@
 ---
+title: System Architecture
 start: 2024-11-01
 due: 2024-11-26
 status: completed

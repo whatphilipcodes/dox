@@ -1,4 +1,5 @@
 ---
+title: Documentation Template
 start: 2025-10-07
 due: 2025-01-15
 status: completed

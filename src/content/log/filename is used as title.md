@@ -1,4 +1,5 @@
 ---
+title: Filename is used as title
 description: 'Lorem ipsum dolor sit amet'
 created: 2024-11-22 14:37
 ---

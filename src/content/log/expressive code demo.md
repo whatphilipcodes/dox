@@ -1,4 +1,5 @@
 ---
+title: Expressive Code Demo
 description: 'Small demo of Expressive Code features on this template'
 created: 2025-01-14 00:37
 ---

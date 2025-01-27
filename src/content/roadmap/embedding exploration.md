@@ -1,4 +1,5 @@
 ---
+title: Embedding Exploration
 start: 2025-01-16
 due: 2025-01-31
 status: active

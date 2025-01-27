@@ -9,7 +9,7 @@ const { title, description, created } = Astro.props;
 
 <Basic title={title} description={description}>
   <article>
-    <div class='title'>
+    <div class='flex flex-col gap-4'>
       <FormattedDate date={created} />
       <h1>{title}</h1>
     </div>

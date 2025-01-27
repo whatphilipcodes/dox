@@ -7,8 +7,9 @@ Features:
 - Markdown and MDX support
 - Syntax highlighting
 - Prebuilt Routes
-  - Devlog
-  - Manual
+  - Home
+  - Development Log
+  - Roadmap
 - FTP Deployment already set up
   - directly via script
   - workflow for GitHub Actions

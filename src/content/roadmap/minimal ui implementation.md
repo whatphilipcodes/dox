@@ -1,4 +1,5 @@
 ---
+title: Minimal UI Implementation
 start: 2025-02-01
 due: 2025-02-10
 status: active

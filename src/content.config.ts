@@ -1,15 +1,15 @@
-import { defineCollection, z } from 'astro:content';
-import { frontLoader } from './utils/loader';
+import { defineCollection, z, type CollectionEntry } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const baseSchema = z.object({
-  title: z.string().optional(), // needs to be optional for filename replacement
+  title: z.string(), // needs to be optional for filename replacement
   created: z.coerce.date(),
   description: z.string().optional(),
   tags: z.array(z.string()).optional(),
 });
 
 const timeStep = z.object({
-  title: z.string().optional(),
+  title: z.string(), // needs to be optional for filename replacement
   start: z.coerce.date(),
   due: z.coerce.date(),
   logEntry: z.string().optional(),
@@ -19,23 +19,25 @@ const timeStep = z.object({
 
 const basePattern = '**/*.{md,mdx}';
 
+// --- Collections --- //
+
 const download = defineCollection({
-  loader: frontLoader({ base: './src/content/download', pattern: basePattern }),
+  loader: glob({ base: './src/content/download', pattern: basePattern }),
   schema: baseSchema,
 });
 
 const log = defineCollection({
-  loader: frontLoader({ base: './src/content/log', pattern: basePattern }),
+  loader: glob({ base: './src/content/log', pattern: basePattern }),
   schema: baseSchema,
 });
 
 const manual = defineCollection({
-  loader: frontLoader({ base: './src/content/manual', pattern: basePattern }),
+  loader: glob({ base: './src/content/manual', pattern: basePattern }),
   schema: baseSchema,
 });
 
 const roadmap = defineCollection({
-  loader: frontLoader({
+  loader: glob({
     base: './src/content/roadmap',
     pattern: basePattern,
   }),
