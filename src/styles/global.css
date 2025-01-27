@@ -4,6 +4,9 @@
 
 html {
   @apply scroll-pt-24 overflow-y-scroll;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -moz-text-size-adjust: none;
 }
 
 body {
@@ -16,10 +19,6 @@ article {
 
 section {
   @apply flex flex-col gap-4;
-}
-
-main {
-  @apply p-4;
 }
 
 hr {
