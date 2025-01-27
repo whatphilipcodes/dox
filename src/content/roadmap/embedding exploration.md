@@ -1,6 +1,6 @@
 ---
 title: Embedding Exploration
-start: 2025-01-16
+start: 2025-01-07
 due: 2025-01-31
 status: active
 ---

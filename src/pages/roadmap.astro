@@ -5,18 +5,41 @@ import TimeStep from '../components/TimeStep.astro';
 import Basic from '../layouts/Basic.astro';
 
 const roadmap = (await getCollection('roadmap')).sort(
-  (a, b) => b.data.start.valueOf() - a.data.start.valueOf(),
+  (a, b) => a.data.start.valueOf() - b.data.start.valueOf(),
 );
+
+// error if multi steps active
+const activeCount = roadmap.filter(
+  (step) => step.data.status === 'active',
+).length;
+
+if (activeCount > 1) {
+  throw new Error('Only one roadmap step can have "active" status');
+}
 ---
 
 <Basic>
   <article>
     {
-      roadmap.map((step) => (
+      roadmap.map((step, index) => (
         <>
-          <TimeStep step={step} />
+          <TimeStep
+            id={step.data.status === 'active' ? 'active-step' : undefined}
+            step={step}
+          />
+          {index < roadmap.length - 1 && <hr />}
         </>
       ))
     }
   </article>
 </Basic>
+
+<script>
+  // scroll to active step on page load
+  window.addEventListener('load', () => {
+    const activeStep = document.getElementById('active-step');
+    if (activeStep) {
+      activeStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+</script>
