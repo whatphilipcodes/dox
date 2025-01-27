@@ -19,31 +19,37 @@ const isActive = (path: string) => {
 };
 ---
 
-<header
-  class='fixed left-0 top-0 z-50 h-20 w-full border-b border-neutral-600 bg-neutral-200 p-4 dark:bg-neutral-900'
->
-  <nav class='flex h-full w-full flex-row items-center justify-between gap-4'>
-    <Link href='/' data-info='icon' class={`flex flex-row items-center gap-4`}>
-      <Icon class='h-12 w-12' />
-      <div class='hidden sm:block'>{SITE_TITLE}</div>
-    </Link>
-    <div
-      data-info='controls'
-      class='flex flex-row items-center gap-4 overflow-y-auto'
-    >
-      {
-        collectionsList.map((collection) => (
-          <Link
-            href={`/${collection}/`}
-            class={`flex ${isActive(`/${collection}/`) ? 'text-neutral-500 dark:text-neutral-400' : ''}`}
-          >
-            {collection}
-          </Link>
-        ))
-      }
-      <Link href={GITHUB_URL}>github</Link>
-      <ThemeToggle client:load />
-    </div>
-  </nav>
-</header>
-<div data-info='header-spacer' class='h-20'></div>
+<>
+  <header
+    class='fixed left-0 right-0 top-0 z-50 h-20 w-full border-b border-neutral-600 bg-neutral-200 p-4 dark:bg-neutral-900'
+  >
+    <nav class='flex h-full w-full flex-row items-center justify-between gap-4'>
+      <Link
+        href='/'
+        data-info='icon'
+        class={`flex flex-row items-center gap-4`}
+      >
+        <Icon class='h-12 w-12' />
+        <div class='hidden sm:block'>{SITE_TITLE}</div>
+      </Link>
+      <div
+        data-info='controls'
+        class='flex flex-row items-center gap-4 overflow-y-auto'
+      >
+        {
+          collectionsList.map((collection) => (
+            <Link
+              href={`/${collection}/`}
+              class={`flex ${isActive(`/${collection}/`) ? 'text-neutral-500 dark:text-neutral-400' : ''}`}
+            >
+              {collection}
+            </Link>
+          ))
+        }
+        <Link href={GITHUB_URL}>github</Link>
+        <ThemeToggle client:load />
+      </div>
+    </nav>
+  </header>
+  <div data-info='header-spacer' class='h-20'></div>
+</>
