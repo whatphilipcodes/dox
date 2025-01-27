@@ -7,6 +7,7 @@ status: completed
 
 [Test Header](#test-header)
 
+<div class="responsive-table">
 <table>
   <thead>
     <th>Time Frame</th>
@@ -30,6 +31,7 @@ status: completed
     </tr>
   </tbody>
 </table>
+</div>
 
 ### Test Header
 

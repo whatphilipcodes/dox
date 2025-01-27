@@ -3,7 +3,7 @@
 }
 
 table {
-  @apply table-auto border-collapse text-left;
+  @apply min-w-full table-auto border-collapse text-left;
 }
 
 thead {
