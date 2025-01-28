@@ -7,15 +7,6 @@ import Basic from '../layouts/Basic.astro';
 const roadmap = (await getCollection('roadmap')).sort(
   (a, b) => a.data.start.valueOf() - b.data.start.valueOf(),
 );
-
-// error if multi steps active
-const activeCount = roadmap.filter(
-  (step) => step.data.status === 'active',
-).length;
-
-if (activeCount > 1) {
-  throw new Error('Only one roadmap step can have "active" status');
-}
 ---
 
 <Basic>
@@ -23,10 +14,7 @@ if (activeCount > 1) {
     {
       roadmap.map((step, index) => (
         <>
-          <TimeStep
-            id={step.data.status === 'active' ? 'active-step' : undefined}
-            step={step}
-          />
+          <TimeStep step={step} />
           {index < roadmap.length - 1 && <hr />}
         </>
       ))
@@ -35,9 +23,31 @@ if (activeCount > 1) {
 </Basic>
 
 <script>
-  // scroll to active step on page load
-  window.addEventListener('load', () => {
-    const activeStep = document.getElementById('active-step');
+  // mark all starts as active that come after now
+  const getActive = async (): Promise<Element> => {
+    const steps = document.querySelectorAll('[tstep-data-start]');
+    const now = new Date();
+
+    let mostRecent: Element | null = null;
+
+    steps.forEach((step) => {
+      const startAttribute = step.getAttribute('tstep-data-start');
+      if (!startAttribute) return;
+      const start = new Date(startAttribute);
+
+      if (now >= start) {
+        mostRecent = step;
+      }
+    });
+    if (!mostRecent)
+      throw new Error(
+        'active timestep could not be inferred. Please check the start dates of your Timesteps',
+      );
+    return mostRecent;
+  };
+  // scroll to first active
+  window.addEventListener('load', async () => {
+    const activeStep = await getActive();
     if (activeStep) {
       activeStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }

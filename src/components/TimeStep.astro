@@ -8,12 +8,15 @@ interface Props {
   step: CollectionEntry<'roadmap'>;
 }
 
-const { step, id } = Astro.props;
+const { step } = Astro.props;
 const { start, due, status, title } = step.data;
 const { Content } = await render(step);
 ---
 
-<div id={id} class:list={['flex w-full flex-col gap-4 md:flex-row']}>
+<div
+  tstep-data-start={start}
+  class:list={['flex w-full flex-col gap-4 md:flex-row']}
+>
   <div class='flex flex-row gap-4'>
     <div
       class:list={[
