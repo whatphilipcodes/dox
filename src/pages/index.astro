@@ -1,16 +1,9 @@
 ---
-import Basic from '../layouts/Basic.astro';
-import LogPreview from '../components/LogPreview.astro';
-import { SITE_TITLE } from '../consts';
+import * as markdown from '../content/index.md';
+import Home from '../layouts/Home.astro';
+const { Content, frontmatter } = markdown;
 ---
 
-<Basic>
-  <article>
-    <h4>Welcome to {SITE_TITLE}</h4>
-    <p>
-      Here you will find the main landing page soon. Below you can see the first
-      five entries into the log section.
-    </p>
-    <LogPreview limit={5} />
-  </article>
-</Basic>
+<Home title={frontmatter.title} description={frontmatter.description}>
+  <Content />
+</Home>
