@@ -9,9 +9,13 @@ ul ul {
 
 ul ul::before {
   content: '';
-  @apply absolute left-0.5 top-0 h-full w-px bg-neutral-400 dark:bg-neutral-600;
+  @apply absolute left-[2px] top-0 h-full w-px bg-neutral-400 dark:bg-neutral-600;
 }
 
 li {
   @apply mb-1 mt-1;
+}
+
+li:not(.task-list-item) {
+  @apply ml-[3px];
 }
