@@ -26,7 +26,7 @@ hr {
 }
 
 p {
-  @apply hyphens-auto;
+  @apply hyphens-auto text-justify;
 }
 
 h1 {

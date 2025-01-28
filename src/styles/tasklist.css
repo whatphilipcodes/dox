@@ -3,5 +3,9 @@
 }
 
 .task-list-item {
-  @apply flex flex-row gap-4;
+  @apply flex flex-row gap-4 text-wrap;
+}
+
+.task-list-item input[type='checkbox'] {
+  @apply mt-1.5 flex-shrink-0 !self-start;
 }
