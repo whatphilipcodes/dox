@@ -3,5 +3,5 @@
 }
 
 .task-list-item {
-  @apply flex flex-row gap-[14px];
+  @apply flex flex-row gap-4;
 }
