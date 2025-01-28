@@ -5,13 +5,12 @@
 public/*
 !public/fonts
 
+# assets
+src/assets/*
+
 # content
 src/content/*
 
-# pages
-src/pages/*
-
 # misc
 src/consts.ts
-src/content.config.ts
 README.md
