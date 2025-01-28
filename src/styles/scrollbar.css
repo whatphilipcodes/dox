@@ -1,0 +1,28 @@
+/* Light */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.transparent');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.neutral.400');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.neutral.500');
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: theme('colors.neutral.600');
+  border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.neutral.500');
+}
+/* --- */

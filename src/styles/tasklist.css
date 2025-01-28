@@ -1,0 +1,7 @@
+.contains-task-list {
+  @apply list-none;
+}
+
+.task-list-item {
+  @apply flex flex-row gap-4;
+}

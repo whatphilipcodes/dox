@@ -1,0 +1,21 @@
+ul,
+.contains-task-list {
+  @apply list-inside list-disc;
+}
+
+ul ul {
+  @apply relative pl-6;
+}
+
+ul ul::before {
+  content: '';
+  @apply absolute left-[2px] top-0 h-full w-px bg-neutral-400 dark:bg-neutral-600;
+}
+
+li {
+  @apply mb-1 mt-1;
+}
+
+li:not(.task-list-item) {
+  @apply ml-[3px];
+}

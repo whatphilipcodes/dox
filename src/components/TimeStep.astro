@@ -1,0 +1,58 @@
+---
+import FormattedDate from './FormattedDate.astro';
+import { type CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+
+interface Props {
+  id?: string;
+  step: CollectionEntry<'roadmap'>;
+}
+
+const { step } = Astro.props;
+const { start, due, status, title } = step.data;
+const { Content } = await render(step);
+---
+
+<div
+  tstep-data-start={start}
+  class:list={['flex w-full flex-col gap-4 md:flex-row']}
+>
+  <div class='flex flex-row gap-4'>
+    <div
+      class:list={[
+        'w-0.5 rounded-sm md:hidden',
+        {
+          'bg-mint-500': status === 'completed',
+        },
+        { 'bg-cynder-500': status === 'active' },
+        {
+          'bg-neutral-300 dark:bg-neutral-800': status === 'planned',
+        },
+      ]}
+    >
+    </div>
+    <div class:list={['flex h-full flex-col justify-between gap-2 md:w-full']}>
+      <FormattedDate date={start} />
+      <div
+        class:list={[
+          'hidden h-full w-0.5 rounded-sm md:block',
+          {
+            'bg-mint-500': status === 'completed',
+          },
+          { 'bg-cynder-500': status === 'active' },
+          {
+            'bg-neutral-300 dark:bg-neutral-800': status === 'planned',
+          },
+        ]}
+      >
+      </div>
+      <FormattedDate date={due} />
+    </div>
+  </div>
+  <section
+    class:list={['w-full', { 'text-neutral-500': status === 'completed' }]}
+  >
+    <h1>{title}</h1>
+    <Content />
+  </section>
+</div>

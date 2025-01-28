@@ -1,0 +1,20 @@
+.responsive-table {
+  @apply overflow-x-auto rounded-md border border-neutral-300 dark:border-neutral-800;
+}
+
+table {
+  @apply min-w-full table-auto border-collapse text-left;
+}
+
+thead {
+  @apply bg-neutral-300 align-top text-neutral-500 dark:bg-neutral-800;
+}
+
+tbody {
+  @apply align-top [&_tr:nth-child(odd)]:bg-neutral-800/5 dark:[&_tr:nth-child(odd)]:bg-neutral-800/30;
+}
+
+th,
+td {
+  @apply p-4 font-normal;
+}

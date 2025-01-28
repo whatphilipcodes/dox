@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+
+import TimeStep from '../components/TimeStep.astro';
+import Basic from '../layouts/Basic.astro';
+
+const roadmap = (await getCollection('roadmap')).sort(
+  (a, b) => a.data.start.valueOf() - b.data.start.valueOf(),
+);
+---
+
+<Basic>
+  <article>
+    {
+      roadmap.map((step, index) => (
+        <>
+          <TimeStep step={step} />
+          {index < roadmap.length - 1 && <hr />}
+        </>
+      ))
+    }
+  </article>
+</Basic>
+
+<script>
+  // mark all starts as active that come after now
+  const getActive = async (): Promise<Element> => {
+    const steps = document.querySelectorAll('[tstep-data-start]');
+    const now = new Date();
+
+    let mostRecent: Element | null = null;
+
+    steps.forEach((step) => {
+      const startAttribute = step.getAttribute('tstep-data-start');
+      if (!startAttribute) return;
+      const start = new Date(startAttribute);
+
+      if (now >= start) {
+        mostRecent = step;
+      }
+    });
+    if (!mostRecent)
+      throw new Error(
+        'active timestep could not be inferred. Please check the start dates of your Timesteps',
+      );
+    return mostRecent;
+  };
+  // scroll to first active
+  window.addEventListener('load', async () => {
+    const activeStep = await getActive();
+    if (activeStep) {
+      activeStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+</script>
