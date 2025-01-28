@@ -9,6 +9,7 @@ const { href, class: className } = Astro.props as Props;
 ---
 
 <a
+  is-component
   href={href}
   class:list={twMerge(
     'text-neutral-900 hover:text-neutral-500 dark:text-neutral-200 dark:hover:text-neutral-400',

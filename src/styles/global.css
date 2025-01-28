@@ -78,7 +78,7 @@ mark {
   @apply rounded-sm bg-mint-500 px-1;
 }
 
-article a {
+a:not([is-component]) {
   @apply underline decoration-mint-500 underline-offset-4 dark:text-mint-500;
 }
 
