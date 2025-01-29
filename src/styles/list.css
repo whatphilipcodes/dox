@@ -19,3 +19,15 @@ li {
 li:not(.task-list-item) {
   @apply ml-[3px];
 }
+
+li p {
+  @apply flex flex-row flex-wrap text-wrap;
+}
+
+ol {
+  @apply flex flex-col gap-2;
+}
+
+a[data-footnote-backref] {
+  @apply px-2;
+}
