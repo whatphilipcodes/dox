@@ -1,12 +1,12 @@
-a[data-footnote-ref] {
+div[data-markdown-content] a[data-footnote-ref] {
   @apply underline-offset-2 dark:text-mint-500;
 }
 
-.footnotes h2 {
+div[data-markdown-content] .footnotes h2 {
   @apply hidden;
 }
 
-.footnotes::before {
+div[data-markdown-content] .footnotes::before {
   content: '';
   @apply block h-px w-full bg-neutral-300 dark:bg-neutral-800;
 }

@@ -1,10 +1,15 @@
 ---
-import Basic from '../layouts/Basic.astro';
-import { SITE_TITLE } from '../consts';
+import MarkdownWrapper from '../components/MarkdownWrapper.astro';
+import DownloadSection from '../components/react/DownloadSection';
+import Home from '../layouts/Home.astro';
+
+import * as markdown from '../content/download.md';
+const { Content, frontmatter } = markdown;
+
+import { SITE_TITLE, GITHUB_URL } from '../consts';
 ---
 
-<Basic>
-  <article>
-    <p>The download section for {SITE_TITLE} is coming soon...</p>
-  </article>
-</Basic>
+<Home title={frontmatter.title} description={frontmatter.description}>
+  <MarkdownWrapper><Content /></MarkdownWrapper>
+  <DownloadSection repository={GITHUB_URL} title={SITE_TITLE} client:load />
+</Home>

@@ -1,0 +1,56 @@
+div[data-markdown-content] p {
+  @apply hyphens-auto text-justify;
+}
+
+div[data-markdown-content] h1 {
+  @apply break-words text-5xl font-bold;
+}
+
+div[data-markdown-content] h1::after {
+  @apply mt-4 block h-px w-full bg-neutral-300 content-[''] dark:bg-neutral-800;
+}
+
+div[data-markdown-content] h2 {
+  @apply text-4xl font-bold;
+}
+
+div[data-markdown-content] h3 {
+  @apply text-3xl font-bold;
+}
+
+div[data-markdown-content] h4 {
+  @apply text-2xl font-bold;
+}
+
+div[data-markdown-content] h5 {
+  @apply text-xl font-bold;
+}
+
+div[data-markdown-content] h6 {
+  @apply text-lg font-bold;
+}
+
+div[data-markdown-content] h1,
+div[data-markdown-content] h2,
+div[data-markdown-content] h3,
+div[data-markdown-content] h4,
+div[data-markdown-content] h5,
+div[data-markdown-content] h6 {
+  @apply hyphens-auto;
+}
+
+div[data-markdown-content] pre {
+  @apply rounded-md p-4;
+}
+
+div[data-markdown-content] code {
+  @apply rounded-sm bg-neutral-300 px-1 dark:bg-neutral-800;
+}
+
+div[data-markdown-content] mark {
+  @apply rounded-sm bg-mint-500 px-1;
+}
+
+div[data-markdown-content] a {
+  @apply px-2 underline decoration-mint-500 underline-offset-4 dark:text-mint-500;
+}

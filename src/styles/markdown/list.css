@@ -1,33 +1,29 @@
-ul,
+div[data-markdown-content] ul,
 .contains-task-list {
   @apply list-inside list-disc;
 }
 
-ul ul {
+div[data-markdown-content] ul ul {
   @apply relative pl-6;
 }
 
-ul ul::before {
+div[data-markdown-content] ul ul::before {
   content: '';
   @apply absolute left-[2px] top-0 h-full w-px bg-neutral-400 dark:bg-neutral-600;
 }
 
-li {
+div[data-markdown-content] li {
   @apply mb-1 mt-1;
 }
 
-li:not(.task-list-item) {
+div[data-markdown-content] li:not(.task-list-item) {
   @apply ml-[3px];
 }
 
-li p {
+div[data-markdown-content] li p {
   @apply flex flex-row flex-wrap text-wrap;
 }
 
-ol {
+div[data-markdown-content] ol {
   @apply flex flex-col gap-2;
-}
-
-a[data-footnote-backref] {
-  @apply px-2;
 }

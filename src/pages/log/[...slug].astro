@@ -1,4 +1,5 @@
 ---
+import MarkdownWrapper from '../../components/MarkdownWrapper.astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
 import ArticleFullPage from '../../layouts/ArticleFullPage.astro';
 import { render } from 'astro:content';
@@ -16,5 +17,5 @@ const { Content } = await render(log);
 ---
 
 <ArticleFullPage {...log.data}>
-  <Content />
+  <MarkdownWrapper><Content /></MarkdownWrapper>
 </ArticleFullPage>

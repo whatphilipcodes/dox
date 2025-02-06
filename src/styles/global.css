@@ -25,63 +25,6 @@ hr {
   @apply border-neutral-300 dark:border-neutral-800;
 }
 
-p {
-  @apply hyphens-auto text-justify;
-}
-
-h1 {
-  @apply break-words text-5xl font-bold;
-}
-
-h1::after {
-  @apply mt-4 block h-px w-full bg-neutral-300 content-[''] dark:bg-neutral-800;
-}
-
-h2 {
-  @apply text-4xl font-bold;
-}
-
-h3 {
-  @apply text-3xl font-bold;
-}
-
-h4 {
-  @apply text-2xl font-bold;
-}
-
-h5 {
-  @apply text-xl font-bold;
-}
-
-h6 {
-  @apply text-lg font-bold;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply hyphens-auto;
-}
-
-pre {
-  @apply rounded-md p-4;
-}
-
-code {
-  @apply rounded-sm bg-neutral-300 px-1 dark:bg-neutral-800;
-}
-
-mark {
-  @apply rounded-sm bg-mint-500 px-1;
-}
-
-a:not([is-component]) {
-  @apply underline decoration-mint-500 underline-offset-4 dark:text-mint-500;
-}
-
 /* fx: hide copied message behind header */
 .feedback {
   @apply !z-10;
