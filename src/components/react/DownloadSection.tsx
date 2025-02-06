@@ -18,7 +18,13 @@ const DownloadSection = ({ repository, title }: Props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetchReleases(repoURL).then((result) => setReleases(result));
+      await fetchReleases(repoURL).then((result) => {
+        if (!result)
+          console.log(
+            `Your releases could not be fetched from GitHub. Does your repository '${repository}' have public releases?`,
+          );
+        setReleases(result);
+      });
     };
     fetchData();
   }, []);
