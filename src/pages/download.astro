@@ -1,14 +1,14 @@
 ---
+import MarkdownWrapper from '../components/MarkdownWrapper.astro';
 import DownloadSection from '../components/react/DownloadSection';
 import Home from '../layouts/Home.astro';
-// import { GITHUB_URL } from '../consts';
 
 import * as markdown from '../content/download.md';
 const { Content, frontmatter } = markdown;
 ---
 
 <Home title={frontmatter.title} description={frontmatter.description}>
-  <Content />
+  <MarkdownWrapper><Content /></MarkdownWrapper>
   <DownloadSection
     repository='https://github.com/whatphilipcodes/whatphilipdoes'
     client:load

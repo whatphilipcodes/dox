@@ -1,6 +1,9 @@
+import MarkdownWrapperTSX from './MarkdownWrapperTSX';
 import { useEffect, useState } from 'react';
 import type { GithubRelease } from 'github-data';
-import { marked } from 'marked';
+import ReactMarkdown from 'react-markdown';
+
+import ReactiveButton from './ReactiveButton';
 
 interface Props {
   repository: string;
@@ -25,15 +28,25 @@ const DownloadSection = ({ repository }: Props) => {
 
   return (
     <>
-      <div>{releases?.[0].name}</div>
-      <div
-        className='overflow-x-scroll hyphens-auto text-wrap rounded-md border border-neutral-300 p-4 dark:border-neutral-800'
-        dangerouslySetInnerHTML={
-          releases?.[0].body
-            ? { __html: marked.parse(releases?.[0].body) }
-            : { __html: 'Loading...' }
-        }
-      />
+      <div className='font-bold dark:text-mint-500'>{releases?.[0].name}</div>
+      <div className='flex flex-col gap-4 rounded-md border border-neutral-300 p-4 dark:border-neutral-800'>
+        <MarkdownWrapperTSX>
+          {releases?.[0].body ? (
+            <div className='flex flex-col gap-4 overflow-x-scroll hyphens-auto text-wrap'>
+              <ReactMarkdown>{releases[0].body}</ReactMarkdown>
+            </div>
+          ) : (
+            <div>Loading...</div>
+          )}
+        </MarkdownWrapperTSX>
+        <ReactiveButton
+          variant='border'
+          href={releases?.[0].assets[0].browser_download_url}
+          target='_blank'
+        >
+          download
+        </ReactiveButton>
+      </div>
       <details>
         <summary>archive</summary>
         {releases?.map((release) => (
@@ -41,12 +54,12 @@ const DownloadSection = ({ repository }: Props) => {
             key={release.id}
             className='flex items-center justify-between py-2'
           >
-            <span className='text-sm text-gray-600'>
+            <span className='text-neutral-500 dark:text-neutral-600'>
               Version {release.tag_name}
             </span>
             <a
               href={release.html_url}
-              className='text-sm text-blue-600 hover:text-blue-800'
+              className='underline decoration-mint-500 dark:text-mint-500'
               download
             >
               Download

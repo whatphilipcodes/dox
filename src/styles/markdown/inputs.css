@@ -1,0 +1,3 @@
+div[data-markdown-content] .task-list-item input[type='checkbox'] {
+  @apply flex h-3 w-3 appearance-none self-center rounded-sm border border-neutral-400 checked:border-mint-500 checked:bg-mint-500 dark:border-neutral-700;
+}
