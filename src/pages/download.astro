@@ -5,12 +5,11 @@ import Home from '../layouts/Home.astro';
 
 import * as markdown from '../content/download.md';
 const { Content, frontmatter } = markdown;
+
+import { SITE_TITLE, GITHUB_URL } from '../consts';
 ---
 
 <Home title={frontmatter.title} description={frontmatter.description}>
   <MarkdownWrapper><Content /></MarkdownWrapper>
-  <DownloadSection
-    repository='https://github.com/whatphilipcodes/whatphilipdoes'
-    client:load
-  />
+  <DownloadSection repository={GITHUB_URL} title={SITE_TITLE} client:load />
 </Home>

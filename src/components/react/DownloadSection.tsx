@@ -7,9 +7,10 @@ import ReactiveButton from './ReactiveButton';
 
 interface Props {
   repository: string;
+  title: string;
 }
 
-const DownloadSection = ({ repository }: Props) => {
+const DownloadSection = ({ repository, title }: Props) => {
   const repoURL = new URL(repository);
   const [releases, setReleases] = useState<GithubRelease[] | undefined>(
     undefined,
@@ -22,16 +23,20 @@ const DownloadSection = ({ repository }: Props) => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(releases);
-  }, [releases]);
+  if (!releases?.length) {
+    return (
+      <div className='text-neutral-500 dark:text-neutral-600'>
+        No releases available yet.
+      </div>
+    );
+  }
 
   return (
     <>
-      <div className='font-bold dark:text-mint-500'>{releases?.[0].name}</div>
+      <div className='font-bold dark:text-mint-500'>{releases[0].name}</div>
       <div className='flex flex-col gap-4 rounded-md border border-neutral-300 p-4 dark:border-neutral-800'>
         <MarkdownWrapperTSX>
-          {releases?.[0].body ? (
+          {releases[0].body ? (
             <div className='flex flex-col gap-4 overflow-x-scroll hyphens-auto text-wrap'>
               <ReactMarkdown>{releases[0].body}</ReactMarkdown>
             </div>
@@ -41,7 +46,7 @@ const DownloadSection = ({ repository }: Props) => {
         </MarkdownWrapperTSX>
         <ReactiveButton
           variant='border'
-          href={releases?.[0].assets[0].browser_download_url}
+          href={releases[0].assets[0].browser_download_url}
           target='_blank'
         >
           download
@@ -58,7 +63,7 @@ const DownloadSection = ({ repository }: Props) => {
               Version {release.tag_name}
             </span>
             <a
-              href={release.html_url}
+              href={release.assets[0]?.browser_download_url}
               className='underline decoration-mint-500 dark:text-mint-500'
               download
             >
