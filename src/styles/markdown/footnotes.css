@@ -1,5 +1,9 @@
 div[data-markdown-content] a[data-footnote-ref] {
-  @apply underline-offset-2 dark:text-mint-500;
+  @apply pl-0.5 underline-offset-2 dark:text-mint-500;
+}
+
+div[data-markdown-content] section.footnotes a {
+  @apply px-1;
 }
 
 div[data-markdown-content] .footnotes h2 {
