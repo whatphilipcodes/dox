@@ -2,11 +2,11 @@ div[data-markdown-content] a[data-footnote-ref] {
   @apply pl-0.5 underline-offset-2 dark:text-mint-500;
 }
 
-div[data-markdown-content] section.footnotes a {
-  @apply px-1;
+div[data-markdown-content] section.footnotes a.data-footnote-backref {
+  @apply pl-2;
 }
 
-div[data-markdown-content] .footnotes h2 {
+div[data-markdown-content] section.footnotes h2 {
   @apply hidden;
 }
 

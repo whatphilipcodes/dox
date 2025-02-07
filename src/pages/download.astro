@@ -1,5 +1,4 @@
 ---
-import MarkdownWrapper from '../components/MarkdownWrapper.astro';
 import DownloadSection from '../components/react/DownloadSection';
 import Home from '../layouts/Home.astro';
 
@@ -10,12 +9,6 @@ import { SITE_TITLE, GITHUB_URL } from '../consts';
 ---
 
 <Home title={frontmatter.title} description={frontmatter.description}>
-  {
-    frontmatter.active ? (
-      <MarkdownWrapper>
-        <Content />
-      </MarkdownWrapper>
-    ) : null
-  }
+  {frontmatter.active ? <Content /> : null}
   <DownloadSection repository={GITHUB_URL} title={SITE_TITLE} client:load />
 </Home>

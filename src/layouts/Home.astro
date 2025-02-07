@@ -1,5 +1,6 @@
 ---
 import Basic from './Basic.astro';
+import MarkdownWrapper from '../components/MarkdownWrapper.astro';
 
 type Props = {
   title: string;
@@ -10,6 +11,8 @@ const { title, description } = Astro.props;
 
 <Basic title={title} description={description}>
   <article>
-    <slot />
+    <MarkdownWrapper>
+      <slot />
+    </MarkdownWrapper>
   </article>
 </Basic>
