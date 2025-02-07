@@ -18,7 +18,13 @@ const DownloadSection = ({ repository, title }: Props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetchReleases(repoURL).then((result) => setReleases(result));
+      await fetchReleases(repoURL).then((result) => {
+        if (!result)
+          console.log(
+            `Your releases could not be fetched from GitHub. Does your repository '${repository}' have public releases?`,
+          );
+        setReleases(result);
+      });
     };
     fetchData();
   }, []);
@@ -37,7 +43,7 @@ const DownloadSection = ({ repository, title }: Props) => {
       <div className='flex flex-col gap-4 rounded-md border border-neutral-300 p-4 dark:border-neutral-800'>
         <MarkdownWrapperTSX>
           {releases[0].body ? (
-            <div className='flex flex-col gap-4 overflow-x-scroll hyphens-auto text-wrap'>
+            <div className='flex flex-col gap-4 overflow-x-auto hyphens-auto text-wrap'>
               <ReactMarkdown>{releases[0].body}</ReactMarkdown>
             </div>
           ) : (
@@ -52,26 +58,28 @@ const DownloadSection = ({ repository, title }: Props) => {
           download
         </ReactiveButton>
       </div>
-      <details>
-        <summary>archive</summary>
-        {releases?.map((release) => (
-          <li
-            key={release.id}
-            className='flex items-center justify-between py-2'
-          >
-            <span className='text-neutral-500 dark:text-neutral-600'>
-              Version {release.tag_name}
-            </span>
-            <a
-              href={release.assets[0]?.browser_download_url}
-              className='underline decoration-mint-500 dark:text-mint-500'
-              download
+      {releases.slice(1).length > 0 && (
+        <details>
+          <summary>archive</summary>
+          {releases.slice(1).map((release) => (
+            <li
+              key={release.id}
+              className='flex items-center justify-between py-2'
             >
-              Download
-            </a>
-          </li>
-        ))}
-      </details>
+              <span className='text-neutral-500 dark:text-neutral-600'>
+                Version {release.tag_name}
+              </span>
+              <a
+                href={release.assets[0]?.browser_download_url}
+                className='underline decoration-mint-500 dark:text-mint-500'
+                download
+              >
+                Download
+              </a>
+            </li>
+          ))}
+        </details>
+      )}
     </>
   );
 };

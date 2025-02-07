@@ -52,5 +52,5 @@ div[data-markdown-content] mark {
 }
 
 div[data-markdown-content] a {
-  @apply px-2 underline decoration-mint-500 underline-offset-4 dark:text-mint-500;
+  @apply underline decoration-mint-500 underline-offset-4 dark:text-mint-500;
 }
