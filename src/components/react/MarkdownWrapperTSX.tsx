@@ -1,11 +1,3 @@
-import '../../styles/markdown/misc.css';
-import '../../styles/markdown/list.css';
-import '../../styles/markdown/table.css';
-import '../../styles/markdown/inputs.css';
-import '../../styles/markdown/tasklist.css';
-import '../../styles/markdown/footnotes.css';
-import '../../styles/markdown/blockquote.css';
-
 interface Props {
   children: React.ReactNode;
 }

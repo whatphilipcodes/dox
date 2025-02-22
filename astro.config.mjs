@@ -1,14 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 
+import tailwindcss from '@tailwindcss/vite';
 import rehypeWrapAll from 'rehype-wrap-all';
 
-import expressiveConfig from './src/utils/expressiveCode/expressiveConfig.ts';
+// import expressiveConfig from './src/utils/expressiveCode/expressiveConfig.ts';
 import { SITE_URL } from './src/consts.ts';
+
+import expressiveCode from 'astro-expressive-code';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,7 +20,7 @@ export default defineConfig({
       [rehypeWrapAll, { selector: 'table', wrapper: 'div.responsive-table' }],
     ],
   },
-  integrations: [expressiveConfig, react(), mdx(), sitemap(), tailwind()],
+  integrations: [react(), expressiveCode(), mdx(), sitemap()],
   experimental: {
     responsiveImages: true,
     svg: true,
@@ -28,5 +30,8 @@ export default defineConfig({
   },
   server: {
     host: true,
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
