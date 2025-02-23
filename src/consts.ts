@@ -11,3 +11,7 @@ export const GITHUB_URL = 'https://github.com/whatphilipcodes/dox';
 export const EXTERNAL_IMPRINT = 'https://whatphilipdoes.com/legal/imprint';
 export const EXTERNAL_PRIVACY = 'https://whatphilipdoes.com/legal/privacy';
 export const SERVER_DIR = '/public_html/dox/';
+
+// these are optional stylistic configurations:
+
+export const lowercaseTitles = true;

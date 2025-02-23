@@ -3,6 +3,7 @@ import MarkdownWrapper from './MarkdownWrapper.astro';
 import FormattedDate from './FormattedDate.astro';
 import { type CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
+import { lowercaseTitles } from '../consts';
 
 interface Props {
   id?: string;
@@ -53,7 +54,9 @@ const { Content } = await render(step);
   <section
     class:list={['w-full', { 'text-neutral-500': status === 'completed' }]}
   >
-    <h1 class='break-words text-5xl font-bold'>{title}</h1>
+    <h1 class='text-5xl font-bold break-words'>
+      {lowercaseTitles ? title.toLowerCase() : title}
+    </h1>
     <MarkdownWrapper><Content /></MarkdownWrapper>
   </section>
 </div>
