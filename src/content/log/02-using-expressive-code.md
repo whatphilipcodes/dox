@@ -1,7 +1,7 @@
 ---
 title: Using Expressive Code
 description: 'Small demo of how to use Expressive Code features in this template'
-created: 2025-01-14 00:37
+created: 2025-02-08 00:00
 ---
 
 ### Standard Markdown

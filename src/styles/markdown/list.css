@@ -9,11 +9,11 @@ div[data-markdown-content] ul ul {
 
 div[data-markdown-content] ul ul::before {
   content: '';
-  @apply absolute left-[2px] top-0 h-full w-px bg-neutral-400 dark:bg-neutral-600;
+  @apply absolute top-0 left-[2px] h-full w-px bg-neutral-400 dark:bg-neutral-600;
 }
 
 div[data-markdown-content] li {
-  @apply mb-1 mt-1;
+  @apply mt-1 mb-1;
 }
 
 div[data-markdown-content] li:not(.task-list-item) {
@@ -25,5 +25,30 @@ div[data-markdown-content] li p {
 }
 
 div[data-markdown-content] ol {
-  @apply flex flex-col gap-2;
+  @apply list-inside;
+  counter-reset: item;
+}
+
+div[data-markdown-content] ol li {
+  counter-increment: item;
+  @apply mt-1 mb-1;
+}
+
+div[data-markdown-content] ol li::before {
+  content: counter(item) '.';
+  @apply mr-2 font-mono text-neutral-600 dark:text-neutral-400;
+}
+
+div[data-markdown-content] ol ol {
+  @apply relative ml-6;
+  counter-reset: subitem;
+}
+
+div[data-markdown-content] ol ol li {
+  counter-increment: subitem;
+}
+
+div[data-markdown-content] ol ol li::before {
+  content: counter(item) '.' counter(subitem) '.';
+  @apply font-mono;
 }

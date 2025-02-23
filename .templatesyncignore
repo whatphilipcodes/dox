@@ -11,6 +11,9 @@ src/assets/*
 # content
 src/content/*
 
+# custom components
+src/components/custom/*
+
 # misc
 src/consts.ts
 README.md
