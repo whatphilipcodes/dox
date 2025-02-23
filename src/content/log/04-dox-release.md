@@ -16,6 +16,7 @@ created: 2025-02-28 00:00
 - Prebuilt Routes
   - Home
   - Development Log
+  - Download
   - Roadmap
 - FTP Deployment already set up
   - directly via script
