@@ -1,9 +1,9 @@
 name: Deploy to FTPS
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,4 +36,4 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: ./artifact/
-          server-dir: /public_html/
+          server-dir: /public_html/dox

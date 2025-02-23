@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+/* Tailwind Config */
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: 'Geist';
+  --font-mono: 'GeistMono';
+
+  --color-mint-50: oklch(99.17% 0.011 176.33);
+  --color-mint-100: oklch(98.4% 0.022 179.22);
+  --color-mint-200: oklch(96.82% 0.044 177.29);
+  --color-mint-300: oklch(95.45% 0.065 176.94);
+  --color-mint-400: oklch(94.12% 0.086 175.69);
+  --color-mint-500: oklch(93% 0.103 175.07);
+  --color-mint-600: oklch(89.77% 0.161 170.51);
+  --color-mint-700: oklch(85.98% 0.18 165.37);
+  --color-mint-800: oklch(63.45% 0.132 166.09);
+  --color-mint-900: oklch(38.93% 0.079 167.36);
+  --color-mint-950: oklch(24.99% 0.049 170.21);
+
+  --color-cynder-50: oklch(98.71% 0.007 67.75);
+  --color-cynder-100: oklch(97.2% 0.014 64.35);
+  --color-cynder-200: oklch(94.5% 0.03 62.59);
+  --color-cynder-300: oklch(91.96% 0.044 63.9);
+  --color-cynder-400: oklch(89.33% 0.059 62.81);
+  --color-cynder-500: oklch(86.62% 0.075 63.29);
+  --color-cynder-600: oklch(76.86% 0.132 59.75);
+  --color-cynder-700: oklch(67.37% 0.165 53.27);
+  --color-cynder-800: oklch(50.22% 0.12 53.79);
+  --color-cynder-900: oklch(31.46% 0.069 57.67);
+  --color-cynder-950: oklch(20.97% 0.042 60.56);
+}
+
+/* General */
+@import './scrollbar.css';
+@import './embeds.css';
+@import './fonts.css';
+@import './misc.css';
+
+/* Markdown Styling */
+@import './markdown/blockquote.css';
+@import './markdown/footnotes.css';
+@import './markdown/inputs.css';
+@import './markdown/list.css';
+@import './markdown/misc.css';
+@import './markdown/table.css';
+@import './markdown/tasklist.css';

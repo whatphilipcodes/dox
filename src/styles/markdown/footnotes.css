@@ -2,8 +2,13 @@ div[data-markdown-content] a[data-footnote-ref] {
   @apply pl-0.5 underline-offset-2 dark:text-mint-500;
 }
 
-div[data-markdown-content] section.footnotes a.data-footnote-backref {
-  @apply pl-2;
+div[data-markdown-content] section.footnotes p {
+  @apply block space-x-2;
+}
+
+/* dirty work-around, there has to be a better way to achieve this */
+div[data-markdown-content] section.footnotes p > a:first-of-type {
+  @apply md:pl-2;
 }
 
 div[data-markdown-content] section.footnotes h2 {
