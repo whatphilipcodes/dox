@@ -1,6 +1,7 @@
 ---
 import DownloadSection from '../components/react/DownloadSection';
-import Home from '../layouts/Home.astro';
+import Basic from '../layouts/Basic.astro';
+import MarkdownWrapper from '../components/MarkdownWrapper.astro';
 
 import * as markdown from '../content/download.md';
 const { Content, frontmatter } = markdown;
@@ -8,7 +9,11 @@ const { Content, frontmatter } = markdown;
 import { SITE_TITLE, GITHUB_URL } from '../consts';
 ---
 
-<Home title={frontmatter.title} description={frontmatter.description}>
-  {frontmatter.active ? <Content /> : null}
-  <DownloadSection repository={GITHUB_URL} title={SITE_TITLE} client:load />
-</Home>
+<Basic title={frontmatter.title} description={frontmatter.description}>
+  <article>
+    <MarkdownWrapper>
+      {frontmatter.active ? <Content /> : null}
+    </MarkdownWrapper>
+    <DownloadSection repository={GITHUB_URL} title={SITE_TITLE} client:load />
+  </article>
+</Basic>

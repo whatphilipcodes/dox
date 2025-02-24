@@ -4,7 +4,7 @@ import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 import { wrapRawNodes } from './utils';
 
 const baseStyles =
-  'twd flex flex-row flex-nowrap justify-center gap-2 items-center rounded-md py-2 px-4 no-underline!';
+  'twd cursor-pointer flex flex-row flex-nowrap justify-center gap-2 items-center rounded-md py-2 px-4 no-underline!';
 const variantStyles = {
   primary:
     'twd dark:border-mint-500 dark:text-mint-500 dark:hover:bg-mint-500/10 dark:active:bg-mint-500/20 border border-neutral-900 text-neutral-900 ease-out hover:bg-neutral-300 active:bg-neutral-400',
