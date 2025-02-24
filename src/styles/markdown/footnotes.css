@@ -17,7 +17,12 @@ div[data-markdown-content] section.footnotes h2 {
 
 div[data-markdown-content] .footnotes::before {
   content: '';
-  @apply block h-px w-full bg-neutral-300 dark:bg-neutral-800;
+  @apply block h-px w-full bg-neutral-300;
+}
+
+/* darkmode on pseudo elements currently not working in tailwind v4 */
+:is(.dark) div[data-markdown-content] .footnotes::before {
+  @apply bg-neutral-800;
 }
 
 div[data-markdown-content] section.footnotes ol {
