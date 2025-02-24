@@ -1,7 +1,7 @@
-import MarkdownWrapperTSX from './MarkdownWrapperTSX';
 import { useEffect, useState } from 'react';
-import type { GithubRelease } from 'github-data';
 import ReactMarkdown from 'react-markdown';
+import MarkdownWrapperTSX from './MarkdownWrapperTSX';
+import type { GithubRelease } from 'github-data';
 
 import Button from './Button';
 

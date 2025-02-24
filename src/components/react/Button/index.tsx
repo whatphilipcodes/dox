@@ -1,6 +1,5 @@
-import { type FC } from 'react';
+import type { ButtonHTMLAttributes, AnchorHTMLAttributes, FC } from 'react';
 import { twMerge } from 'tailwind-merge';
-import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 import { wrapRawNodes } from './utils';
 
 const baseStyles =
