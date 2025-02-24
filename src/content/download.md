@@ -1,8 +1,8 @@
 ---
 title: download knoto
-created: 2025-01-29
+created: 2025-02-28
 description: downloads
-active: false
+active: true
 ---
 
-This proper Markdown description is optional and has to be enables using the `active` prop.
+This section above the downloads is another Markdown file you can optionally add for additional information. If you want to disable this set the `active` prop to false.
