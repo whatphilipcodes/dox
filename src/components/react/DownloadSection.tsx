@@ -45,8 +45,10 @@ const DownloadSection = ({ repository, title }: Props) => {
 
   return (
     <>
-      <div className='dark:text-mint-500 font-bold'>{releases[0].name}</div>
       <div className='flex flex-col gap-4 rounded-md border border-neutral-300 p-4 dark:border-neutral-800'>
+        <div className='dark:text-mint-500 font-mono font-bold'>
+          {releases[0].name}
+        </div>
         <MarkdownWrapperTSX>
           <div className='flex flex-col gap-4 overflow-x-auto text-wrap hyphens-auto'>
             <ReactMarkdown>{releases[0].body}</ReactMarkdown>
@@ -71,8 +73,8 @@ const DownloadSection = ({ repository, title }: Props) => {
               key={release.id}
               className='flex items-center justify-between py-2'
             >
-              <span className='text-neutral-500 dark:text-neutral-600'>
-                Version {release.tag_name}
+              <span className='font-mono text-neutral-500 dark:text-neutral-600'>
+                {release.tag_name}
               </span>
               <a
                 href={
