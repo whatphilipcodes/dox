@@ -20,6 +20,8 @@ Features:
 
 Based on [Astro's](https://astro.build/) Blog Theme, the docs are built with [React](https://react.dev/), [Vite](https://vitejs.dev/), [MDX](https://mdxjs.com/), and [Tailwind CSS](https://tailwindcss.com/). Refer to respective documentation for more information.
 
+---
+
 ### known issues
 
 - [ ] `Tailwindcss v4` and `Expressive Code`
