@@ -5,4 +5,4 @@ description: downloads
 active: true
 ---
 
-This section above the downloads is another Markdown file you can optionally add for additional information. If you want to disable this set the `active` prop to false.
+This section above the downloads is another Markdown file you can optionally add for additional information. If you want to disable this, set the `active` prop to false.
