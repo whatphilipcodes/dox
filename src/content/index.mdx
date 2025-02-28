@@ -4,9 +4,13 @@ created: 2025-02-28
 description: homepage
 ---
 
-import LandingPrompt from '../components/heroModules/LandingPrompt.astro';
+import LandingPrompt from '../components/landingModules/LandingPrompt.astro';
+import Artifact from '../components/react/Artifact';
 
-<LandingPrompt startRef='/log/04-dox-release/#get-started'>
+<LandingPrompt startRef='/log/05-dox-release/#get-started' svgRef='/color-reference.svg'>
+  <div class='hidden md:block'>
+    <Artifact svgRef='/color-reference.svg' client:load />
+  </div>
   <Fragment slot='prompt-title'>welcome to the dox</Fragment>
   <Fragment slot='prompt-subtitle'>Create beautiful documentations for your projects with ease</Fragment>
 </LandingPrompt>

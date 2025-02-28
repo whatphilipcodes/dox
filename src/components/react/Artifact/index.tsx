@@ -13,6 +13,7 @@ const BASE_LAYER_DEPTH = 0.25;
 const LAYER_POSITIONS = [-BASE_LAYER_DEPTH, 0, BASE_LAYER_DEPTH];
 
 interface ArtifactProps {
+  svgRef?: string;
   atomSize?: number;
   padding?: number;
   atomPadding?: number;
@@ -97,6 +98,7 @@ function Scene({
 }
 
 const Artifact: FC<ArtifactProps> = ({
+  svgRef,
   atomSize = 0.1,
   padding = DEFAULT_PADDING,
   atomPadding = 0.2,
@@ -123,13 +125,13 @@ const Artifact: FC<ArtifactProps> = ({
   useEffect(() => {
     const svgHelper = new ArtifactSeed();
     svgHelper
-      .loadSVG(new URL('/favicon.svg', window.location.origin))
+      .loadSVG(new URL(svgRef ?? '/favicon.svg', window.location.origin))
       .then(() => {
         setHelper(svgHelper);
-        console.log(
-          'Colors loaded:',
-          svgHelper.getColors().map((c) => c.getHexString()),
-        );
+        // console.log(
+        //   'Colors loaded:',
+        //   svgHelper.getColors().map((c) => c.getHexString()),
+        // );
       });
   }, []);
 
