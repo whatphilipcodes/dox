@@ -1,9 +1,9 @@
 ---
 import * as markdown from '../content/index.mdx';
-import Home from '../layouts/Home.astro';
+import Landing from '../layouts/Landing.astro';
 const { Content, frontmatter } = markdown;
 ---
 
-<Home title={frontmatter.title} description={frontmatter.description}>
+<Landing title={frontmatter.title} description={frontmatter.description}>
   <Content />
-</Home>
+</Landing>

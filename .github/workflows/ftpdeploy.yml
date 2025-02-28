@@ -36,4 +36,4 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: ./artifact/
-          server-dir: /public_html/dox
+          server-dir: /public_html/dox/

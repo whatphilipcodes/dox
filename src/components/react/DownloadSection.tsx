@@ -1,9 +1,9 @@
-import MarkdownWrapperTSX from './MarkdownWrapperTSX';
 import { useEffect, useState } from 'react';
-import type { GithubRelease } from 'github-data';
 import ReactMarkdown from 'react-markdown';
+import MarkdownWrapperTSX from './MarkdownWrapperTSX';
+import type { GithubRelease } from 'github-data';
 
-import ReactiveButton from './ReactiveButton';
+import Button from './Button';
 
 interface Props {
   repository: string;
@@ -12,71 +12,102 @@ interface Props {
 
 const DownloadSection = ({ repository, title }: Props) => {
   const repoURL = new URL(repository);
+  const [loading, setLoading] = useState(true);
   const [releases, setReleases] = useState<GithubRelease[] | undefined>(
     undefined,
   );
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetchReleases(repoURL).then((result) => {
-        if (!result)
+      await fetchReleases(repoURL).then((result: GithubRelease[]) => {
+        if (!result || !result.length)
           console.log(
             `Your releases could not be fetched from GitHub. Does your repository '${repository}' have public releases?`,
           );
         setReleases(result);
+        setLoading(false);
       });
     };
     fetchData();
   }, []);
 
-  if (!releases?.length) {
+  if (loading) {
+    return (
+      <div className='text-neutral-500 dark:text-neutral-600'>loading...</div>
+    );
+  } else if (!releases?.length) {
     return (
       <div className='text-neutral-500 dark:text-neutral-600'>
-        No releases available yet.
+        No public releases yet.
       </div>
     );
   }
 
   return (
     <>
-      <div className='font-bold dark:text-mint-500'>{releases[0].name}</div>
       <div className='flex flex-col gap-4 rounded-md border border-neutral-300 p-4 dark:border-neutral-800'>
+        <div className='dark:text-mint-500 font-mono font-bold'>
+          {releases[0].name}
+        </div>
         <MarkdownWrapperTSX>
-          {releases[0].body ? (
-            <div className='flex flex-col gap-4 overflow-x-auto hyphens-auto text-wrap'>
-              <ReactMarkdown>{releases[0].body}</ReactMarkdown>
-            </div>
-          ) : (
-            <div>Loading...</div>
-          )}
+          <div className='flex flex-col gap-4 overflow-x-auto text-wrap hyphens-auto'>
+            <ReactMarkdown>{releases[0].body}</ReactMarkdown>
+          </div>
         </MarkdownWrapperTSX>
-        <ReactiveButton
-          variant='border'
-          href={releases[0].assets[0].browser_download_url}
-          target='_blank'
-        >
-          download
-        </ReactiveButton>
+        <div className='flex flex-col gap-2'>
+          {releases[0].assets.length > 0 ? (
+            releases[0].assets.map((asset) => (
+              <Button
+                key={asset.id}
+                href={asset.browser_download_url}
+                target='_blank'
+              >
+                {asset.name}
+              </Button>
+            ))
+          ) : (
+            <Button href={releases[0].html_url} target='_blank'>
+              view release
+            </Button>
+          )}
+        </div>
       </div>
       {releases.slice(1).length > 0 && (
         <details>
           <summary>archive</summary>
           {releases.slice(1).map((release) => (
-            <li
+            <div
               key={release.id}
-              className='flex items-center justify-between py-2'
+              className='mt-4 flex flex-col gap-4 rounded-md border border-neutral-300 p-4 dark:border-neutral-800'
             >
-              <span className='text-neutral-500 dark:text-neutral-600'>
-                Version {release.tag_name}
-              </span>
-              <a
-                href={release.assets[0]?.browser_download_url}
-                className='underline decoration-mint-500 dark:text-mint-500'
-                download
-              >
-                Download
-              </a>
-            </li>
+              <div className='flex items-center justify-between'>
+                <span className='font-mono text-neutral-500 dark:text-neutral-600'>
+                  {release.tag_name}
+                </span>
+                <div className='flex gap-2'>
+                  {release.assets.length > 0 ? (
+                    release.assets.map((asset) => (
+                      <a
+                        key={asset.id}
+                        href={asset.browser_download_url}
+                        className='decoration-mint-500 dark:text-mint-500 underline'
+                        target='_blank'
+                      >
+                        {asset.name}
+                      </a>
+                    ))
+                  ) : (
+                    <a
+                      href={release.html_url}
+                      className='decoration-mint-500 dark:text-mint-500 underline'
+                      target='_blank'
+                    >
+                      view release
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
           ))}
         </details>
       )}

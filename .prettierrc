@@ -1,5 +1,13 @@
 {
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   "singleQuote": true,
-  "jsxSingleQuote": true
+  "jsxSingleQuote": true,
+  "overrides": [
+    {
+      "files": "*.mdx",
+      "options": {
+        "printWidth": 1000
+      }
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 div[data-markdown-content] a[data-footnote-ref] {
-  @apply pl-0.5 underline-offset-2 dark:text-mint-500;
+  @apply dark:text-mint-500 pl-0.5 underline-offset-2;
 }
 
 div[data-markdown-content] section.footnotes p {
@@ -17,5 +17,25 @@ div[data-markdown-content] section.footnotes h2 {
 
 div[data-markdown-content] .footnotes::before {
   content: '';
-  @apply block h-px w-full bg-neutral-300 dark:bg-neutral-800;
+  @apply block h-px w-full bg-neutral-300;
+}
+
+/* darkmode on pseudo elements currently not working in tailwind v4 */
+:is(.dark) div[data-markdown-content] .footnotes::before {
+  @apply bg-neutral-800;
+}
+
+div[data-markdown-content] section.footnotes ol {
+  @apply list-none pl-0;
+  counter-reset: list-item;
+}
+
+div[data-markdown-content] section.footnotes ol li {
+  @apply flex;
+  counter-increment: list-item;
+}
+
+div[data-markdown-content] section.footnotes ol li::before {
+  content: counter(list-item) '.';
+  @apply text-neutral-500 dark:text-neutral-400;
 }

@@ -1,12 +1,12 @@
 ---
-title: Expressive Code Demo
-description: 'Small demo of Expressive Code features on this template'
-created: 2025-01-14 00:37
+title: Using Expressive Code
+description: 'Small demo of how to use Expressive Code features in this template'
+created: 2025-02-08 00:00
 ---
 
-# Standard Markdown
+### Standard Markdown
 
-The stuff you know from other Markdown also works here. You should however take into account that `inline code blocks` will not be processed by `Expressive Code` and are instead only styled via the `.code` selector in `./src/styles/global.css`.
+The syntax you know from other Markdown also works here. You should however take into account that `inline code blocks` will not be processed by `Expressive Code` and are instead only styled via the `.code` selector in `./src/styles/global.css`.
 
 ```py
 def hello_world():
@@ -15,7 +15,7 @@ def hello_world():
 
 This is what a standard code block looks like.
 
-# Expressive Code
+### Expressive Code
 
 Using the `Expressive Code` features you can add a bit more fancy to your code blocks.
 
@@ -32,9 +32,9 @@ echo 'This is a shell script displayed in a terminal frame by default'
 ```
 
 ```powershell title="hello title"
-Write-Output "This one has a title!"
+write-output 'This one has a title!'
 ```
 
 ```sh title="install.sh" frame="code"
-echo 'This is a shell script displayed in a code frame thanks to the override'
+echo 'This is a shell script displayed in a code frame thanks to the override
 ```
