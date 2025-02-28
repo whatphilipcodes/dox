@@ -1,30 +1,29 @@
-import * as THREE from 'three';
 import { type FC, useState, useEffect } from 'react';
-import { Canvas, type ThreeEvent, useThree } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { useSpring, animated } from '@react-spring/three';
 
 import { ArtifactSeed } from './ArtifactSeed';
 import Atom from './Atom';
 
-const GRID_SIZE = 11; // 9x9 usable + 1 padding on each side
-const DEFAULT_CELL_SIZE = 0.14; // Reduced from 0.175
+const GRID_SIZE = 10;
+const DEFAULT_CELL_SIZE = 0.14;
 const DEFAULT_PADDING = 1;
-const LAYER_DEPTH = 0.15; // Distance between color layers
+const LAYER_DEPTH = 0.15;
 const BASE_LAYER_DEPTH = 0.25;
-const LAYER_POSITIONS = [-BASE_LAYER_DEPTH, 0, BASE_LAYER_DEPTH]; // Add this
+const LAYER_POSITIONS = [-BASE_LAYER_DEPTH, 0, BASE_LAYER_DEPTH];
 
 interface ArtifactProps {
-  atomSize?: number; // Individual atom scale
-  padding?: number; // Grid padding (in grid cells)
+  atomSize?: number;
+  padding?: number;
   atomPadding?: number;
   rotationAmount?: number;
-  depthMultiplier?: number; // Add new prop
+  depthMultiplier?: number;
 }
 
 interface PatternItem {
   x: number;
   y: number;
-  z: number; // Add z position
+  z: number;
   type: 'plane' | 'triangle';
   colorIndex: number;
 }
@@ -33,7 +32,6 @@ function Scene({
   pattern,
   helper,
   rotationAmount,
-  atomPadding,
 }: {
   pattern: PatternItem[];
   helper: ArtifactSeed;
@@ -61,7 +59,6 @@ function Scene({
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
 
-      // Check if mouse is within canvas bounds
       if (x < 0 || x > rect.width || y < 0 || y > rect.height) {
         resetRotation();
         return;
@@ -88,6 +85,7 @@ function Scene({
     <animated.group rotation={rotation}>
       {pattern.map((item, index) => (
         <Atom
+          layerDepth={LAYER_DEPTH}
           key={index}
           position={[item.x, item.y, item.z]}
           color={helper.getColors()[item.colorIndex]}
@@ -101,9 +99,9 @@ function Scene({
 const Artifact: FC<ArtifactProps> = ({
   atomSize = 0.1,
   padding = DEFAULT_PADDING,
-  atomPadding = 0.2, // Now represents space between atoms
+  atomPadding = 0.2,
   rotationAmount = 0.45,
-  depthMultiplier = 1, // Default to no change
+  depthMultiplier = 1,
 }) => {
   const [helper, setHelper] = useState<ArtifactSeed>();
   const [pattern, setPattern] = useState<
@@ -116,7 +114,6 @@ const Artifact: FC<ArtifactProps> = ({
     }>
   >();
 
-  // Adjust cell size to include padding between atoms
   const baseAtomSize = DEFAULT_CELL_SIZE * (atomSize / 0.12);
   const cellSize = baseAtomSize * (1 + atomPadding);
   const gridOffset = ((GRID_SIZE - 1) * cellSize) / 2;
@@ -125,7 +122,6 @@ const Artifact: FC<ArtifactProps> = ({
 
   useEffect(() => {
     const svgHelper = new ArtifactSeed();
-    // Fix: use correct public path
     svgHelper
       .loadSVG(new URL('/favicon.svg', window.location.origin))
       .then(() => {
@@ -144,7 +140,6 @@ const Artifact: FC<ArtifactProps> = ({
     const holes = new Set<string>();
     const numHoles = 28;
 
-    // Generate random holes (only in usable area)
     while (holes.size < numHoles) {
       const x =
         usableStart +
@@ -155,7 +150,6 @@ const Artifact: FC<ArtifactProps> = ({
       holes.add(`${x},${y}`);
     }
 
-    // Create pattern for only the usable area (skip padding)
     for (let x = usableStart; x < usableEnd; x++) {
       for (let y = usableStart; y < usableEnd; y++) {
         if (!holes.has(`${x},${y}`)) {
@@ -163,7 +157,7 @@ const Artifact: FC<ArtifactProps> = ({
           newPattern.push({
             x: x * cellSize - gridOffset,
             y: y * cellSize - gridOffset,
-            z: LAYER_POSITIONS[colorIndex], // Use predefined layer positions
+            z: LAYER_POSITIONS[colorIndex],
             type:
               helper.getRandom() > 0.5
                 ? ('plane' as 'plane')
@@ -183,7 +177,7 @@ const Artifact: FC<ArtifactProps> = ({
     usableStart,
     usableEnd,
     depthMultiplier,
-  ]); // Add dependency
+  ]);
 
   return (
     <div className='aspect-square h-80'>

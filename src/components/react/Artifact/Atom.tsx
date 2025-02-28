@@ -6,15 +6,21 @@ import { useSpring, animated } from '@react-spring/three';
 type AtomProps = ThreeElements['mesh'] & {
   color: THREE.Color;
   type: 'plane' | 'triangle';
+  layerDepth: number;
   baseScale?: number;
 };
 
-const Atom = ({ color, type, baseScale = 0.12, ...props }: AtomProps) => {
+const Atom = ({
+  color,
+  type,
+  layerDepth,
+  baseScale = 0.12,
+  ...props
+}: AtomProps) => {
   const [hovered, setHovered] = useState(false);
   const initialPosition = Array.isArray(props.position)
     ? props.position
     : [0, 0, 0];
-  const layerDepth = 0.25; // Match BASE_LAYER_DEPTH
 
   const getHoverZ = (currentZ: number): number => {
     if (currentZ < -layerDepth / 2) return 0; // back -> middle
@@ -53,12 +59,15 @@ const Atom = ({ color, type, baseScale = 0.12, ...props }: AtomProps) => {
     return (
       <animated.mesh {...meshProps}>
         <planeGeometry args={[1, 1]} />
-        <meshStandardMaterial color={color} side={THREE.DoubleSide} />
+        <meshStandardMaterial
+          color={color}
+          emissive={color}
+          side={THREE.DoubleSide}
+        />
       </animated.mesh>
     );
   }
 
-  // Centered triangle vertices (no padding modification)
   const vertices = new Float32Array([
     -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0,
   ]);
