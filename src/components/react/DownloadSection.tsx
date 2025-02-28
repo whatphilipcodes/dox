@@ -54,40 +54,60 @@ const DownloadSection = ({ repository, title }: Props) => {
             <ReactMarkdown>{releases[0].body}</ReactMarkdown>
           </div>
         </MarkdownWrapperTSX>
-        <Button
-          href={
-            releases[0].assets[0]?.browser_download_url || releases[0].html_url
-          }
-          target='_blank'
-        >
-          {releases[0].assets[0]?.browser_download_url
-            ? 'download'
-            : 'view release'}
-        </Button>
+        <div className='flex flex-col gap-2'>
+          {releases[0].assets.length > 0 ? (
+            releases[0].assets.map((asset) => (
+              <Button
+                key={asset.id}
+                href={asset.browser_download_url}
+                target='_blank'
+              >
+                {asset.name}
+              </Button>
+            ))
+          ) : (
+            <Button href={releases[0].html_url} target='_blank'>
+              view release
+            </Button>
+          )}
+        </div>
       </div>
       {releases.slice(1).length > 0 && (
         <details>
           <summary>archive</summary>
           {releases.slice(1).map((release) => (
-            <li
+            <div
               key={release.id}
-              className='flex items-center justify-between py-2'
+              className='mt-4 flex flex-col gap-4 rounded-md border border-neutral-300 p-4 dark:border-neutral-800'
             >
-              <span className='font-mono text-neutral-500 dark:text-neutral-600'>
-                {release.tag_name}
-              </span>
-              <a
-                href={
-                  release.assets[0]?.browser_download_url || release.html_url
-                }
-                className='decoration-mint-500 dark:text-mint-500 underline'
-                target='_blank'
-              >
-                {release.assets[0]?.browser_download_url
-                  ? 'download'
-                  : 'view release'}
-              </a>
-            </li>
+              <div className='flex items-center justify-between'>
+                <span className='font-mono text-neutral-500 dark:text-neutral-600'>
+                  {release.tag_name}
+                </span>
+                <div className='flex gap-2'>
+                  {release.assets.length > 0 ? (
+                    release.assets.map((asset) => (
+                      <a
+                        key={asset.id}
+                        href={asset.browser_download_url}
+                        className='decoration-mint-500 dark:text-mint-500 underline'
+                        target='_blank'
+                      >
+                        {asset.name}
+                      </a>
+                    ))
+                  ) : (
+                    <a
+                      href={release.html_url}
+                      className='decoration-mint-500 dark:text-mint-500 underline'
+                      target='_blank'
+                    >
+                      view release
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
           ))}
         </details>
       )}
