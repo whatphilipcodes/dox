@@ -1,0 +1,42 @@
+---
+import { ExternalLink } from 'lucide-react';
+import { GITHUB_URL, SITE_TITLE } from '../../consts';
+import Artifact from '../react/Artifact';
+import Button from '../react/Button';
+
+interface Props {
+  startRef: string;
+}
+
+const { startRef } = Astro.props;
+---
+
+<div class='flex flex-col items-center gap-6 py-16 text-center md:py-20'>
+  <div class='hidden md:block'>
+    <Artifact client:load />
+  </div>
+  <h1 class='font-bold'>
+    <slot name='prompt-title'>Welcome to {SITE_TITLE}</slot>
+  </h1>
+  <h3 class='max-w-2xl text-neutral-600 dark:text-neutral-400'>
+    <slot name='prompt-subtitle'
+      >You can change this <code>prompt-subtitle</code> as well as the <code
+        >prompt-title</code
+      > by using the named slots respectively</slot
+    >
+  </h3>
+  <div class='flex gap-4'>
+    <Button className='w-32' href={startRef} variant='primary'>
+      Get started
+    </Button>
+    <Button
+      className='w-32'
+      href={GITHUB_URL}
+      target='_blank'
+      variant='secondary'
+    >
+      GitHub
+      <ExternalLink size={20} />
+    </Button>
+  </div>
+</div>
