@@ -11,9 +11,13 @@ import { SITE_TITLE, GITHUB_URL } from '../consts';
 
 <Basic title={frontmatter.title} description={frontmatter.description}>
   <article>
-    <MarkdownWrapper>
-      {frontmatter.active ? <Content /> : null}
-    </MarkdownWrapper>
+    {
+      frontmatter.active ? (
+        <MarkdownWrapper>
+          <Content />
+        </MarkdownWrapper>
+      ) : null
+    }
     <DownloadSection repository={GITHUB_URL} title={SITE_TITLE} client:load />
   </article>
 </Basic>
