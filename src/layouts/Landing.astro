@@ -10,7 +10,9 @@ const { title, description } = Astro.props;
 ---
 
 <Basic title={title} description={description}>
-  <div class='flex min-h-[calc(100svh-12rem-1px)] grow flex-col justify-center'>
+  <div
+    class='flex min-h-[calc(100svh-13rem-1px)] grow flex-col justify-center md:min-h-[calc(100svh-12rem-1px)]'
+  >
     <MarkdownWrapper>
       <slot />
     </MarkdownWrapper>
