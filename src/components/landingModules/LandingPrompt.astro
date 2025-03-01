@@ -24,7 +24,7 @@ const { startRef } = Astro.props;
   </h3>
   <div class='flex gap-4'>
     <Button className='w-32' href={startRef} variant='primary'>
-      Get started
+      <slot name='action'>Get started</slot>
     </Button>
     <Button
       className='w-32'
