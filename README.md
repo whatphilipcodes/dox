@@ -24,7 +24,7 @@ Based on [Astro's](https://astro.build/) [Blog Example](https://stackblitz.com/g
 
 ### known issues
 
-- [ ] `Tailwindcss v4` and `Expressive Code`
+- [x] `fixed` : ~~Tailwindcss v4 and Expressive Code~~
   - Expressive Code briefly generates CSS that Tailwind tries to parse. When Tailwind encounters those transient files, it can trigger a path error. This causes occasional failures until the generated file no longer exists or is excluded from scanning.
   - Error:
     ```
