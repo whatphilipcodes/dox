@@ -3,7 +3,7 @@ div[data-markdown-content] a[data-footnote-ref] {
 }
 
 div[data-markdown-content] section.footnotes p {
-  @apply block space-x-2;
+  @apply text-left break-all;
 }
 
 /* dirty work-around, there has to be a better way to achieve this */
@@ -27,14 +27,7 @@ div[data-markdown-content] .footnotes::before {
 
 div[data-markdown-content] section.footnotes ol {
   @apply list-none pl-0;
-  counter-reset: list-item 1;
-}
-
-/* fix counter issue (1 based everywhere except firefox Gecko engine) */
-@-moz-document url-prefix() {
-  div[data-markdown-content] section.footnotes ol {
-    counter-reset: list-item 0;
-  }
+  counter-reset: 0;
 }
 
 div[data-markdown-content] section.footnotes ol li {
