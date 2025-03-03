@@ -24,6 +24,18 @@ Based on [Astro's](https://astro.build/) [Blog Example](https://stackblitz.com/g
 
 ### known issues
 
+- [ ] HMR issues with `tailwindcss v4` and `vite`
+  - Since tailwind v4 changed the way the vite integration worked I have been having issues with HMR. My nested CSS import structure (not ideal but the easiest way to style Markdown content coming from Astro) HMR stopped working completely requiring a full dev server restart. Since that is not acceptable for styling where iterating through a lot of versions is necessary I restructured the tailwind and CSS imports in a way that works with HMR. This however introduces some console errors that come up when changing CSS files during dev server runtime:
+    - Laden fehlgeschlagen für das Modul mit der Quelle "url/to/changed/file.css".
+    - [vite] TypeError: error loading dynamically imported module: url/to/changed/file.css
+    - [vite] Failed to reload path/to/changed/file.css. This could be due to syntax errors or importing non-existent modules. (see errors above)
+    - Source-Map-Fehler: request failed with status 404
+      Ressourcen-Adresse: useless/url
+      Source-Map-Adresse: installHook.js.map
+    - Source-Map-Fehler: can't access property "sources", map is undefined
+      Ressourcen-Adresse: useless/url
+      Source-Map-Adresse: react_devtools_backend_compact.js.map
+  - while this is annoying to look at this way HMR does work and for the time being this seems to be a fair compromise.
 - [x] `fixed` : ~~Tailwindcss v4 and Expressive Code~~
   - Expressive Code briefly generates CSS that Tailwind tries to parse. When Tailwind encounters those transient files, it can trigger a path error. This causes occasional failures until the generated file no longer exists or is excluded from scanning.
   - Error:

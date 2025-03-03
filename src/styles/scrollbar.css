@@ -1,4 +1,3 @@
-/* Light */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -25,4 +24,3 @@ html.dark ::-webkit-scrollbar-thumb {
 html.dark ::-webkit-scrollbar-thumb:hover {
   background: rgb(var(--neutral-500));
 }
-/* --- */
