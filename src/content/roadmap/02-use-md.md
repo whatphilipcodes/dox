@@ -7,12 +7,17 @@ status: completed
 
 All of the Markdown syntax is available here as well and should work as expected[^1]. You could for example write your to dos:
 
+```markdown
+- [ ] to dos in markdown look like this
+- [x] when they are done you can put an `x` inside
+```
+
+Once you have some things done, this could look like this:
+
 - [x] Learn Markdown
 - Implement Astro Integrations
   - [x] MDX
   - [x] React
   - [x] Expressive Code
-
-Aliquip nostrud pariatur in culpa dolore commodo officia eiusmod ea aliqua enim amet. Ut irure consectetur aute cillum magna in ipsum veniam irure. Lorem sunt dolore sint adipisicing duis sunt mollit adipisicing.
 
 [^1]: You can even use footnotes

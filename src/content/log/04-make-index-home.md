@@ -21,7 +21,6 @@ import Artifact from '../components/react/Artifact';
 
 <LandingPrompt
   startRef='/log/04-dox-release/#get-started'
-  svgRef='/color-reference.svg'
 >
   <div class='hidden md:block'>
     <Artifact svgRef='/color-reference.svg' client:load />
