@@ -1,18 +1,11 @@
 @import '../tailwind.css';
 
+/* in-text */
 div[data-markdown-content] a[data-footnote-ref] {
   @apply dark:text-mint-500 pl-0.5 underline-offset-2;
 }
 
-div[data-markdown-content] section.footnotes p {
-  @apply text-left break-all;
-}
-
-/* dirty work-around, there has to be a better way to achieve this */
-div[data-markdown-content] section.footnotes p > a:first-of-type {
-  @apply md:pl-2;
-}
-
+/* footnote section (page end) */
 div[data-markdown-content] section.footnotes h2 {
   @apply hidden;
 }
@@ -40,4 +33,12 @@ div[data-markdown-content] section.footnotes ol li {
 div[data-markdown-content] section.footnotes ol li::before {
   content: counter(list-item) '.';
   @apply text-neutral-500 dark:text-neutral-400;
+}
+
+div[data-markdown-content] section.footnotes p {
+  @apply block text-left break-all md:break-normal;
+}
+
+div[data-markdown-content] a[data-footnote-backref] {
+  @apply pl-2;
 }
