@@ -1,3 +1,5 @@
+@import '../tailwind.css';
+
 div[data-markdown-content] a[data-footnote-ref] {
   @apply dark:text-mint-500 pl-0.5 underline-offset-2;
 }

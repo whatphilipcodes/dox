@@ -1,3 +1,5 @@
+@import '../tailwind.css';
+
 .responsive-table {
   @apply overflow-x-auto rounded-md border border-neutral-300 dark:border-neutral-800;
 }
