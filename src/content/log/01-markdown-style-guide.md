@@ -51,7 +51,9 @@ Ordered lists use numbers followed by a period and space:
 1. First item
 2. Second item
    1. Nested numbered item
-   2. Another nested item
+      1. You can use up to 3 nested layers
+      2. But don't use more please
+   2. Three should be more than enough
 
 ### Code Blocks
 

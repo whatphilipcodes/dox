@@ -5,7 +5,7 @@ div[data-markdown-content] a[data-footnote-ref] {
   @apply dark:text-mint-500 pl-0.5 underline-offset-2;
 }
 
-/* footnote section (page end) */
+/* footnote section (page end); counter see ol style -> ./list.css */
 div[data-markdown-content] section.footnotes h2 {
   @apply hidden;
 }
@@ -20,23 +20,8 @@ div[data-markdown-content] .footnotes::before {
   @apply bg-neutral-800;
 }
 
-div[data-markdown-content] section.footnotes ol {
-  @apply list-none pl-0;
-  counter-reset: 0;
-}
-
 div[data-markdown-content] section.footnotes ol li {
-  @apply flex;
-  counter-increment: list-item;
-}
-
-div[data-markdown-content] section.footnotes ol li::before {
-  content: counter(list-item) '.';
-  @apply text-neutral-500 dark:text-neutral-400;
-}
-
-div[data-markdown-content] section.footnotes p {
-  @apply block text-left break-all md:break-normal;
+  @apply flex flex-row break-all md:break-normal;
 }
 
 div[data-markdown-content] a[data-footnote-backref] {
