@@ -6,7 +6,7 @@ created: 2025-02-08 00:00
 
 ### Standard Markdown
 
-The syntax you know from other Markdown also works here. You should however take into account that `inline code blocks` will not be processed by `Expressive Code` and are instead only styled via the `.code` selector in `./src/styles/global.css`.
+The syntax you know from other Markdown also works here. You should however take into account that `inline code blocks` will not be processed by `Expressive Code` and are instead only styled via the `.code` selector in `./src/styles/markdown/misc.css`.
 
 ```py
 def hello_world():
