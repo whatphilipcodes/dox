@@ -22,10 +22,6 @@ div[data-markdown-content] li:not(.task-list-item) {
   @apply ml-[3px];
 }
 
-div[data-markdown-content] li p {
-  @apply flex flex-row flex-wrap text-wrap;
-}
-
 div[data-markdown-content] ol {
   @apply list-inside;
   counter-reset: item;
@@ -38,7 +34,7 @@ div[data-markdown-content] ol li {
 
 div[data-markdown-content] ol li::before {
   content: counter(item) '.';
-  @apply mr-2 font-mono text-neutral-600 dark:text-neutral-400;
+  @apply shrink-0 pr-2 font-mono text-neutral-600 dark:text-neutral-400;
 }
 
 div[data-markdown-content] ol ol {
@@ -52,5 +48,19 @@ div[data-markdown-content] ol ol li {
 
 div[data-markdown-content] ol ol li::before {
   content: counter(item) '.' counter(subitem) '.';
+  @apply font-mono;
+}
+
+div[data-markdown-content] ol ol ol {
+  @apply ml-6;
+  counter-reset: subsubitem;
+}
+
+div[data-markdown-content] ol ol ol li {
+  counter-increment: subsubitem;
+}
+
+div[data-markdown-content] ol ol ol li::before {
+  content: counter(item) '.' counter(subitem) '.' counter(subsubitem) '.';
   @apply font-mono;
 }
