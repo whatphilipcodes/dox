@@ -8,6 +8,10 @@ import { collections } from '../content.config';
 import Icon from '../../public/favicon.svg';
 
 const collectionsList = Object.keys(collections);
+
+// add pages that are not a collection
+collectionsList.unshift('download');
+
 const currentPath = Astro.url.pathname;
 
 // Helper function to check if link is active
