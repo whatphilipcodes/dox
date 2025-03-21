@@ -4,8 +4,11 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 
+import remarkMath from 'remark-math';
+
 import tailwindcss from '@tailwindcss/vite';
 import rehypeWrapAll from 'rehype-wrap-all';
+import rehypeKatex from 'rehype-katex';
 
 // import expressiveConfig from './src/utils/expressiveCode/expressiveConfig.ts';
 import { SITE_URL } from './src/consts.ts';
@@ -16,7 +19,9 @@ import expressiveCode from 'astro-expressive-code';
 export default defineConfig({
   site: SITE_URL,
   markdown: {
+    remarkPlugins: [remarkMath],
     rehypePlugins: [
+      rehypeKatex,
       [rehypeWrapAll, { selector: 'table', wrapper: 'div.responsive-table' }],
     ],
   },

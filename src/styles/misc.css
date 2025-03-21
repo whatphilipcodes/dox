@@ -33,5 +33,5 @@ hr {
 }
 
 img {
-  @apply rounded-md;
+  @apply rounded-md border border-neutral-600;
 }

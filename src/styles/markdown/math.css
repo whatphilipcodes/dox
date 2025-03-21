@@ -1,0 +1,13 @@
+@import '../tailwind.css';
+
+.katex-display {
+  @apply overflow-y-auto rounded-md border border-neutral-300 p-4 text-left dark:border-neutral-800;
+}
+
+.katex-html {
+  @apply text-left;
+}
+
+.katex-html .base {
+  @apply inline-block text-left;
+}
