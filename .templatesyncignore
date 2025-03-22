@@ -1,9 +1,13 @@
+# https://github.com/AndreasAugustin/actions-template-sync#ignore-files:
+# due to the ignore being handled by remark !unignores have to be prepended with
+# :!your/ignore/
+
 # workflows
 .github/workflows/*
 
 # public
 public/*
-!public/fonts
+:!public/fonts/**
 
 # assets
 src/assets/*
