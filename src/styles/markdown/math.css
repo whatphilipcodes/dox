@@ -11,3 +11,7 @@
 .katex-html .base {
   @apply inline-block text-left;
 }
+
+div[data-markdown-content] :not(.katex-display) > .katex {
+  @apply rounded-sm bg-neutral-300 px-1 dark:bg-neutral-800;
+}
