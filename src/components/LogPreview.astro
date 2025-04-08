@@ -1,4 +1,5 @@
 ---
+import Tag from './Tag.astro';
 import Link from './Link.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { getCollection } from 'astro:content';
@@ -18,10 +19,10 @@ if (limit && preview.length > limit) {
 ---
 
 <section>
-  <div>
+  <div class='flex flex-col gap-y-2'>
     {
       preview.map((post) => (
-        <div class='flex flex-row gap-4 truncate'>
+        <div class='flex flex-row flex-wrap gap-x-4 gap-y-2'>
           <FormattedDate date={post.data.created} />
           <Link href={`/log/${post.id}/`}>
             <div class='title text-ellipsis'>
@@ -30,6 +31,11 @@ if (limit && preview.length > limit) {
                 : post.data.title}
             </div>
           </Link>
+          <div class='flex w-full flex-row gap-x-2 md:w-fit'>
+            {post.data.tags?.map((tag) => (
+              <Tag>{tag}</Tag>
+            ))}
+          </div>
         </div>
       ))
     }
