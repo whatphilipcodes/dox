@@ -1,7 +1,7 @@
 ---
 import MarkdownWrapper from '../../components/MarkdownWrapper.astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
-import ArticleFullPage from '../../layouts/ArticleFullPage.astro';
+import LogEntry from '../../layouts/LogEntry.astro';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -16,6 +16,6 @@ const log: Props = Astro.props;
 const { Content } = await render(log);
 ---
 
-<ArticleFullPage {...log.data}>
+<LogEntry {...log.data}>
   <MarkdownWrapper><Content /></MarkdownWrapper>
-</ArticleFullPage>
+</LogEntry>

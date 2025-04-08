@@ -33,7 +33,7 @@ if (limit && preview.length > limit) {
           </Link>
           <div class='flex w-full flex-row gap-x-2 md:w-fit'>
             {post.data.tags?.map((tag) => (
-              <Tag>{tag}</Tag>
+              <Tag name={tag} />
             ))}
           </div>
         </div>
