@@ -1,23 +1,23 @@
 ---
 import Tag from './Tag.astro';
 import { getSortedTags } from '../utils/log-data';
-const tags = await getSortedTags();
 
-const currentRoute = Astro.url.pathname;
+interface Props {
+  activeTag?: string;
+}
 
-const currentTag = currentRoute.startsWith('/tags/')
-  ? currentRoute.split('/tags/')[1]
-  : null;
+const { activeTag } = Astro.props as Props;
+const all = await getSortedTags();
 ---
 
 <section>
   <div class='flex w-full flex-row flex-wrap gap-2 md:w-fit'>
-    <Tag name='all' active={currentRoute === '/log/'} href='/log/' />
+    <Tag name='all' active={activeTag === 'all'} href='/log/' />
     {
-      tags.map((tag) => (
+      all.map((tag) => (
         <Tag
           name={tag.tag}
-          active={currentTag === tag.tag}
+          active={activeTag === tag.tag}
           href={`/tags/${tag.tag}`}
         />
       ))
