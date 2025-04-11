@@ -41,7 +41,9 @@ const LogEntryPreview: FC<LogEntryPreviewProps> = ({ log }) => {
   return (
     <div ref={containerRef} className='relative hidden h-full w-full md:block'>
       <div
-        className={`pointer-events-none absolute z-50 w-96 transform rounded-lg bg-neutral-300 p-3 shadow-lg transition-all duration-300 ease-in-out dark:bg-neutral-700 ${isHovering ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}
+        className={`pointer-events-none absolute z-50 w-96 !transform rounded-lg bg-neutral-300/80 p-3 shadow-lg backdrop-blur-xs !transition !duration-150 dark:bg-neutral-700/80 ${
+          isHovering ? 'scale-100 opacity-100' : 'scale-80 opacity-0'
+        }`}
         style={{
           top: mousePosition.y + 16,
           left: mousePosition.x + 16,
