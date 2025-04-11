@@ -1,0 +1,26 @@
+---
+import Tag from './Tag.astro';
+import { getSortedTags } from '../utils/log-data';
+const tags = await getSortedTags();
+
+const currentRoute = Astro.url.pathname;
+
+const currentTag = currentRoute.startsWith('/tags/')
+  ? currentRoute.split('/tags/')[1]
+  : null;
+---
+
+<section>
+  <div class='flex w-full flex-row gap-x-2 md:w-fit'>
+    <Tag name='all' active={currentRoute === '/log/'} href='/log/' />
+    {
+      tags.map((tag) => (
+        <Tag
+          name={tag.tag}
+          active={currentTag === tag.tag}
+          href={`/tags/${tag.tag}`}
+        />
+      ))
+    }
+  </div>
+</section>

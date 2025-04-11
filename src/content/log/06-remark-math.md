@@ -2,6 +2,8 @@
 title: adding math equations
 description: 'math support through remark math and rehype katex'
 created: 2025-03-21 00:00
+tags: [guide]
+draft: false
 ---
 
 Adding mathematical equations to your content can greatly enhance technical documentation. Using [remark-math](https://github.com/remarkjs/remark-math) and [rehype-katex](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-katex), you can easily incorporate beautiful math equations rendered by KaTeX.

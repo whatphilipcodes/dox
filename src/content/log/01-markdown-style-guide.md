@@ -2,6 +2,8 @@
 title: Markdown Style Guide
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
 created: 2025-02-01 00:00
+tags: [cc-one, guide]
+draft: false
 ---
 
 ### Basic Text Formatting

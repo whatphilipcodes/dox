@@ -2,6 +2,8 @@
 title: dox release
 description: 'the easy to use solution for university project documentations'
 created: 2025-02-28 00:00
+tags: [cc-one, announcement]
+draft: false
 ---
 
 - Simple template to create documentation-style static websites from .md(x) files.
