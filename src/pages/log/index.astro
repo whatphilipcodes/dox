@@ -1,8 +1,15 @@
 ---
 import Basic from '../../layouts/Basic.astro';
-import LogPreview from '../../components/LogPreview.astro';
+import LogListDisplay from '../../components/LogListDisplay.astro';
+import TagSelector from '../../components/TagSelector.astro';
+
+import { getAllLogs } from '../../utils/log-data';
+const logs = await getAllLogs();
 ---
 
 <Basic>
-  <LogPreview />
+  <div class='flex flex-col gap-4'>
+    <TagSelector />
+    <LogListDisplay logs={logs} />
+  </div>
 </Basic>

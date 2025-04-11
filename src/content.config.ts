@@ -6,6 +6,7 @@ const baseSchema = z.object({
   created: z.coerce.date(),
   description: z.string().optional(),
   tags: z.array(z.string()).optional(),
+  draft: z.boolean().optional(),
 });
 
 const timeStep = z.object({

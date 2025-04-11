@@ -2,37 +2,28 @@
 import Tag from './Tag.astro';
 import Link from './Link.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import { lowercaseTitles } from '../consts';
 
 interface Props {
-  limit?: number;
+  logs: CollectionEntry<'log'>[];
 }
-
-const { limit } = Astro.props as Props;
-const preview = (await getCollection('log')).sort(
-  (a, b) => b.data.created.valueOf() - a.data.created.valueOf(),
-);
-if (limit && preview.length > limit) {
-  preview.splice(limit);
-}
+const { logs } = Astro.props as Props;
 ---
 
 <section>
   <div class='flex flex-col gap-y-2'>
     {
-      preview.map((post) => (
+      logs.map((log) => (
         <div class='flex flex-row flex-wrap gap-x-4 gap-y-2'>
-          <FormattedDate date={post.data.created} />
-          <Link href={`/log/${post.id}/`}>
+          <FormattedDate date={log.data.created} />
+          <Link href={`/log/${log.id}/`}>
             <div class='title text-ellipsis'>
-              {lowercaseTitles
-                ? post.data.title.toLowerCase()
-                : post.data.title}
+              {lowercaseTitles ? log.data.title.toLowerCase() : log.data.title}
             </div>
           </Link>
           <div class='flex w-full flex-row gap-x-2 md:w-fit'>
-            {post.data.tags?.map((tag) => (
+            {log.data.tags?.map((tag) => (
               <Tag name={tag} />
             ))}
           </div>

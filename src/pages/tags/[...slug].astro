@@ -1,0 +1,34 @@
+---
+import Basic from '../../layouts/Basic.astro';
+import LogListDisplay from '../../components/LogListDisplay.astro';
+import TagSelector from '../../components/TagSelector.astro';
+
+import { getAllTags, getLogsByTag } from '../../utils/log-data';
+
+export async function getStaticPaths() {
+  const tagMap = await getAllTags();
+  const uniqueTags = Array.from(tagMap.keys());
+
+  return Promise.all(
+    uniqueTags.map(async (tag) => {
+      const logs = await getLogsByTag(tag);
+      return {
+        params: { slug: tag },
+        props: {
+          tag,
+          logs,
+        },
+      };
+    }),
+  );
+}
+
+const { logs } = Astro.props;
+---
+
+<Basic>
+  <div class='flex flex-col gap-4'>
+    <TagSelector />
+    <LogListDisplay logs={logs} />
+  </div>
+</Basic>

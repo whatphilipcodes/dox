@@ -20,6 +20,8 @@ Features:
 
 Based on [Astro's](https://astro.build/) [Blog Example](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog), the docs are built using [React](https://react.dev/), [Vite](https://vitejs.dev/), [MDX](https://mdxjs.com/), and [Tailwind CSS](https://tailwindcss.com/). Refer to respective documentations for more information.
 
+Certain architectural decisions (eg. tags) have taken strong inspiration from [astro-erudite](https://github.com/jktrn/astro-erudite) which I stumbled across after starting dox. If you are looking for a more comprehensive blogging template make sure to check that out as well.
+
 ---
 
 ### known issues

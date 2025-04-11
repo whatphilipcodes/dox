@@ -3,6 +3,7 @@ title: make your index a home
 description: 'landing page styling guide'
 created: 2025-02-22 00:00
 tags: [cc-one, guide]
+draft: false
 ---
 
 > Here you can control what users will see when they open your documentation.
