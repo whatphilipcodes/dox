@@ -23,12 +23,12 @@ export async function getStaticPaths() {
   );
 }
 
-const { logs } = Astro.props;
+const { logs, tag } = Astro.props;
 ---
 
 <Basic>
   <div class='flex flex-col gap-4'>
-    <TagSelector />
+    <TagSelector activeTag={tag} />
     <LogListDisplay logs={logs} />
   </div>
 </Basic>
