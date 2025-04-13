@@ -44,12 +44,17 @@ const isActive = (path: string) => {
       >
         {
           collectionsList.map((collection) => (
-            <Link
-              href={`/${collection}/`}
-              class={`flex ${isActive(`/${collection}/`) ? 'text-neutral-500 dark:text-neutral-400' : ''}`}
-            >
-              {collection}
-            </Link>
+            <div class='relative h-full'>
+              <Link
+                href={`/${collection}/`}
+                class={`flex ${isActive(`/${collection}/`) ? 'text-neutral-500 dark:text-neutral-400' : ''}`}
+              >
+                {collection}
+              </Link>
+              {isActive(`/${collection}/`) && (
+                <div class='bg-cynder-500 absolute h-0.5 w-full' />
+              )}
+            </div>
           ))
         }
         <Link href={GITHUB_URL}>github</Link>
