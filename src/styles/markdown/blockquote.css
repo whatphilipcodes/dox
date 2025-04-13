@@ -5,5 +5,5 @@ div[data-markdown-content] blockquote {
 }
 
 div[data-markdown-content] blockquote::before {
-  @apply bg-cynder-500 absolute top-0 bottom-0 left-0 w-0.5 rounded-full content-[''];
+  @apply bg-secondary-500 absolute top-0 bottom-0 left-0 w-0.5 rounded-full content-[''];
 }

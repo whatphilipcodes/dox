@@ -6,7 +6,7 @@ const baseStyles =
   'twd cursor-pointer flex flex-row flex-nowrap justify-center gap-2 items-center rounded-md py-2 px-4 no-underline!';
 const variantStyles = {
   primary:
-    'twd dark:border-mint-500 dark:text-mint-500 dark:hover:bg-mint-500/10 dark:active:bg-mint-500/20 border border-neutral-900 text-neutral-900 ease-out hover:bg-neutral-300 active:bg-neutral-400',
+    'twd dark:border-primary-500 dark:text-primary-500 dark:hover:bg-primary-500/10 dark:active:bg-primary-500/20 border border-neutral-900 text-neutral-900 ease-out hover:bg-neutral-300 active:bg-neutral-400',
   secondary:
     'twd bg-neutral-300/50 ease-out hover:bg-neutral-300 active:bg-neutral-400 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:active:bg-neutral-600',
 };

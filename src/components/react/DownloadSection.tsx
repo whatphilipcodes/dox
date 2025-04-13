@@ -46,7 +46,7 @@ const DownloadSection = ({ repository, title }: Props) => {
   return (
     <>
       <div className='flex flex-col gap-4 rounded-md border border-neutral-300 p-4 dark:border-neutral-800'>
-        <div className='dark:text-mint-500 font-mono font-bold'>
+        <div className='dark:text-primary-500 font-mono font-bold'>
           {releases[0].name}
         </div>
         <MarkdownWrapperTSX>
@@ -90,7 +90,7 @@ const DownloadSection = ({ repository, title }: Props) => {
                       <a
                         key={asset.id}
                         href={asset.browser_download_url}
-                        className='decoration-mint-500 dark:text-mint-500 underline'
+                        className='decoration-primary-500 dark:text-primary-500 underline'
                         target='_blank'
                       >
                         {asset.name}
@@ -99,7 +99,7 @@ const DownloadSection = ({ repository, title }: Props) => {
                   ) : (
                     <a
                       href={release.html_url}
-                      className='decoration-mint-500 dark:text-mint-500 underline'
+                      className='decoration-primary-500 dark:text-primary-500 underline'
                       target='_blank'
                     >
                       view release
