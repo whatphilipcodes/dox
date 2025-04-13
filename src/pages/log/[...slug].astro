@@ -1,11 +1,12 @@
 ---
 import MarkdownWrapper from '../../components/MarkdownWrapper.astro';
-import { type CollectionEntry, getCollection } from 'astro:content';
 import LogEntry from '../../layouts/LogEntry.astro';
+import { type CollectionEntry } from 'astro:content';
+import { getAllLogs } from '../../utils/log-data';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const logs = await getCollection('log');
+  const logs = await getAllLogs();
   return logs.map((log) => ({
     params: { slug: log.id },
     props: log,

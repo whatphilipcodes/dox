@@ -56,9 +56,9 @@ div[data-markdown-content] code {
 }
 
 div[data-markdown-content] mark {
-  @apply bg-mint-500 rounded-sm px-1;
+  @apply bg-primary-500 rounded-sm px-1;
 }
 
 div[data-markdown-content] a {
-  @apply decoration-mint-500 dark:text-mint-500 underline underline-offset-4;
+  @apply decoration-primary-500 dark:text-primary-500 underline underline-offset-4;
 }

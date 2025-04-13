@@ -1,9 +1,9 @@
 ---
-import Basic from '../../layouts/Basic.astro';
-import LogListDisplay from '../../components/LogListDisplay.astro';
-import TagSelector from '../../components/TagSelector.astro';
+import Basic from '../../../layouts/Basic.astro';
+import LogListDisplay from '../../../components/LogListDisplay.astro';
+import TagSelector from '../../../components/TagSelector.astro';
 
-import { getAllTags, getLogsByTag } from '../../utils/log-data';
+import { getAllTags, getLogsByTag } from '../../../utils/log-data';
 
 export async function getStaticPaths() {
   const tagMap = await getAllTags();

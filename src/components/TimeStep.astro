@@ -24,9 +24,9 @@ const { Content } = await render(step);
       class:list={[
         'w-0.5 rounded-sm md:hidden',
         {
-          'bg-mint-500': status === 'completed',
+          'bg-primary-500': status === 'completed',
         },
-        { 'bg-cynder-500': status === 'active' },
+        { 'bg-secondary-500': status === 'active' },
         {
           'bg-neutral-300 dark:bg-neutral-800': status === 'planned',
         },
@@ -39,9 +39,9 @@ const { Content } = await render(step);
         class:list={[
           'ml-2 hidden h-full w-0.5 rounded-sm md:block',
           {
-            'bg-mint-500': status === 'completed',
+            'bg-primary-500': status === 'completed',
           },
-          { 'bg-cynder-500': status === 'active' },
+          { 'bg-secondary-500': status === 'active' },
           {
             'bg-neutral-300 dark:bg-neutral-800': status === 'planned',
           },

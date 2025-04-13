@@ -2,7 +2,7 @@
 
 /* in-text */
 div[data-markdown-content] a[data-footnote-ref] {
-  @apply dark:text-mint-500 pl-0.5 underline-offset-2;
+  @apply dark:text-primary-500 pl-0.5 underline-offset-2;
 }
 
 /* footnote section (page end); counter see ol style -> ./list.css */
