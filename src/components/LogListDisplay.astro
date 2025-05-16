@@ -16,22 +16,24 @@ const { logs } = Astro.props as Props;
   <div class='flex flex-col gap-y-4'>
     {
       logs.map((log) => (
-        <div class='relative flex flex-row flex-wrap gap-x-4 gap-y-2 rounded-md p-4 ring ring-neutral-300 dark:ring-neutral-800'>
-          <FormattedDate date={log.data.created} />
-          <Link href={`/log/${log.id}/`} class='relative'>
+          <Link href={`/log/${log.id}/`} class="relative rounded-md p-4 ring ring-neutral-300 dark:ring-neutral-800">
             <div class='absolute h-full w-full'>
-              <LogEntryPreview client:load log={log} />
+                  <LogEntryPreview client:load log={log} />
             </div>
-            <div class='title text-ellipsis'>
-              {lowercaseTitles ? log.data.title.toLowerCase() : log.data.title}
+            <div class="flex flex-row flex-wrap gap-x-4 gap-y-2">
+              <FormattedDate date={log.data.created} />
+              <div class='title text-ellipsis'>
+                  {lowercaseTitles
+                    ? log.data.title.toLowerCase()
+                    : log.data.title}
+                </div>
+                <div class='flex w-full flex-row gap-x-2 md:w-fit'>
+                  {log.data.tags?.map((tag) => (
+                    <Tag name={tag} />
+                  ))}
+                </div>
             </div>
           </Link>
-          <div class='flex w-full flex-row gap-x-2 md:w-fit'>
-            {log.data.tags?.map((tag) => (
-              <Tag name={tag} />
-            ))}
-          </div>
-        </div>
       ))
     }
   </div>

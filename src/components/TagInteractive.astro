@@ -1,0 +1,19 @@
+---
+interface Props {
+  name: string;
+  active?: boolean;
+  href?: string;
+}
+
+const { name, active, href } = Astro.props as Props;
+const computed_href = href ?? '/log/tags/' + name;
+---
+
+<a
+  class={`dark:text-secondary-500 cursor-pointer rounded-md px-2 text-neutral-500 inset-ring 
+    hover:bg-neutral-500/20 dark:hover:bg-secondary-500/20 active:bg-transparent dark:active:bg-transparent 
+    ${active ? 'bg-neutral-500/20 dark:bg-secondary-500/20' : ''}`}
+  href={computed_href}
+>
+  {name}
+</a>

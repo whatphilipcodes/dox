@@ -1,5 +1,5 @@
 ---
-import Tag from './Tag.astro';
+import TagInteractive from './TagInteractive.astro';
 import { getSortedTags } from '../utils/log-data';
 
 interface Props {
@@ -12,10 +12,10 @@ const all = await getSortedTags();
 
 <section>
   <div class='flex w-full flex-row flex-wrap gap-2 md:w-fit'>
-    <Tag name='all' active={activeTag === 'all'} href='/log/' />
+    <TagInteractive name='all' active={activeTag === 'all'} href='/log/' />
     {
       all.map((tag) => (
-        <Tag
+        <TagInteractive
           name={tag.tag}
           active={activeTag === tag.tag}
           href={`/log/tags/${tag.tag}`}
