@@ -6,7 +6,7 @@ const pageConfig: PageOptions = {
 		height: 1080,
 		printBackground: true,
 	},
-	path: 'test.pdf',
+	path: 'download/pdf/test.pdf',
 	waitUntil: 'networkidle0',
 	screen: false,
 };

@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import pdfConfig from './src/utils/pdf-config.ts';
 import { SITE_URL } from './src/consts.ts';
 
+import metawrite from './src/utils/meta-write.ts';
 import expressiveCode from 'astro-expressive-code';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
@@ -25,7 +26,14 @@ export default defineConfig({
 			[rehypeWrapAll, { selector: 'table', wrapper: 'div.responsive-table' }],
 		],
 	},
-	integrations: [react(), expressiveCode(), mdx(), sitemap(), pdf(pdfConfig)],
+	integrations: [
+		react(),
+		expressiveCode(),
+		mdx(),
+		sitemap(),
+		pdf(pdfConfig),
+		metawrite(),
+	],
 	experimental: {
 		responsiveImages: true,
 	},
