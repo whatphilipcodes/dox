@@ -10,7 +10,6 @@ import tailwindcss from '@tailwindcss/vite';
 import rehypeWrapAll from 'rehype-wrap-all';
 import rehypeKatex from 'rehype-katex';
 
-// import expressiveConfig from './src/utils/expressiveCode/expressiveConfig.ts';
 import { SITE_URL } from './src/consts.ts';
 
 import expressiveCode from 'astro-expressive-code';
@@ -28,10 +27,6 @@ export default defineConfig({
   integrations: [react(), expressiveCode(), mdx(), sitemap()],
   experimental: {
     responsiveImages: true,
-    svg: true,
-  },
-  image: {
-    experimentalLayout: 'responsive',
   },
   server: {
     host: true,
