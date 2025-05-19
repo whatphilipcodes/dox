@@ -1,8 +1,7 @@
 import type { GithubRelease } from 'github-data';
-import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import MarkdownWrapperTSX from './MarkdownWrapperTSX';
 import Button from './Button';
+import MarkdownWrapperTSX from './MarkdownWrapperTSX';
 import useFetch from './hooks/useFetch';
 
 interface Props {
