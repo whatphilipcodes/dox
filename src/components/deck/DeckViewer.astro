@@ -1,0 +1,13 @@
+---
+import '../../styles/decks.css';
+import { type CollectionEntry, render } from 'astro:content';
+
+type Props = {
+	deck: CollectionEntry<'deck'>;
+};
+const { deck } = Astro.props;
+const { Content, headings } = await render(deck);
+---
+<div class="deck-container">
+  <Content/>
+</div>

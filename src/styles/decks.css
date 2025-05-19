@@ -1,0 +1,23 @@
+.deck-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.slide {
+	background-color: cadetblue;
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 16 / 9;
+	page-break-after: always;
+	box-sizing: border-box;
+	padding: 2rem;
+}
+@media print {
+	body.pdf-mode {
+		margin: 0;
+	}
+	.slide {
+		page-break-after: always;
+	}
+}
