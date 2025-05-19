@@ -1,9 +1,9 @@
 import type { GithubRelease } from 'github-data';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import MarkdownWrapperTSX from './MarkdownWrapperTSX';
-
 import Button from './Button';
+import useFetch from './hooks/useFetch';
 
 interface Props {
 	repository: string;
@@ -12,28 +12,21 @@ interface Props {
 
 const DownloadSection = ({ repository, title }: Props) => {
 	const repoURL = new URL(repository);
-	const [loading, setLoading] = useState(true);
-	const [releases, setReleases] = useState<GithubRelease[] | undefined>(
-		undefined,
-	);
+	const apiUrl = `https://api.github.com/repos${repoURL.pathname}/releases`;
 
-	useEffect(() => {
-		const fetchData = async () => {
-			await fetchReleases(repoURL).then((result: GithubRelease[]) => {
-				if (!result || !result.length)
-					console.log(
-						`Your releases could not be fetched from GitHub. Does your repository '${repository}' have public releases?`,
-					);
-				setReleases(result);
-				setLoading(false);
-			});
-		};
-		fetchData();
-	}, [repoURL, repository]);
+	const { data: releases, loading, error } = useFetch<GithubRelease[]>(apiUrl);
 
 	if (loading) {
 		return (
 			<div className="text-neutral-500 dark:text-neutral-600">loading...</div>
+		);
+	}
+
+	if (error) {
+		return (
+			<div className="text-red-500">
+				Error fetching releases: {error.message}
+			</div>
 		);
 	}
 
@@ -118,23 +111,5 @@ const DownloadSection = ({ repository, title }: Props) => {
 		</>
 	);
 };
-export default DownloadSection;
 
-const fetchReleases = async (repoURL: URL) => {
-	try {
-		const response = await fetch(
-			`https://api.github.com/repos${repoURL.pathname}/releases`,
-			{
-				headers: {
-					Accept: 'application/vnd.github+json',
-				},
-			},
-		);
-		if (!response.ok) {
-			throw new Error(`Failed to fetch releases: ${response.statusText}`);
-		}
-		return await response.json();
-	} catch (error) {
-		console.error('Error fetching releases:', error);
-	}
-};
+export default DownloadSection;
