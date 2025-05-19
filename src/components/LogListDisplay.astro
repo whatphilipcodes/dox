@@ -1,13 +1,13 @@
 ---
-import Tag from './Tag.astro';
-import Link from './Link.astro';
-import LogEntryPreview from './react/LogEntryPreview';
-import FormattedDate from '../components/FormattedDate.astro';
 import type { CollectionEntry } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
 import { lowercaseTitles } from '../consts';
+import Link from './Link.astro';
+import Tag from './Tag.astro';
+import LogEntryPreview from './react/LogEntryPreview';
 
 interface Props {
-  logs: CollectionEntry<'log'>[];
+	logs: CollectionEntry<'log'>[];
 }
 const { logs } = Astro.props as Props;
 ---

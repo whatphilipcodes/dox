@@ -1,5 +1,5 @@
-import { type FC, useState, useRef, useEffect, useCallback } from 'react';
 import type { CollectionEntry } from 'astro:content';
+import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 
 interface LogEntryPreviewProps {
 	log: CollectionEntry<'log'>;

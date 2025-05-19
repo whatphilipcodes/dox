@@ -1,7 +1,7 @@
-import * as THREE from 'three';
+import { animated, useSpring } from '@react-spring/three';
 import type { ThreeElements, ThreeEvent } from '@react-three/fiber';
 import { useState } from 'react';
-import { useSpring, animated } from '@react-spring/three';
+import * as THREE from 'three';
 
 type AtomProps = ThreeElements['mesh'] & {
 	color: THREE.Color;

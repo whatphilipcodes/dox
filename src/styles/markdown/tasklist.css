@@ -1,13 +1,13 @@
 @import '../tailwind.css';
 
 .contains-task-list {
-  @apply list-none;
+	@apply list-none;
 }
 
 .task-list-item {
-  @apply flex flex-row gap-4 text-wrap;
+	@apply flex flex-row gap-4 text-wrap;
 }
 
 .task-list-item input[type='checkbox'] {
-  @apply mt-1.5 flex-shrink-0 !self-start;
+	@apply mt-1.5 flex-shrink-0 !self-start;
 }

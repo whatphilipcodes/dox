@@ -1,6 +1,6 @@
-import type { AstroIntegrationLogger, AstroIntegration } from 'astro';
-import { SITE_AUTHOR } from '../consts';
+import type { AstroIntegration, AstroIntegrationLogger } from 'astro';
 import { ExifTool } from 'exiftool-vendored';
+import { SITE_AUTHOR } from '../consts';
 
 const metawrite = (): AstroIntegration => ({
 	name: 'meta-write',

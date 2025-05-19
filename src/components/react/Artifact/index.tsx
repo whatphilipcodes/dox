@@ -1,6 +1,6 @@
-import { type FC, useState, useEffect } from 'react';
+import { animated, useSpring } from '@react-spring/three';
 import { Canvas, useThree } from '@react-three/fiber';
-import { useSpring, animated } from '@react-spring/three';
+import { type FC, useEffect, useState } from 'react';
 
 import { ArtifactSeed } from './ArtifactSeed';
 import Atom from './Atom';

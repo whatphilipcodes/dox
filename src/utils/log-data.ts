@@ -1,5 +1,5 @@
 // as seen here: https://github.com/jktrn/astro-erudite/blob/main/src/lib/data-utils.ts
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 
 export const getAllLogs = async (): Promise<CollectionEntry<'log'>[]> => {
 	const logs = await getCollection('log');

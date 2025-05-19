@@ -1,17 +1,17 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import pdfConfig from './src/utils/pdf-config.ts';
 import { SITE_URL } from './src/consts.ts';
+import pdfConfig from './src/utils/pdf-config.ts';
 
-import metawrite from './src/utils/meta-write.ts';
-import expressiveCode from 'astro-expressive-code';
-import sitemap from '@astrojs/sitemap';
-import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
+import expressiveCode from 'astro-expressive-code';
 import pdf from 'astro-pdf';
+import metawrite from './src/utils/meta-write.ts';
 
-import rehypeWrapAll from 'rehype-wrap-all';
 import rehypeKatex from 'rehype-katex';
+import rehypeWrapAll from 'rehype-wrap-all';
 import remarkMath from 'remark-math';
 
 import tailwindcss from '@tailwindcss/vite';

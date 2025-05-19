@@ -1,12 +1,12 @@
 ---
 interface Props {
-  name: string;
-  active?: boolean;
-  href?: string;
+	name: string;
+	active?: boolean;
+	href?: string;
 }
 
 const { name, active, href } = Astro.props as Props;
-const computed_href = href ?? '/log/tags/' + name;
+const computed_href = href ?? `/log/tags/${name}`;
 ---
 
 <a

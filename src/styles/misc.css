@@ -1,37 +1,37 @@
 @import './tailwind.css';
 
 * {
-  @apply transition-[background-color] duration-300;
+	@apply transition-[background-color] duration-300;
 }
 
 html {
-  @apply scroll-pt-24 overflow-y-scroll;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-  -moz-text-size-adjust: none;
+	@apply scroll-pt-24 overflow-y-scroll;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	-moz-text-size-adjust: none;
 }
 
 body {
-  @apply bg-neutral-200 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-200;
+	@apply bg-neutral-200 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-200;
 }
 
 article {
-  @apply flex flex-col gap-4;
+	@apply flex flex-col gap-4;
 }
 
 section {
-  @apply flex flex-col gap-4;
+	@apply flex flex-col gap-4;
 }
 
 hr {
-  @apply border-neutral-300 dark:border-neutral-800;
+	@apply border-neutral-300 dark:border-neutral-800;
 }
 
 /* fx: hide copied message behind header */
 .feedback {
-  @apply !z-10;
+	@apply !z-10;
 }
 
 img {
-  @apply rounded-md border border-neutral-600;
+	@apply rounded-md border border-neutral-600;
 }

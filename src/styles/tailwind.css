@@ -1,9 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 /* dark mode variant creates css syntax error warning during build but is recommended by  tailwindcss: https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually */
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
-	--font-sans: "Geist";
-	--font-mono: "GeistMono";
+	--font-sans: 'Geist';
+	--font-mono: 'GeistMono';
 
 	--color-primary-50: oklch(99.17% 0.011 176.33);
 	--color-primary-100: oklch(98.4% 0.022 179.22);

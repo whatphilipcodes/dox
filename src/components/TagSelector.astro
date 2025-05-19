@@ -1,9 +1,9 @@
 ---
-import TagInteractive from './TagInteractive.astro';
 import { getSortedTags } from '../utils/log-data';
+import TagInteractive from './TagInteractive.astro';
 
 interface Props {
-  activeTag?: string;
+	activeTag?: string;
 }
 
 const { activeTag } = Astro.props as Props;

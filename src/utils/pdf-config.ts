@@ -2,8 +2,8 @@ import type { Options, PageOptions } from 'astro-pdf';
 
 const pageConfig: PageOptions = {
 	pdf: {
-		width: 1920,
-		height: 1080,
+		width: 1200,
+		height: 720,
 		printBackground: true,
 	},
 	path: 'download/pdf/test.pdf',
@@ -11,6 +11,6 @@ const pageConfig: PageOptions = {
 	screen: false,
 };
 const pdfConfig: Options = {
-	pages: { '/': pageConfig },
+	pages: { '/dex/': pageConfig },
 };
 export default pdfConfig;

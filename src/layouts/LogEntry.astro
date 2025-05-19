@@ -1,9 +1,9 @@
 ---
-import TagInteractive from '../components/TagInteractive.astro';
 import type { CollectionEntry } from 'astro:content';
-import Basic from './Basic.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import TagInteractive from '../components/TagInteractive.astro';
 import { lowercaseTitles } from '../consts';
+import Basic from './Basic.astro';
 
 type Props = CollectionEntry<'log'>['data'];
 const { title, description, created, tags } = Astro.props;

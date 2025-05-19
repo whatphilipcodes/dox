@@ -1,4 +1,4 @@
-import { defineCollection, z, type CollectionEntry } from 'astro:content'; // without type CollectionEntry things break (astro 5.4.1)
+import { type CollectionEntry, defineCollection, z } from 'astro:content'; // without type CollectionEntry things break (astro 5.4.1)
 import { glob } from 'astro/loaders';
 
 const baseSchema = z.object({
@@ -46,9 +46,9 @@ const roadmap = defineCollection({
 	schema: timeStepSchema,
 });
 
-const deck = defineCollection({
-	loader: glob({ pattern: '**/*.mdx', base: './src/content/deck' }),
+const dex = defineCollection({
+	loader: glob({ pattern: '**/*.mdx', base: './src/content/dex' }),
 	schema: deckSchema,
 });
 
-export const collections = { log, manual, roadmap, deck };
+export const collections = { log, manual, roadmap, dex };

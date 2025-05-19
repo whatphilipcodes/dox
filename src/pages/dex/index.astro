@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+import DeckViewer from '../../components/dex/DeckViewer.astro';
+import Basic from '../../layouts/Basic.astro';
+
+const dex = await getCollection('dex');
+---
+<Basic title="dex" description="presentation viewer">
+	<DeckViewer deck={dex[0]} />
+</Basic>

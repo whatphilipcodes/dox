@@ -9,14 +9,14 @@ import '../../styles/markdown/katex.css';
 import '../../styles/markdown/math.css';
 
 interface Props {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 const MarkdownWrapperTSX = ({ children }: Props) => {
-  return (
-    <div data-markdown-content className='flex flex-col gap-4'>
-      {children}
-    </div>
-  );
+	return (
+		<div data-markdown-content className="flex flex-col gap-4">
+			{children}
+		</div>
+	);
 };
 export default MarkdownWrapperTSX;

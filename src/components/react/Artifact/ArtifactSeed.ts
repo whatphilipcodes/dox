@@ -1,5 +1,5 @@
-import * as THREE from 'three';
 import seedrandom from 'seedrandom';
+import * as THREE from 'three';
 
 export class ArtifactSeed {
 	private svg: string | null = null;

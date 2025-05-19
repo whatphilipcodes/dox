@@ -2,65 +2,65 @@
 
 div[data-markdown-content] ul,
 .contains-task-list {
-  @apply list-inside list-disc;
+	@apply list-inside list-disc;
 }
 
 div[data-markdown-content] ul ul {
-  @apply relative pl-6;
+	@apply relative pl-6;
 }
 
 div[data-markdown-content] ul ul::before {
-  content: '';
-  @apply absolute top-0 left-[2px] h-full w-px bg-neutral-400 dark:bg-neutral-600;
+	content: '';
+	@apply absolute top-0 left-[2px] h-full w-px bg-neutral-400 dark:bg-neutral-600;
 }
 
 div[data-markdown-content] li {
-  @apply mt-1 mb-1;
+	@apply mt-1 mb-1;
 }
 
 div[data-markdown-content] li:not(.task-list-item) {
-  @apply ml-[3px];
+	@apply ml-[3px];
 }
 
 div[data-markdown-content] ol {
-  @apply list-inside;
-  counter-reset: item;
+	@apply list-inside;
+	counter-reset: item;
 }
 
 div[data-markdown-content] ol li {
-  counter-increment: item;
-  @apply mt-1 mb-1;
+	counter-increment: item;
+	@apply mt-1 mb-1;
 }
 
 div[data-markdown-content] ol li::before {
-  content: counter(item) '.';
-  @apply shrink-0 pr-2 font-mono text-neutral-600 dark:text-neutral-400;
+	content: counter(item) '.';
+	@apply shrink-0 pr-2 font-mono text-neutral-600 dark:text-neutral-400;
 }
 
 div[data-markdown-content] ol ol {
-  @apply relative ml-6;
-  counter-reset: subitem;
+	@apply relative ml-6;
+	counter-reset: subitem;
 }
 
 div[data-markdown-content] ol ol li {
-  counter-increment: subitem;
+	counter-increment: subitem;
 }
 
 div[data-markdown-content] ol ol li::before {
-  content: counter(item) '.' counter(subitem) '.';
-  @apply font-mono;
+	content: counter(item) '.' counter(subitem) '.';
+	@apply font-mono;
 }
 
 div[data-markdown-content] ol ol ol {
-  @apply ml-6;
-  counter-reset: subsubitem;
+	@apply ml-6;
+	counter-reset: subsubitem;
 }
 
 div[data-markdown-content] ol ol ol li {
-  counter-increment: subsubitem;
+	counter-increment: subsubitem;
 }
 
 div[data-markdown-content] ol ol ol li::before {
-  content: counter(item) '.' counter(subitem) '.' counter(subsubitem) '.';
-  @apply font-mono;
+	content: counter(item) '.' counter(subitem) '.' counter(subsubitem) '.';
+	@apply font-mono;
 }
