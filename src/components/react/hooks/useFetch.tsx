@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-function useFetch<T>(url: string) {
+const useFetch = <T,>(url: string) => {
 	const [data, setData] = useState<T | null>(null);
-	const [loading, setLoading] = useState<boolean>(true);
+	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<Error | null>(null);
 
 	useEffect(() => {
@@ -12,7 +12,7 @@ function useFetch<T>(url: string) {
 			try {
 				const res = await fetch(url);
 				if (!res.ok) throw new Error('Network response was not ok');
-				const json: T = await res.json();
+				const json = (await res.json()) as T;
 				if (isMounted) setData(json);
 			} catch (err) {
 				if (isMounted) setError(err as Error);
@@ -28,6 +28,6 @@ function useFetch<T>(url: string) {
 	}, [url]);
 
 	return { data, loading, error };
-}
+};
 
 export default useFetch;
