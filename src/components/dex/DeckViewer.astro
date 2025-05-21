@@ -1,5 +1,7 @@
 ---
-import '../../styles/decks.css';
+import '../../styles/dex/theme.css';
+import '../../styles/dex/pdf.css';
+
 import { type CollectionEntry, render } from 'astro:content';
 
 type Props = {
@@ -8,6 +10,6 @@ type Props = {
 const { deck } = Astro.props;
 const { Content, headings } = await render(deck);
 ---
-<div class="deck-container">
+<div class="deck-container pdf">
   <Content/>
 </div>

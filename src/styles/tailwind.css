@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-/* dark mode variant creates css syntax error warning during build but is recommended by  tailwindcss: https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually */
+/* dark mode variant creates css syntax error warning during build but is recommended by  tailwindcss: https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually*/
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
 	--font-sans: 'Geist';
