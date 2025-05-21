@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import expressiveCode from 'astro-expressive-code';
 import pdf from 'astro-pdf';
-import metawrite from './src/utils/meta-write.ts';
+// import metawrite from './src/utils/meta-write.ts';
 
 import rehypeKatex from 'rehype-katex';
 import rehypeWrapAll from 'rehype-wrap-all';
@@ -32,7 +32,7 @@ export default defineConfig({
 		mdx(),
 		sitemap(),
 		pdf(pdfConfig),
-		metawrite(),
+		// metawrite(),
 	],
 	experimental: {
 		responsiveImages: true,
