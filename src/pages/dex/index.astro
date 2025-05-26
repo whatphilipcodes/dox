@@ -1,10 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
-import DeckViewer from '../../components/dex/DeckViewer.astro';
+import { getCollection, render } from 'astro:content';
+// import DeckViewer from '../../components/dex/DeckViewer.astro';
+import Dex from '../../components/react/Dex';
 import Basic from '../../layouts/Basic.astro';
 
 const dex = await getCollection('dex');
+const { Content } = await render(dex[0]);
 ---
+
 <Basic title="dex" description="presentation viewer">
-	<DeckViewer deck={dex[0]} />
+	 <Dex client:load>
+		<Content />
+	 </Dex>
 </Basic>
