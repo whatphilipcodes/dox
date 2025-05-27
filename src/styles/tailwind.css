@@ -29,13 +29,3 @@
 	--color-secondary-900: oklch(31.46% 0.069 57.67);
 	--color-secondary-950: oklch(20.97% 0.042 60.56);
 }
-/* show only elements with pdf-export (including their children) */
-@media print {
-	body * {
-		visibility: hidden !important;
-	}
-	.pdf-export,
-	.pdf-export * {
-		visibility: visible !important;
-	}
-}
