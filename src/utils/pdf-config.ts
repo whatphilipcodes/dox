@@ -3,20 +3,18 @@ import type { Options, PageOptions } from 'astro-pdf';
 import { ExifTool } from 'exiftool-vendored';
 import { SITE_AUTHOR } from '../consts';
 
-const scale = 1.3333333;
-const zoom = 1.2;
-// puppeteer uses 96 dpi instead of 72 to rasterize the pdf, to get the exact resolution in the output we need to multiply with 96 / 72
 const pageConfig = (width: number, height: number) => {
+	// puppeteer uses 96 dpi instead of 72 to rasterize the pdf, to get the exact resolution in the output we need to multiply with 96 / 72
+	const scale = 96 / 72;
 	return {
 		pdf: {
 			width: width * scale,
 			height: height * scale,
 			printBackground: true,
-			displayHeaderFooter: false,
+			scale: scale,
 		},
 		waitUntil: 'networkidle0',
 		throwOnFail: true,
-		screen: false,
 	} as PageOptions;
 };
 
@@ -34,12 +32,11 @@ const pdfConfig = (
 					...pageConfig(width, height),
 					path: join(outDir, `${filename}.pdf`),
 					callback: async (page) => {
-						await page.evaluate((zoomValue: number) => {
+						await page.evaluate(() => {
 							const style = document.createElement('style');
 							style.innerHTML = `
 							  @media print {
 								  body * {
-									  zoom: ${zoomValue};
 									  visibility: hidden !important;
 								  }
 								  .pdf-export,
@@ -49,7 +46,7 @@ const pdfConfig = (
 							  }
 							`;
 							document.head.appendChild(style);
-						}, zoom);
+						});
 					},
 				};
 			}

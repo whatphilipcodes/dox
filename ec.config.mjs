@@ -45,7 +45,9 @@ export default defineEcConfig({
 		},
 		codeBackground: 'var(--color-transparent)',
 		codeFontFamily: 'var(--font-mono)',
+		codeFontSize: 'inherit',
 		uiFontFamily: 'var(--font-sans)',
+		uiFontSize: 'inherit',
 		frames: {
 			shadowColor: 'var(--color-transparent)',
 			inlineButtonBorderOpacity: '0%',
