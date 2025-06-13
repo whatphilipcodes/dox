@@ -1,7 +1,7 @@
 import { useAtom } from 'jotai';
 import { useEffect, useRef } from 'react';
 import WrapperSVG from './wrapperSVG';
-import { registerSlideRefAtom } from '../stores/storeDex';
+import { registerSlideRefAtom, clearSlideRefsAtom } from '../stores/storeDex';
 
 interface SlideProps {
 	layout: 'default';
@@ -16,10 +16,14 @@ export default function Slide({
 }: SlideProps) {
 	const ref = useRef<HTMLDivElement>(null);
 	const [, setSlideRefs] = useAtom(registerSlideRefAtom);
+	const [, clearSlideRefs] = useAtom(clearSlideRefsAtom);
 
 	useEffect(() => {
 		setSlideRefs(ref);
-	}, [setSlideRefs]);
+		return () => {
+			clearSlideRefs();
+		};
+	}, [setSlideRefs, clearSlideRefs]);
 
 	if (displaySVG) {
 		return (

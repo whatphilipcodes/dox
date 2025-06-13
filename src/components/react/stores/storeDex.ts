@@ -9,3 +9,7 @@ export const registerSlideRefAtom = atom(
 		set(slideRefsAtom, [...current, newRef]);
 	},
 );
+
+export const clearSlideRefsAtom = atom(null, (get, set) => {
+	set(slideRefsAtom, []);
+});
