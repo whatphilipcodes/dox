@@ -2,7 +2,7 @@
 import { useAtom } from 'jotai';
 import { useEffect } from 'react';
 
-import { slideRefsAtom } from '../store/storeDex';
+import { slideRefsAtom } from '../stores/storeDex';
 
 type DeckProps = { children: React.ReactNode };
 
