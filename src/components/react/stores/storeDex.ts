@@ -10,6 +10,13 @@ export const registerSlideRefAtom = atom(
 	},
 );
 
-export const clearSlideRefsAtom = atom(null, (get, set) => {
-	set(slideRefsAtom, []);
-});
+export const unmountSlideRefAtom = atom(
+	null,
+	(get, set, target: React.RefObject<HTMLDivElement | null>) => {
+		const current = get(slideRefsAtom);
+		set(
+			slideRefsAtom,
+			current.filter((ref) => ref !== target),
+		);
+	},
+);
