@@ -4,34 +4,35 @@ description: bar fu
 created: 2025-05-11
 ---
 
-import Slide from "../../components/react/Dex/Slide";
+import { Deck, Slide } from "../../components/react/Dex";
 
-<Slide layout="center">
-# Hello World
+<Deck client:load >
+    <Slide client:load layout="center">
+    # Hello World
 
-this is a test presentation
+    this is a test presentation
 
-</Slide>
+    </Slide>
+    <Slide client:load>
+    ## Slide 2 title
 
-<Slide>
-## Slide 2 title
+    More content
 
-More content
+    </Slide>
+    <Slide client:load>
 
-</Slide>
-<Slide>
+    ## Slide 3 title
 
-## Slide 3 title
+    ```python
+    print("Hello World")
+    ```
 
-```python
-print("Hello World")
-```
+    </Slide>
+    <Slide client:load>
 
-</Slide>
-<Slide>
+    ## Image Test
 
-## Image Test
+    ![](../../assets/img/placeholder.jpg)
 
-![](../../assets/img/placeholder.jpg)
-
-</Slide>
+    </Slide>
+</Deck>

@@ -1,15 +1,4 @@
-import type { FC } from 'react';
+import Deck from './Deck';
+import Slide from './Slide';
 
-type ViewerProps = {
-	children: React.ReactNode;
-};
-
-const Viewer: FC<ViewerProps> = ({ children }) => {
-	return (
-		<div className="pdf-export print:absolute top-0 left-0 w-full h-full">
-			{children}
-		</div>
-	);
-};
-
-export default Viewer;
+export { Slide, Deck };

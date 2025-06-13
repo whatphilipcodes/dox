@@ -1,4 +1,4 @@
-import { join, basename, parse } from 'node:path';
+import { basename, join, parse } from 'node:path';
 import type { Options, PageOptions } from 'astro-pdf';
 import { ExifTool } from 'exiftool-vendored';
 import { SITE_AUTHOR } from '../consts';
