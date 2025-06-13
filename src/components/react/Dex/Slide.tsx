@@ -5,12 +5,16 @@ import { registerSlideRefAtom, unmountSlideRefAtom } from '../stores/storeDex';
 
 interface SlideProps {
 	layout: 'default';
+	width: number;
+	height: number;
 	displaySVG: boolean;
 	children: React.ReactNode;
 }
 
 export default function Slide({
 	layout,
+	width = 1920,
+	height = 1080,
 	displaySVG = true,
 	children,
 }: SlideProps) {
@@ -27,22 +31,26 @@ export default function Slide({
 
 	if (displaySVG) {
 		return (
-			<WrapperSVG width={1920} height={1080}>
-				<div
-					ref={ref}
-					className="aspect-video bg-neutral-600 break-after-page w-full last:break-after-auto overflow-hidden p-4 text-2xl"
-				>
-					{children}
-				</div>
-			</WrapperSVG>
+			<div ref={ref} className="absolute w-full h-full">
+				<WrapperSVG width={width} height={height}>
+					<div
+						className="bg-neutral-600 overflow-hidden p-4 text-2xl"
+						style={{ aspectRatio: `${width} / ${height}` }}
+					>
+						{children}
+					</div>
+				</WrapperSVG>
+			</div>
 		);
 	}
 	return (
-		<div
-			ref={ref}
-			className="aspect-video bg-neutral-600 break-after-page w-full last:break-after-auto overflow-hidden p-4 text-2xl"
-		>
-			{children}
+		<div ref={ref} className="absolute w-full h-full">
+			<div
+				className="bg-neutral-600 break-after-page last:break-after-auto overflow-hidden p-4 text-2xl"
+				style={{ aspectRatio: `${width} / ${height}` }}
+			>
+				{children}
+			</div>
 		</div>
 	);
 }
