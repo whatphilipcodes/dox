@@ -26,18 +26,17 @@ export default defineConfig({
 		],
 	},
 	integrations: [
-		react(),
+		react({
+			// experimentalReactChildren: true,
+			// experimentalDisableStreaming: true,
+		}),
 		expressiveCode(),
 		mdx(),
 		sitemap(),
 		pdf(pdfConfig('/dex/')),
 	],
-	experimental: {
-		responsiveImages: true,
-	},
 	// server: {
 	// 	host: true,
-	// },
 	vite: {
 		plugins: [tailwindcss()],
 		build: {

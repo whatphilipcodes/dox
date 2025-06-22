@@ -2,7 +2,7 @@
 	"name": "dox",
 	"type": "module",
 	"version": "0.0.1",
-	"packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
+	"packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac",
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
@@ -12,14 +12,14 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^4.2.6",
-		"@astrojs/react": "^4.2.7",
-		"@astrojs/sitemap": "^3.4.0",
+		"@astrojs/mdx": "^4.3.0",
+		"@astrojs/react": "^4.3.0",
+		"@astrojs/sitemap": "^3.4.1",
 		"@react-spring/three": "^9.7.5",
 		"@react-three/fiber": "^9.1.2",
-		"@types/react": "^19.1.4",
-		"@types/react-dom": "^19.1.5",
-		"astro": "^5.7.13",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"astro": "^5.10.0",
 		"astro-expressive-code": "^0.40.2",
 		"astro-pdf": "^1.7.2",
 		"jotai": "^2.12.5",
@@ -36,13 +36,13 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@samkirkland/ftp-deploy": "^1.2.4",
-		"@tailwindcss/vite": "^4.1.7",
+		"@tailwindcss/vite": "^4.1.10",
 		"@types/hast": "^3.0.4",
 		"@types/seedrandom": "^3.0.8",
 		"@types/three": "^0.174.0",
 		"exiftool-vendored": "^29.3.0",
 		"rehype-wrap-all": "^1.1.0",
-		"tailwind-merge": "^3.3.0",
-		"tailwindcss": "^4.1.7"
+		"tailwind-merge": "^3.3.1",
+		"tailwindcss": "^4.1.10"
 	}
 }
