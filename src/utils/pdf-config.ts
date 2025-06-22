@@ -30,7 +30,6 @@ const pdfConfig = (
 				const filename = basename(pathname).replace(/[\\/]/g, '');
 				return {
 					...pageConfig(width, height),
-					path: join(outDir, `${filename}.pdf`),
 					callback: async (page) => {
 						await page.evaluate(() => {
 							const style = document.createElement('style');
@@ -48,6 +47,7 @@ const pdfConfig = (
 							document.head.appendChild(style);
 						});
 					},
+					path: join(outDir, `${filename}.pdf`),
 				};
 			}
 		},

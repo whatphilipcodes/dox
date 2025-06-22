@@ -1,28 +1,30 @@
 import { useAtom } from 'jotai';
 import { useEffect, useRef } from 'react';
 import WrapperSVG from './wrapperSVG';
-import { registerSlideRefAtom, unmountSlideRefAtom } from '../stores/storeDex';
+import {
+	registerSlideRefAtom,
+	unmountSlideRefAtom,
+	resolutionAtom,
+} from '../stores/storeDex';
 
 interface SlideProps {
 	layout: 'default';
-	width: number;
-	height: number;
 	displaySVG: boolean;
 	children: React.ReactNode;
 }
 
 export default function Slide({
 	layout,
-	width = 1920,
-	height = 1080,
 	displaySVG = true,
 	children,
 }: SlideProps) {
 	const ref = useRef<HTMLDivElement>(null);
+	const [res] = useAtom(resolutionAtom);
 	const [, setSlideRefs] = useAtom(registerSlideRefAtom);
 	const [, unmountSlideRef] = useAtom(unmountSlideRefAtom);
 
 	useEffect(() => {
+		console.log('mounting slide', +ref);
 		setSlideRefs(ref);
 		return () => {
 			unmountSlideRef(ref);
@@ -32,10 +34,10 @@ export default function Slide({
 	if (displaySVG) {
 		return (
 			<div ref={ref} className="absolute w-full h-full">
-				<WrapperSVG width={width} height={height}>
+				<WrapperSVG width={res.width} height={res.height}>
 					<div
 						className="bg-neutral-600 overflow-hidden p-4 text-2xl"
-						style={{ aspectRatio: `${width} / ${height}` }}
+						style={{ aspectRatio: `${res.width} / ${res.height}` }}
 					>
 						{children}
 					</div>
@@ -47,7 +49,7 @@ export default function Slide({
 		<div ref={ref} className="absolute w-full h-full">
 			<div
 				className="bg-neutral-600 break-after-page last:break-after-auto overflow-hidden p-4 text-2xl"
-				style={{ aspectRatio: `${width} / ${height}` }}
+				style={{ aspectRatio: `${res.width} / ${res.height}` }}
 			>
 				{children}
 			</div>

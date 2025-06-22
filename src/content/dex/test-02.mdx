@@ -6,20 +6,20 @@ created: 2025-05-11
 
 import { Deck, Slide } from "../../components/react/Dex";
 
-<Deck client:load >
-    <Slide client:load layout="center">
-    # Hello World
+<Deck client:load width={640} height={480}>
+    <Slide client:only layout="center">
 
+    # Hello World
     this is a test presentation
 
     </Slide>
-    <Slide client:load>
-    ## Slide 2 title
+    <Slide client:only>
 
+    ## Slide 2 title
     More content
 
     </Slide>
-    <Slide client:load>
+    <Slide client:only>
 
     ## Slide 3 title
 
@@ -28,11 +28,17 @@ import { Deck, Slide } from "../../components/react/Dex";
     ```
 
     </Slide>
-    <Slide client:load>
+    <Slide client:only>
 
     ## Image Test
-
+    this is an image test
     ![](../../assets/img/placeholder.jpg)
+
+    </Slide>
+    <Slide client:only>
+
+    ## fu bra
+    abrakadabra
 
     </Slide>
 </Deck>

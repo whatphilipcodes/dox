@@ -33,7 +33,7 @@ export default defineConfig({
 		expressiveCode(),
 		mdx(),
 		sitemap(),
-		pdf(pdfConfig('/dex/')),
+		pdf(pdfConfig('/dex/', '/pdf/', 1920, 1080)),
 	],
 	// server: {
 	// 	host: true,

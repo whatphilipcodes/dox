@@ -7,6 +7,7 @@ import {
 	slideRefsAtom,
 	nextSlideAtom,
 	prevSlideAtom,
+	setResolutionAtom,
 } from '../stores/storeDex';
 
 type DeckProps = { width: number; height: number; children: React.ReactNode };
@@ -16,24 +17,25 @@ export default function Deck({
 	height = 1080,
 	children,
 }: DeckProps) {
+	const [, setResolution] = useAtom(setResolutionAtom);
 	const [slideRefs] = useAtom(slideRefsAtom);
 	const [activeSlide] = useAtom(activeSlideAtom);
 	const [, nextSlide] = useAtom(nextSlideAtom);
 	const [, prevSlide] = useAtom(prevSlideAtom);
 
-	// show/hide slides and scroll into view based on activeSlide
 	useEffect(() => {
+		console.log('this should be before mount of slide');
+		setResolution({ width: width, height: height });
 		slideRefs.forEach((ref, idx) => {
 			const el = ref?.current;
 			if (!el) return;
 			el.style.display = idx === activeSlide ? 'block' : 'none';
 		});
-		console.log(activeSlide);
-	}, [activeSlide, slideRefs]);
+	}, [activeSlide, slideRefs, width, height, setResolution]);
 
 	return (
 		<div
-			className="pdf-export relative print:absolute top-0 left-0 w-120 h-full"
+			className="pdf-export relative print:absolute top-0 left-0 w-full"
 			style={{ aspectRatio: `${width} / ${height}` }}
 		>
 			{children}

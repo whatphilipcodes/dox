@@ -19,6 +19,18 @@ export const unmountSlideRefAtom = atom(
 	},
 );
 
+interface Resolution {
+	width: number;
+	height: number;
+}
+export const resolutionAtom = atom<Resolution>({
+	width: 1920,
+	height: 1080,
+});
+export const setResolutionAtom = atom(null, (get, set, newRes: Resolution) => {
+	set(resolutionAtom, newRes);
+});
+
 export const activeSlideAtom = atom<number>(0);
 export const nextSlideAtom = atom(null, (get, set) => {
 	const active = get(activeSlideAtom);
