@@ -1,6 +1,7 @@
 // https://react.dev/blog/2024/12/05/react-19#ref-as-a-prop -> passing down a prop
 import { useAtom } from 'jotai';
 import { useEffect } from 'react';
+import Button from '../Button';
 
 import {
 	activeSlideAtom,
@@ -24,7 +25,6 @@ export default function Deck({
 	const [, prevSlide] = useAtom(prevSlideAtom);
 
 	useEffect(() => {
-		console.log('this should be before mount of slide');
 		setResolution({ width: width, height: height });
 		slideRefs.forEach((ref, idx) => {
 			const el = ref?.current;
@@ -39,20 +39,12 @@ export default function Deck({
 			style={{ aspectRatio: `${width} / ${height}` }}
 		>
 			{children}
-			<button
-				type="button"
-				onClick={prevSlide}
-				className="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded"
-			>
+			<Button onClick={prevSlide} className="absolute top-1/2 left-4">
 				Prev
-			</button>
-			<button
-				type="button"
-				onClick={nextSlide}
-				className="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded"
-			>
+			</Button>
+			<Button onClick={nextSlide} className="absolute top-1/2 right-4">
 				Next
-			</button>
+			</Button>
 		</div>
 	);
 }

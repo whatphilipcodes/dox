@@ -9,13 +9,13 @@ import {
 
 interface SlideProps {
 	layout: 'default';
-	displaySVG: boolean;
+	preview: boolean;
 	children: React.ReactNode;
 }
 
 export default function Slide({
 	layout,
-	displaySVG = true,
+	preview = true,
 	children,
 }: SlideProps) {
 	const ref = useRef<HTMLDivElement>(null);
@@ -24,16 +24,15 @@ export default function Slide({
 	const [, unmountSlideRef] = useAtom(unmountSlideRefAtom);
 
 	useEffect(() => {
-		console.log('mounting slide', +ref);
 		setSlideRefs(ref);
 		return () => {
 			unmountSlideRef(ref);
 		};
 	}, [setSlideRefs, unmountSlideRef]);
 
-	if (displaySVG) {
+	if (preview) {
 		return (
-			<div ref={ref} className="absolute w-full h-full">
+			<div ref={ref} className="w-full h-full">
 				<WrapperSVG width={res.width} height={res.height}>
 					<div
 						className="bg-neutral-600 overflow-hidden p-4 text-2xl"
@@ -46,7 +45,7 @@ export default function Slide({
 		);
 	}
 	return (
-		<div ref={ref} className="absolute w-full h-full">
+		<div ref={ref} className="w-full h-full">
 			<div
 				className="bg-neutral-600 break-after-page last:break-after-auto overflow-hidden p-4 text-2xl"
 				style={{ aspectRatio: `${res.width} / ${res.height}` }}
