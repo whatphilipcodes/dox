@@ -1,24 +1,19 @@
-name: full deployment
+name: Deploy to FTPS
 on:
   workflow_dispatch:
   push:
     branches:
       - main
-permissions:
-  contents: write
-  issues: write
-  pull-requests: write
 jobs:
   build:
-    name: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "23"
+          node-version: '23'
+      - run: corepack up
       - run: corepack enable
-      - run: corepack prepare pnpm@latest --activate
       - run: pnpm install
       - run: pnpm run build
       - name: Upload artifact
@@ -26,7 +21,7 @@ jobs:
         with:
           path: ./dist
   web-deploy:
-    name: deploy
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -42,23 +37,3 @@ jobs:
           port: 21
           local-dir: ./artifact/
           server-dir: /public_html/dox/
-  release:
-    name: auto-release
-    needs: web-deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Required for semantic-release
-      - name: setup
-        uses: actions/setup-node@v4
-        with:
-          node-version: "23"
-      - run: corepack enable
-      - run: corepack prepare pnpm@latest --activate
-      - run: pnpm install
-      - name: semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpx semantic-release
