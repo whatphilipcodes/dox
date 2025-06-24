@@ -1,8 +1,8 @@
 ---
+import { GITHUB_URL, SITE_TITLE } from '../consts';
+import { collections } from '../content.config';
 import Link from './Link.astro';
 import ThemeToggle from './react/ThemeToggle';
-import { SITE_TITLE, GITHUB_URL } from '../consts';
-import { collections } from '../content.config';
 
 // @ts-ignore -> astro experimental feature
 import Icon from '../../public/favicon.svg';
@@ -16,10 +16,10 @@ const currentPath = Astro.url.pathname;
 
 // Helper function to check if link is active
 const isActive = (path: string) => {
-  if (path === '/') {
-    return currentPath === path;
-  }
-  return currentPath.startsWith(path);
+	if (path === '/') {
+		return currentPath === path;
+	}
+	return currentPath.startsWith(path);
 };
 ---
 

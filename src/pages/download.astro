@@ -1,12 +1,12 @@
 ---
+import MarkdownWrapper from '../components/MarkdownWrapper.astro';
 import DownloadSection from '../components/react/DownloadSection';
 import Basic from '../layouts/Basic.astro';
-import MarkdownWrapper from '../components/MarkdownWrapper.astro';
 
 import * as markdown from '../content/download.md';
 const { Content, frontmatter } = markdown;
 
-import { SITE_TITLE, GITHUB_URL } from '../consts';
+import { GITHUB_URL, SITE_TITLE } from '../consts';
 ---
 
 <Basic title={frontmatter.title} description={frontmatter.description}>

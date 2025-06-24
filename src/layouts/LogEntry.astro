@@ -1,9 +1,9 @@
 ---
-import Tag from '../components/Tag.astro';
 import type { CollectionEntry } from 'astro:content';
-import Basic from './Basic.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import TagInteractive from '../components/TagInteractive.astro';
 import { lowercaseTitles } from '../consts';
+import Basic from './Basic.astro';
 
 type Props = CollectionEntry<'log'>['data'];
 const { title, description, created, tags } = Astro.props;
@@ -14,7 +14,7 @@ const { title, description, created, tags } = Astro.props;
     <div class='flex flex-col gap-4'>
       <FormattedDate date={created} />
       <div class='flex flex-row flex-wrap gap-x-2'>
-        {tags?.map((tag) => <Tag name={tag} />)}
+        {tags?.map((tag) => <TagInteractive name={tag} />)}
       </div>
       <h1 class='text-5xl font-bold break-words'>
         {lowercaseTitles ? title.toLowerCase() : title}

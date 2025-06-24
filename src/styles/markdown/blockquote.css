@@ -1,9 +1,9 @@
 @import '../tailwind.css';
 
 div[data-markdown-content] blockquote {
-  @apply relative pl-4 text-neutral-500;
+	@apply relative pl-4 text-neutral-500;
 }
 
 div[data-markdown-content] blockquote::before {
-  @apply bg-secondary-500 absolute top-0 bottom-0 left-0 w-0.5 rounded-full content-[''];
+	@apply bg-secondary-500 absolute top-0 bottom-0 left-0 w-0.5 rounded-full content-[''];
 }

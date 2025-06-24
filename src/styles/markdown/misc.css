@@ -1,41 +1,41 @@
 @import '../tailwind.css';
 
 div[data-markdown-content] p {
-  @apply text-justify hyphens-auto;
+	@apply text-justify hyphens-auto;
 }
 
 div[data-markdown-content] h1 {
-  @apply text-5xl font-bold break-words;
+	@apply text-5xl font-bold break-words;
 }
 
 div[data-markdown-content] h1::after {
-  @apply mt-2 block h-px w-full bg-neutral-300;
-  content: '';
+	@apply mt-2 block h-px w-full bg-neutral-300;
+	content: '';
 }
 
 /* darkmode on pseudo elements currently not working in tailwind v4 */
 :is(.dark) div[data-markdown-content] h1::after {
-  @apply bg-neutral-800;
+	@apply bg-neutral-800;
 }
 
 div[data-markdown-content] h2 {
-  @apply text-4xl font-bold;
+	@apply text-4xl font-bold;
 }
 
 div[data-markdown-content] h3 {
-  @apply text-3xl font-bold;
+	@apply text-3xl font-bold;
 }
 
 div[data-markdown-content] h4 {
-  @apply text-2xl font-bold;
+	@apply text-2xl font-bold;
 }
 
 div[data-markdown-content] h5 {
-  @apply text-xl font-bold;
+	@apply text-xl font-bold;
 }
 
 div[data-markdown-content] h6 {
-  @apply text-lg font-bold;
+	@apply text-lg font-bold;
 }
 
 div[data-markdown-content] h1,
@@ -44,21 +44,21 @@ div[data-markdown-content] h3,
 div[data-markdown-content] h4,
 div[data-markdown-content] h5,
 div[data-markdown-content] h6 {
-  @apply hyphens-auto;
+	@apply hyphens-auto;
 }
 
 div[data-markdown-content] pre {
-  @apply rounded-md p-4;
+	@apply rounded-md p-4;
 }
 
 div[data-markdown-content] code {
-  @apply rounded-sm bg-neutral-300 px-1 dark:bg-neutral-800;
+	@apply rounded-sm bg-neutral-300 px-1 dark:bg-neutral-800;
 }
 
 div[data-markdown-content] mark {
-  @apply bg-primary-500 rounded-sm px-1;
+	@apply bg-primary-500 rounded-sm px-1;
 }
 
 div[data-markdown-content] a {
-  @apply decoration-primary-500 dark:text-primary-500 underline underline-offset-4;
+	@apply decoration-primary-500 dark:text-primary-500 underline underline-offset-4;
 }

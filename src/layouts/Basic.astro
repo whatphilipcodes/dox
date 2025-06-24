@@ -1,13 +1,13 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_LANGUAGE } from '../consts';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_LANGUAGE, SITE_TITLE } from '../consts';
 
 interface Props {
-  title?: string;
-  description?: string;
-  created?: string;
+	title?: string;
+	description?: string;
+	created?: string;
 }
 const { title, description } = Astro.props;
 ---

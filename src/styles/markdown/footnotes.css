@@ -2,28 +2,28 @@
 
 /* in-text */
 div[data-markdown-content] a[data-footnote-ref] {
-  @apply dark:text-primary-500 pl-0.5 underline-offset-2;
+	@apply dark:text-primary-500 pl-0.5 underline-offset-2;
 }
 
 /* footnote section (page end); counter see ol style -> ./list.css */
 div[data-markdown-content] section.footnotes h2 {
-  @apply hidden;
+	@apply hidden;
 }
 
 div[data-markdown-content] .footnotes::before {
-  content: '';
-  @apply block h-px w-full bg-neutral-300;
+	content: '';
+	@apply block h-px w-full bg-neutral-300;
 }
 
 /* darkmode on pseudo elements currently not working in tailwind v4 */
 :is(.dark) div[data-markdown-content] .footnotes::before {
-  @apply bg-neutral-800;
+	@apply bg-neutral-800;
 }
 
 div[data-markdown-content] section.footnotes ol li {
-  @apply flex flex-row break-all md:break-normal;
+	@apply flex flex-row break-all md:break-normal;
 }
 
 div[data-markdown-content] a[data-footnote-backref] {
-  @apply pl-2;
+	@apply pl-2;
 }

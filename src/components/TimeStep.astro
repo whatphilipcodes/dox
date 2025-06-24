@@ -1,13 +1,13 @@
 ---
-import { type CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
-import MarkdownWrapper from './MarkdownWrapper.astro';
-import FormattedDate from './FormattedDate.astro';
 import { lowercaseTitles } from '../consts';
+import FormattedDate from './FormattedDate.astro';
+import MarkdownWrapper from './MarkdownWrapper.astro';
 
 interface Props {
-  id?: string;
-  step: CollectionEntry<'roadmap'>;
+	id?: string;
+	step: CollectionEntry<'roadmap'>;
 }
 
 const { step } = Astro.props;

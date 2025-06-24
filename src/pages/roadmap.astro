@@ -5,7 +5,7 @@ import TimeStep from '../components/TimeStep.astro';
 import Basic from '../layouts/Basic.astro';
 
 const roadmap = (await getCollection('roadmap')).sort(
-  (a, b) => a.data.start.valueOf() - b.data.start.valueOf(),
+	(a, b) => a.data.start.valueOf() - b.data.start.valueOf(),
 );
 ---
 
