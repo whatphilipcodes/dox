@@ -13,10 +13,10 @@
   },
   "release": {
     "branches": [
+      "prerelease-placeholder",
       {
         "name": "main",
         "channel": "beta",
-        "range": "0.x.x",
         "prerelease": true
       }
     ],
