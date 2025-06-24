@@ -11,6 +11,21 @@
     "deploy": "node --env-file=.env .scripts/deploy.js",
     "astro": "astro"
   },
+  "release": {
+    "branches": [
+      {
+        "name": "main",
+        "channel": "beta",
+        "range": "0.x.x",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
+  },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
